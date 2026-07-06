@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Framework — RICE</title>
+<meta name="description" content="The full RICE standard: 9 pillars, 80 objectives with citable control IDs, key controls, vendor alignment, and mappings to BNM RMiT, NIST CSF, CISA, OWASP and ISO 27001.">
+<link rel="icon" href="assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/rice-seal-gold.svg" alt="RICE seal">
+      <span class="t">RICE<small>CYBERSECURITY ECOSYSTEM</small></span>
+    </a>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="framework.html" aria-current="page">Framework</a>
+      <a href="landscape.html">Landscape</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="about.html">Author</a>
+      <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:56px">
+  <div class="wrap">
+    <div class="hero-meta">
+      <b>§ 05</b><span class="dot"></span><span>RICE Deep Dives</span><span class="dot"></span><span>80 objectives · 10 domains</span>
+    </div>
+    <h1 style="font-size:clamp(30px,4.4vw,52px)">The standard, pillar by pillar.</h1>
+    <p class="lede">Every objective carries a citable control ID and is cross-referenced to BNM RMiT, NIST CSF, CISA, OWASP and ISO 27001 where coverage exists — and marked <span class="m" style="color:var(--gold)">◆</span> where RICE sets a requirement no existing framework does. Click any ID to copy it.</p>
+  </div>
+</header>
+
+<section class="sec last" style="padding-top:48px">
+  <div class="wrap">
+    <div class="toolbar">
+      <div class="search"><span class="sk">/</span><input id="objSearch" type="search" placeholder="Search objectives, controls, vendors…" aria-label="Search objectives"></div>
+      <button class="fchip" data-f="all" aria-pressed="true">ALL</button>
+      <button class="fchip" data-f="rice" aria-pressed="false">◆ RICE-SPECIFIC</button>
+      <button class="fchip" data-f="bnm" aria-pressed="false">BNM RMiT</button>
+      <button class="fchip" data-f="nist" aria-pressed="false">NIST CSF</button>
+      <button class="fchip" data-f="cisa" aria-pressed="false">CISA</button>
+      <button class="fchip" data-f="owasp" aria-pressed="false">OWASP</button>
+      <button class="fchip" data-f="iso" aria-pressed="false">ISO 27001</button>
+      <div class="xall">
+        <button id="expandAll">Expand all</button>
+        <button id="collapseAll">Collapse all</button>
+      </div>
+    </div>
+    <p class="result-note" id="resultNote"></p>
+
+    <!-- ============ P1 ============ -->
+    <details class="pillar" id="p1">
+      <summary>
+        <span class="pid">P1</span>
+        <span class="pt"><h3>Governance &amp; Risk Oversight</h3><span class="tag">RISK APPETITE · BOARD ACCOUNTABILITY · CONTINUOUS POSTURE</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">The foundation pillar — setting direction, accountability, and risk appetite for all that follows.</p>
+        <div class="objs">
+          <div class="obj" data-maps="bnm nist iso rice"><button class="oid" title="Copy control ID">P1.01</button><div><p class="ot">Establish a Technology Risk Governance framework with board-level accountability</p><div class="maps"><span class="chip">BNM §4</span><span class="chip">NIST GV.OC</span><span class="chip">ISO A.5</span><span class="chip u">◆ RICE</span></div><p class="unote">Board-level cyber risk mandate with FSI-specific metrics</p></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P1.02</button><div><p class="ot">Define and publish organisational cybersecurity risk appetite and tolerance thresholds</p><div class="maps"><span class="chip">BNM §5</span><span class="chip">NIST GV.RM</span><span class="chip">ISO A.6</span></div></div></div>
+          <div class="obj" data-maps="bnm nist rice"><button class="oid" title="Copy control ID">P1.03</button><div><p class="ot">Implement a continuous compliance monitoring programme beyond annual audit cycles</p><div class="maps"><span class="chip">BNM §4</span><span class="chip">NIST GV.OC</span><span class="chip u">◆ RICE</span></div><p class="unote">Continuous posture monitoring vs. point-in-time audit</p></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P1.04</button><div><p class="ot">Mandate cybersecurity literacy training at C-suite and board level annually</p><div class="maps"><span class="chip">BNM §13</span><span class="chip">NIST GV.RR</span><span class="chip">ISO A.6.3</span></div></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P1.05</button><div><p class="ot">Establish a Technology Risk Committee with defined escalation thresholds</p><div class="maps"><span class="chip">BNM §4</span><span class="chip">NIST GV.OC</span><span class="chip">ISO A.5</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.06</button><div><p class="ot">Align RICE maturity model scoring to board reporting — Levels 1–5 per pillar</p><div class="maps"><span class="chip u">◆ RICE</span></div><p class="unote">RICE Maturity Model — no equivalent in existing frameworks</p></div></div>
+          <div class="obj" data-maps="bnm iso"><button class="oid" title="Copy control ID">P1.07</button><div><p class="ot">Map all technology risk to regulatory obligations (BNM RMiT, PDPA, AMLA cyber provisions)</p><div class="maps"><span class="chip">BNM §4</span><span class="chip">ISO A.5</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.08</button><div><p class="ot">Address C-suite rotation risk: maintain institutional cybersecurity memory via documented posture reports</p><div class="maps"><span class="chip u">◆ RICE</span></div><p class="unote">Rotation-resilient governance — gap in all existing frameworks</p></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls</h4>
+            <ul>
+              <li>Board-approved Cybersecurity Strategy reviewed annually</li>
+              <li>Technology Risk Register — threats, likelihood, impact, owner</li>
+              <li>RICE Maturity Model scoring per pillar (1 = Aware → 5 = Optimising)</li>
+              <li>Regulatory obligation mapping: RMiT §4–5, PDPA, AMLA cyber</li>
+              <li>Annual board / EXCO cybersecurity simulation exercise</li>
+              <li>Succession-proof documentation: post-rotation posture handover</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment</h4>
+            <ul>
+              <li>GRC platforms: ServiceNow GRC, Archer, MetricStream — automate risk register and control evidence</li>
+              <li>Governance dashboards: Splunk (risk posture), Dynatrace (SLA compliance), LogicMonitor</li>
+              <li>Training platforms: KnowBe4, Proofpoint Security Awareness for C-suite and board</li>
+              <li>BNM submission tooling: internal GRC linked to RMiT §4 evidence requirements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P2 ============ -->
+    <details class="pillar" id="p2">
+      <summary>
+        <span class="pid">P2</span>
+        <span class="pt"><h3>Threat Detection &amp; Intelligence</h3><span class="tag">SIEM · NDR · NPB · AI-AUGMENTED · THREAT INTEL</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Know before you're hit — continuous visibility, AI-augmented detection, and actionable threat intelligence.</p>
+        <div class="objs">
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P2.01</button><div><p class="ot">Deploy SIEM with 24/7 SOC coverage — full log ingestion from network, endpoint, cloud, and OT sources</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST DE.CM</span><span class="chip">ISO A.8.16</span></div></div></div>
+          <div class="obj" data-maps="bnm nist rice"><button class="oid" title="Copy control ID">P2.02</button><div><p class="ot">Implement NDR to detect lateral movement and encrypted threat traffic across east-west flows</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST DE.CM</span><span class="chip u">◆ RICE</span></div><p class="unote">NDR as mandatory FSI control — not implied in other frameworks</p></div></div>
+          <div class="obj" data-maps="bnm nist rice"><button class="oid" title="Copy control ID">P2.03</button><div><p class="ot">Achieve sub-1-hour MTTD for critical incidents across all monitored assets</p><div class="maps"><span class="chip">BNM §12</span><span class="chip">NIST DE.CM</span><span class="chip u">◆ RICE</span></div><p class="unote">1-hour MTTD SLA — no existing framework sets this target</p></div></div>
+          <div class="obj" data-maps="nist cisa rice"><button class="oid" title="Copy control ID">P2.04</button><div><p class="ot">Integrate curated FSI-specific threat intelligence feeds (Cyfirma, Group-IB, CISA advisories)</p><div class="maps"><span class="chip">NIST ID.RA</span><span class="chip">CISA</span><span class="chip u">◆ RICE</span></div><p class="unote">FSI-specific threat intel integration — gap in all frameworks</p></div></div>
+          <div class="obj" data-maps="nist rice"><button class="oid" title="Copy control ID">P2.05</button><div><p class="ot">Deploy AI/ML-powered detection for behavioural anomaly and insider threat identification</p><div class="maps"><span class="chip">NIST DE.CM</span><span class="chip u">◆ RICE</span></div><p class="unote">AI-augmented adaptive detection — not addressed in BNM/ISO/NIST</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.06</button><div><p class="ot">Implement Network Packet Broker (NPB) for full-fidelity traffic analysis without blind spots</p><div class="maps"><span class="chip u">◆ RICE</span></div><p class="unote">NPB as detection infrastructure — RICE-only requirement</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.07</button><div><p class="ot">Establish darknet and brand monitoring for FSI credential exposure and impersonation</p><div class="maps"><span class="chip u">◆ RICE</span></div><p class="unote">Darknet monitoring — not addressed in any existing framework</p></div></div>
+          <div class="obj" data-maps="nist cisa rice"><button class="oid" title="Copy control ID">P2.08</button><div><p class="ot">Conduct purple team exercises bi-annually with threat-informed scenarios (MITRE ATT&amp;CK FSI)</p><div class="maps"><span class="chip">NIST ID.RA</span><span class="chip">CISA</span><span class="chip u">◆ RICE</span></div><p class="unote">FSI MITRE ATT&amp;CK scenario library — RICE-only</p></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls</h4>
+            <ul>
+              <li>SIEM deployment: Splunk, LogRhythm, Microsoft Sentinel — cross-source correlation</li>
+              <li>NDR: ExtraHop Reveal(x), Vectra AI, DarkTrace — east-west visibility</li>
+              <li>NPB: Gigamon, Keysight — traffic aggregation, deduplication, decryption</li>
+              <li>AI/ML detection: CrowdStrike Falcon, SentinelOne, Cybereason — behavioural engines</li>
+              <li>Threat intel: Cyfirma DeCYFIR, Group-IB TI, MISP — FSI-enriched feeds</li>
+              <li>Purple team: MITRE ATT&amp;CK Navigator mapped to Malaysian FSI threat actors</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment</h4>
+            <ul>
+              <li>Splunk / LogRhythm — SIEM backbone with BNM audit log retention (minimum 3 years)</li>
+              <li>ExtraHop Reveal(x) — wire-speed NDR with ML-powered transaction behaviour analysis</li>
+              <li>Cyfirma DeCYFIR — Malaysian-context threat intelligence including darknet monitoring</li>
+              <li>CrowdStrike Falcon / SentinelOne — AI-powered EDR feeding SIEM correlation</li>
+              <li>Gigamon GigaVUE — NPB with SSL decryption and inline security tool chaining</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P3 ============ -->
+    <details class="pillar" id="p3">
+      <summary>
+        <span class="pid">P3</span>
+        <span class="pt"><h3>Identity &amp; Access Governance</h3><span class="tag">ZERO TRUST · PAM · IGA · NON-HUMAN IDENTITY</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Identity is the new perimeter — zero standing privilege, continuous verification, lifecycle governance.</p>
+        <div class="objs">
+          <div class="obj" data-maps="bnm nist cisa iso"><button class="oid" title="Copy control ID">P3.01</button><div><p class="ot">Enforce Zero Trust access model: never trust, always verify — for all users, devices, and workloads</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST PR.AA</span><span class="chip">CISA</span><span class="chip">ISO A.5.15</span></div></div></div>
+          <div class="obj" data-maps="bnm nist iso rice"><button class="oid" title="Copy control ID">P3.02</button><div><p class="ot">Implement Privileged Access Management (PAM) with session recording for all admin accounts</p><div class="maps"><span class="chip">BNM §11.2</span><span class="chip">NIST PR.AA</span><span class="chip">ISO A.8.2</span><span class="chip u">◆ RICE</span></div><p class="unote">PAM with session recording as mandatory FSI control</p></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P3.03</button><div><p class="ot">Deploy phishing-resistant MFA (FIDO2/passkeys) across all external-facing systems</p><div class="maps"><span class="chip">BNM §11.2</span><span class="chip">NIST PR.AA</span><span class="chip">ISO A.8.5</span></div></div></div>
+          <div class="obj" data-maps="bnm nist iso rice"><button class="oid" title="Copy control ID">P3.04</button><div><p class="ot">Implement Identity Governance &amp; Administration (IGA) for automated access reviews quarterly</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST PR.AA</span><span class="chip">ISO A.5.18</span><span class="chip u">◆ RICE</span></div><p class="unote">Automated quarterly access certification — FSI-specific cadence</p></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P3.05</button><div><p class="ot">Enforce least-privilege and just-in-time access for all production system access</p><div class="maps"><span class="chip">BNM §11.2</span><span class="chip">NIST PR.AA</span><span class="chip">ISO A.8.2</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.06</button><div><p class="ot">Address deepfake and synthetic identity fraud in customer identity verification flows</p><div class="maps"><span class="chip u">◆ RICE</span></div><p class="unote">Deepfake identity fraud — not addressed in any existing framework</p></div></div>
+          <div class="obj" data-maps="nist iso rice"><button class="oid" title="Copy control ID">P3.07</button><div><p class="ot">Govern non-human identities: service accounts, API keys, machine credentials with PAM controls</p><div class="maps"><span class="chip">NIST PR.AA</span><span class="chip">ISO A.8.2</span><span class="chip u">◆ RICE</span></div><p class="unote">Non-human identity governance — gap in BNM and ISO</p></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P3.08</button><div><p class="ot">Maintain identity inventory across on-prem, cloud SaaS, and hybrid with automated discovery</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST ID.AM</span><span class="chip">ISO A.8.1</span></div></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls</h4>
+            <ul>
+              <li>SailPoint IdentityNow / CyberArk Conjur — IGA and secrets management</li>
+              <li>CyberArk / BeyondTrust — PAM with session recording and just-in-time access</li>
+              <li>Okta / Cisco Duo — phishing-resistant MFA, SSO federation</li>
+              <li>FIDO2 passkey deployment for customer-facing and employee applications</li>
+              <li>Automated access review campaigns: quarterly for privileged, semi-annual for standard users</li>
+              <li>Non-human identity vault: API key rotation, service account lifecycle management</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment</h4>
+            <ul>
+              <li>SailPoint — identity governance platform with BNM access review evidence generation</li>
+              <li>CyberArk / BeyondTrust — PAM covering both human and non-human privileged access</li>
+              <li>Okta Workforce Identity — SSO and adaptive MFA for all SaaS and on-prem applications</li>
+              <li>Microsoft Entra ID — hybrid identity for M365/Azure-centric FSI environments</li>
+              <li>Delinea / Thycotic — lightweight PAM for mid-tier FSI institutions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P4 ============ -->
+    <details class="pillar" id="p4">
+      <summary>
+        <span class="pid">P4</span>
+        <span class="pt"><h3>Incident Response &amp; Resilience</h3><span class="tag">SOAR · CIRP · RTO/RPO · CRISIS COMMS</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Assume breach. Respond fast. Recover faster — operational resilience as a designed capability.</p>
+        <div class="objs">
+          <div class="obj" data-maps="bnm nist rice"><button class="oid" title="Copy control ID">P4.01</button><div><p class="ot">Achieve sub-1-hour MTTC (Mean Time to Contain) for critical incidents</p><div class="maps"><span class="chip">BNM §12</span><span class="chip">NIST RS.MA</span><span class="chip u">&#9670; RICE</span></div><p class="unote">1-hour MTTC SLA — no existing framework mandates this target</p></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P4.02</button><div><p class="ot">Maintain a tested, BNM-compliant Cyber Incident Response Plan (CIRP) updated annually</p><div class="maps"><span class="chip">BNM §12</span><span class="chip">NIST RS.MA</span><span class="chip">ISO A.5.26</span></div></div></div>
+          <div class="obj" data-maps="bnm nist rice"><button class="oid" title="Copy control ID">P4.03</button><div><p class="ot">Implement SOAR for automated playbook execution and cross-tool orchestration</p><div class="maps"><span class="chip">BNM §12</span><span class="chip">NIST RS.MA</span><span class="chip u">&#9670; RICE</span></div><p class="unote">SOAR automation for FSI incident playbooks — RICE-only specificity</p></div></div>
+          <div class="obj" data-maps="bnm nist rice"><button class="oid" title="Copy control ID">P4.04</button><div><p class="ot">Conduct bi-annual tabletop exercises with board/EXCO participation on ransomware and SWIFT attack scenarios</p><div class="maps"><span class="chip">BNM §12</span><span class="chip">NIST RS.MA</span><span class="chip u">&#9670; RICE</span></div><p class="unote">FSI-specific ransomware + SWIFT attack tabletop scenarios</p></div></div>
+          <div class="obj" data-maps="bnm iso rice"><button class="oid" title="Copy control ID">P4.05</button><div><p class="ot">Establish Crisis Communications playbook for regulators (BNM), customers, and media</p><div class="maps"><span class="chip">BNM §12</span><span class="chip">ISO A.5.26</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Regulatory communication playbook with BNM notification timeline</p></div></div>
+          <div class="obj" data-maps="bnm nist iso rice"><button class="oid" title="Copy control ID">P4.06</button><div><p class="ot">Test and validate Disaster Recovery (DR) for all Tier-1 systems — RTO &le; 4h, RPO &le; 1h</p><div class="maps"><span class="chip">BNM §12</span><span class="chip">NIST RC.RP</span><span class="chip">ISO A.5.29</span><span class="chip u">&#9670; RICE</span></div><p class="unote">FSI-specific RTO/RPO SLA targets — RICE mandates operational thresholds</p></div></div>
+          <div class="obj" data-maps="nist cisa rice"><button class="oid" title="Copy control ID">P4.07</button><div><p class="ot">Integrate threat intelligence into incident response — real-time IOC enrichment during active incidents</p><div class="maps"><span class="chip">NIST RS.AN</span><span class="chip">CISA</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Live IOC enrichment during incidents — RICE-only operational requirement</p></div></div>
+          <div class="obj" data-maps="bnm nist iso rice"><button class="oid" title="Copy control ID">P4.08</button><div><p class="ot">Maintain a post-incident lessons-learned loop feeding back into risk register and control updates</p><div class="maps"><span class="chip">BNM §12</span><span class="chip">NIST RC.IM</span><span class="chip">ISO A.5.27</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Structured lessons-learned feeding RICE maturity model — RICE-only loop</p></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls</h4>
+            <ul>
+              <li>SOAR: Swimlane, Palo Alto XSOAR — automated containment, enrichment, ticketing</li>
+              <li>BNM CIRP documentation with defined roles, escalation matrix, and notification timelines</li>
+              <li>Ransomware playbook: isolation &rarr; assessment &rarr; BNM notification (within 24h) &rarr; recovery</li>
+              <li>DR testing: quarterly failover tests for Tier-1 core banking and payment systems</li>
+              <li>Immutable backups: Rubrik, Cohesity with air-gapped copies — ransomware-resilient</li>
+              <li>Crisis comms: pre-approved templates for BNM, customers, and press — reviewed annually</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment</h4>
+            <ul>
+              <li>Swimlane SOAR — automation platform for FSI incident playbooks and alert triage</li>
+              <li>Rubrik Security Cloud — immutable backup with threat hunting on backup data</li>
+              <li>PagerDuty / ServiceNow ITSM — incident coordination and SLA tracking</li>
+              <li>Recorded Future — threat intelligence enrichment during active incident response</li>
+              <li>BNM eTMS portal integration — streamlined regulatory incident reporting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P5 ============ -->
+    <details class="pillar" id="p5">
+      <summary>
+        <span class="pid">P5</span>
+        <span class="pt"><h3>Data Security &amp; Privacy</h3><span class="tag">DLP · DAM · CDR · PDPA · ENCRYPTION</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Protect data at rest, in transit, and in use — across on-prem, cloud, and SaaS environments.</p>
+        <div class="objs">
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P5.01</button><div><p class="ot">Classify all data assets by sensitivity (Public, Internal, Confidential, Restricted) with automated tagging</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST ID.AM</span><span class="chip">ISO A.5.9</span></div></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P5.02</button><div><p class="ot">Implement Data Loss Prevention (DLP) across endpoints, email, and cloud egress channels</p><div class="maps"><span class="chip">BNM §11.5</span><span class="chip">NIST PR.DS</span><span class="chip">ISO A.8.12</span></div></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P5.03</button><div><p class="ot">Encrypt all Tier-1 data at rest (AES-256) and in transit (TLS 1.3 minimum)</p><div class="maps"><span class="chip">BNM §11.5</span><span class="chip">NIST PR.DS</span><span class="chip">ISO A.8.24</span></div></div></div>
+          <div class="obj" data-maps="bnm nist rice"><button class="oid" title="Copy control ID">P5.04</button><div><p class="ot">Implement Database Activity Monitoring (DAM) on all production databases with real-time alerting</p><div class="maps"><span class="chip">BNM §11.5</span><span class="chip">NIST PR.DS</span><span class="chip u">&#9670; RICE</span></div><p class="unote">DAM as mandatory FSI data control — RICE-only specificity</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.05</button><div><p class="ot">Deploy Content Disarm &amp; Reconstruction (CDR) for all inbound file transfers</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">CDR inbound file sanitisation — gap in all existing frameworks</p></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P5.06</button><div><p class="ot">Implement data masking and pseudonymisation for non-production environments</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST PR.DS</span><span class="chip">ISO A.8.11</span></div></div></div>
+          <div class="obj" data-maps="bnm iso rice"><button class="oid" title="Copy control ID">P5.07</button><div><p class="ot">Establish PDPA-compliant data subject request management with 30-day SLA</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">ISO A.5.34</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Malaysian PDPA operationalisation — BNM references but lacks specifics</p></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P5.08</button><div><p class="ot">Define and execute data retention and secure disposal policies per regulatory timelines</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST PR.DS</span><span class="chip">ISO A.8.10</span></div></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls</h4>
+            <ul>
+              <li>Trellix / Forcepoint / Menlo — DLP across endpoints, web gateway, and email</li>
+              <li>Imperva DAM — real-time database monitoring with FSI compliance reporting</li>
+              <li>Votiro CDR — file sanitisation for inbound email and portal file uploads</li>
+              <li>OpenText / Comforte — data masking and tokenisation for non-prod environments</li>
+              <li>AES-256 at rest, TLS 1.3 in transit — enforced via policy across all FSI systems</li>
+              <li>PDPA request workflow: ServiceNow or similar ITSM with 30-day breach notification tracking</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment</h4>
+            <ul>
+              <li>Imperva Data Security — DAM + data classification + DLP in unified platform</li>
+              <li>Trellix DLP — endpoint and network DLP with Trellix ePolicy integration</li>
+              <li>Votiro Secure File Gateway — CDR protecting email, portals, and file transfers</li>
+              <li>Comforte — tokenisation platform widely used in Malaysian banking for PCI-DSS and PDPA</li>
+              <li>Rubrik — data governance and classification on backup data sets</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P6 ============ -->
+    <details class="pillar" id="p6">
+      <summary>
+        <span class="pid">P6</span>
+        <span class="pt"><h3>Supply Chain &amp; Third-Party Risk</h3><span class="tag">SBOM · VENDOR TIERING · FOURTH-PARTY · C-SCRM</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Your security is only as strong as your weakest vendor — structure and govern every third-party relationship.</p>
+        <div class="objs">
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P6.01</button><div><p class="ot">Maintain a complete vendor inventory with risk tiering (Tier 1/2/3) based on data access and criticality</p><div class="maps"><span class="chip">BNM §14</span><span class="chip">NIST ID.SC</span><span class="chip">ISO A.5.19</span></div></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P6.02</button><div><p class="ot">Mandate security questionnaires and penetration test evidence from Tier-1 and Tier-2 vendors</p><div class="maps"><span class="chip">BNM §14</span><span class="chip">NIST ID.SC</span><span class="chip">ISO A.5.20</span></div></div></div>
+          <div class="obj" data-maps="bnm iso rice"><button class="oid" title="Copy control ID">P6.03</button><div><p class="ot">Include right-to-audit clauses in all vendor contracts with technology risk provisions</p><div class="maps"><span class="chip">BNM §14</span><span class="chip">ISO A.5.20</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Right-to-audit with RICE control framework reference</p></div></div>
+          <div class="obj" data-maps="nist cisa rice"><button class="oid" title="Copy control ID">P6.04</button><div><p class="ot">Implement Software Bill of Materials (SBOM) for all mission-critical vendor software</p><div class="maps"><span class="chip">NIST ID.SC</span><span class="chip">CISA</span><span class="chip u">&#9670; RICE</span></div><p class="unote">SBOM adoption for FSI mission-critical systems — RICE-only mandate</p></div></div>
+          <div class="obj" data-maps="nist cisa rice"><button class="oid" title="Copy control ID">P6.05</button><div><p class="ot">Monitor for supply chain compromise indicators via threat intelligence integration</p><div class="maps"><span class="chip">NIST ID.SC</span><span class="chip">CISA</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Active supply chain threat monitoring — gap in BNM and ISO</p></div></div>
+          <div class="obj" data-maps="bnm rice"><button class="oid" title="Copy control ID">P6.06</button><div><p class="ot">Assess fourth-party risk: sub-contractors and cloud providers used by your vendors</p><div class="maps"><span class="chip">BNM §14</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Fourth-party risk assessment — not addressed in any existing framework</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.07</button><div><p class="ot">Conduct annual supply chain attack simulation (SolarWinds-type scenario)</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Supply chain attack simulation — RICE-only exercise type</p></div></div>
+          <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P6.08</button><div><p class="ot">Define vendor offboarding procedures with credential revocation and access review</p><div class="maps"><span class="chip">BNM §14</span><span class="chip">NIST ID.SC</span><span class="chip">ISO A.5.19</span></div></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls</h4>
+            <ul>
+              <li>Vendor risk management platform: OneTrust, ServiceNow VRM, or Archer</li>
+              <li>SBOM tools: Syft, SPDX, CycloneDX — build and maintain SBOM for all critical software</li>
+              <li>Continuous vendor monitoring: Cyfirma, SecurityScorecard, BitSight</li>
+              <li>Contract playbook: right-to-audit, incident notification SLA, SBOM provision clauses</li>
+              <li>Offboarding checklist: identity deprovisioning, credential rotation, access review sign-off</li>
+              <li>Annual supply chain tabletop: simulate compromised software update scenario</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment</h4>
+            <ul>
+              <li>Cyfirma — vendor cyber risk scoring with Malaysian market context</li>
+              <li>ServiceNow VRM — vendor questionnaire management integrated with procurement</li>
+              <li>OneTrust — third-party risk assessments aligned to BNM §14 obligations</li>
+              <li>SecurityScorecard — continuous supply chain risk monitoring and alerts</li>
+              <li>GitHub Advanced Security / Snyk — SBOM generation for internally developed applications</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P7 ============ -->
+    <details class="pillar" id="p7">
+      <summary>
+        <span class="pid">P7</span>
+        <span class="pt"><h3>Infrastructure Best Practices</h3><span class="tag">ZTNA · SD-WAN · SEGMENTATION · CERT LIFECYCLE · PATCH SLA</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Hardened, visible, and resilient infrastructure — from campus to datacentre to cloud edge.</p>
+        <div class="objs">
+          <div class="obj" data-maps="bnm nist cisa iso rice"><button class="oid" title="Copy control ID">P7.01</button><div><p class="ot">Implement Zero Trust Network Access (ZTNA) replacing legacy VPN for all remote access</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST PR.AC</span><span class="chip">CISA</span><span class="chip">ISO A.8.20</span><span class="chip u">&#9670; RICE</span></div><p class="unote">ZTNA mandate replacing VPN — FSI operational standard</p></div></div>
+          <div class="obj" data-maps="bnm nist rice"><button class="oid" title="Copy control ID">P7.02</button><div><p class="ot">Deploy SD-WAN with integrated security controls for branch connectivity</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST PR.AC</span><span class="chip u">&#9670; RICE</span></div><p class="unote">SD-WAN security integration as FSI infrastructure standard</p></div></div>
+          <div class="obj" data-maps="bnm nist iso rice"><button class="oid" title="Copy control ID">P7.03</button><div><p class="ot">Enforce network segmentation and micro-segmentation across all campus and DC environments</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST PR.AC</span><span class="chip">ISO A.8.20</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Micro-segmentation as FSI mandatory control — RICE specificity</p></div></div>
+          <div class="obj" data-maps="bnm nist iso cisa"><button class="oid" title="Copy control ID">P7.04</button><div><p class="ot">Maintain a hardening baseline (CIS Benchmarks) for all servers, network devices, and endpoints</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST PR.PS</span><span class="chip">ISO A.8.8</span><span class="chip">CISA</span></div></div></div>
+          <div class="obj" data-maps="nist iso rice"><button class="oid" title="Copy control ID">P7.05</button><div><p class="ot">Manage digital certificate lifecycle: 90-day SSL renewal cycles, automated rotation, full inventory</p><div class="maps"><span class="chip">NIST PR.PS</span><span class="chip">ISO A.8.24</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Certificate lifecycle with 90-day cycle — RICE-only mandate</p></div></div>
+          <div class="obj" data-maps="nist iso rice"><button class="oid" title="Copy control ID">P7.06</button><div><p class="ot">Implement infrastructure-as-code (IaC) security scanning in CI/CD pipelines</p><div class="maps"><span class="chip">NIST PR.PS</span><span class="chip">ISO A.8.25</span><span class="chip u">&#9670; RICE</span></div><p class="unote">IaC security scanning in pipeline — RICE-only specificity</p></div></div>
+          <div class="obj" data-maps="bnm nist rice"><button class="oid" title="Copy control ID">P7.07</button><div><p class="ot">Deploy Network Performance Monitoring (NPM) for baseline visibility and anomaly detection</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST DE.CM</span><span class="chip u">&#9670; RICE</span></div><p class="unote">NPM as security-visibility control — RICE-only mandate</p></div></div>
+          <div class="obj" data-maps="bnm nist iso rice"><button class="oid" title="Copy control ID">P7.08</button><div><p class="ot">Enforce patch management SLA: Critical &le; 24h, High &le; 7 days, Medium &le; 30 days</p><div class="maps"><span class="chip">BNM §11</span><span class="chip">NIST PR.PS</span><span class="chip">ISO A.8.8</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Defined patch SLA tiers for FSI — RICE operationalises the timeline</p></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls</h4>
+            <ul>
+              <li>ZTNA: Zscaler ZPA, Cloudflare Access, Palo Alto Prisma Access — replace legacy VPN</li>
+              <li>SD-WAN: Fortinet Secure SD-WAN, Cisco SD-WAN, Cloudflare Magic WAN — integrated security</li>
+              <li>Segmentation: Cisco TrustSec, Arista CloudVision, Fortinet FortiSwitch — micro-segmentation</li>
+              <li>Certificate management: DigiCert, Venafi, Let's Encrypt ACME — automated 90-day cycles</li>
+              <li>NPM: SolarWinds NPM, LogicMonitor, NetScout — infrastructure baseline and anomaly</li>
+              <li>IaC scanning: Checkov, tfsec, Prisma Cloud — prevent cloud misconfiguration at pipeline</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment</h4>
+            <ul>
+              <li>Fortinet Secure SD-WAN — integrated SD-WAN + NGFW across branch and HQ</li>
+              <li>Zscaler ZPA — ZTNA replacing VPN with identity-based access to private applications</li>
+              <li>Infoblox / EfficientIP — DDI with DNS-layer security and DHCP threat intelligence</li>
+              <li>Arista CloudVision — campus and DC switching with telemetry and compliance automation</li>
+              <li>Venafi TLS Protect — enterprise certificate lifecycle management at scale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P8 ============ -->
+    <details class="pillar" id="p8">
+      <summary>
+        <span class="pid">P8</span>
+        <span class="pt"><h3>Secure Application Ecosystem</h3><span class="tag">WAF · API SECURITY · SAST/DAST · CNAPP · RASP</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Security built in from day one — across web apps, APIs, mobile, and SDLC.</p>
+        <div class="objs">
+          <div class="obj" data-maps="bnm nist owasp iso"><button class="oid" title="Copy control ID">P8.01</button><div><p class="ot">Implement OWASP ASVS Level 2 as minimum-security baseline for all customer-facing applications</p><div class="maps"><span class="chip">BNM §11.5</span><span class="chip">NIST PR.PS</span><span class="chip">OWASP</span><span class="chip">ISO A.8.25</span></div></div></div>
+          <div class="obj" data-maps="bnm nist owasp"><button class="oid" title="Copy control ID">P8.02</button><div><p class="ot">Deploy WAF in blocking mode with tuned rule sets for all public-facing web applications</p><div class="maps"><span class="chip">BNM §11.5</span><span class="chip">NIST PR.PS</span><span class="chip">OWASP</span></div></div></div>
+          <div class="obj" data-maps="bnm nist owasp rice"><button class="oid" title="Copy control ID">P8.03</button><div><p class="ot">Implement API security gateway with rate limiting, authentication, and anomaly detection</p><div class="maps"><span class="chip">BNM §11.5</span><span class="chip">NIST PR.PS</span><span class="chip">OWASP</span><span class="chip u">&#9670; RICE</span></div><p class="unote">API security governance for Open Banking — FSI-specific RICE control</p></div></div>
+          <div class="obj" data-maps="nist owasp iso rice"><button class="oid" title="Copy control ID">P8.04</button><div><p class="ot">Integrate SAST and DAST scanning into CI/CD pipeline — block deployment on critical findings</p><div class="maps"><span class="chip">NIST PR.PS</span><span class="chip">OWASP</span><span class="chip">ISO A.8.25</span><span class="chip u">&#9670; RICE</span></div><p class="unote">SAST/DAST pipeline gates — RICE-only enforcement requirement</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.05</button><div><p class="ot">Integrate APM (Application Performance Monitoring) as a security signal alongside performance data</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">APM as security signal — not addressed in any existing framework</p></div></div>
+          <div class="obj" data-maps="nist iso rice"><button class="oid" title="Copy control ID">P8.06</button><div><p class="ot">Implement CNAPP for cloud-native workload protection across containers, serverless, and IaaS</p><div class="maps"><span class="chip">NIST PR.PS</span><span class="chip">ISO A.8.25</span><span class="chip u">&#9670; RICE</span></div><p class="unote">CNAPP for cloud-native FSI workloads — RICE-only mandate</p></div></div>
+          <div class="obj" data-maps="bnm nist iso rice"><button class="oid" title="Copy control ID">P8.07</button><div><p class="ot">Conduct annual application penetration testing (grey-box minimum) for all Tier-1 applications</p><div class="maps"><span class="chip">BNM §11.5</span><span class="chip">NIST ID.RA</span><span class="chip">ISO A.8.29</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Annual grey-box AppSec pentest as FSI minimum — RICE mandates cadence</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.08</button><div><p class="ot">Implement runtime application self-protection (RASP) for critical banking applications</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">RASP for core banking runtime protection — gap in all existing frameworks</p></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls</h4>
+            <ul>
+              <li>WAF: F5 Advanced WAF, Imperva, Cloudflare WAF — blocking mode with custom FSI rule sets</li>
+              <li>API security: F5 NGINX, Kong, Cloudflare API Gateway — rate limiting + anomaly detection</li>
+              <li>SAST/DAST: Checkmarx, Veracode, OWASP ZAP — pipeline-integrated scanning with gates</li>
+              <li>APM + security: Dynatrace, AppDynamics — combine performance and security observability</li>
+              <li>CNAPP: SentinelOne Singularity Cloud, CrowdStrike Falcon Cloud, Check Point CloudGuard</li>
+              <li>RASP: Sqreen (Datadog), Contrast Security — runtime protection inside the application</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment</h4>
+            <ul>
+              <li>F5 / Imperva — WAF + API security gateway with DDoS and bot management</li>
+              <li>Dynatrace — APM unified with security observability; runtime vulnerability detection</li>
+              <li>Checkmarx / Veracode — SAST/DAST with IDE plugins and pipeline integrations</li>
+              <li>SentinelOne Singularity Cloud / CrowdStrike Falcon — CNAPP for cloud workloads</li>
+              <li>NGINX App Protect — inline WAF + API gateway for open banking API layers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P9A ============ -->
+    <details class="pillar" id="p9a">
+      <summary>
+        <span class="pid">P9A</span>
+        <span class="pt"><h3>Emerging Threat Horizon — AI &amp; Quantum</h3><span class="tag">PQC · HNDL · LLM GOVERNANCE · DEEPFAKE · ADVERSARIAL ML</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">The threats of tomorrow are here today — AI-powered attacks, quantum decryption, and the race to adapt.</p>
+        <div class="objs">
+          <div class="obj" data-maps="nist rice"><button class="oid" title="Copy control ID">P9A.01</button><div><p class="ot">Initiate Post-Quantum Cryptography (PQC) migration roadmap — inventory RSA/ECC assets, prioritise Tier-1</p><div class="maps"><span class="chip">NIST PR.PS</span><span class="chip u">&#9670; RICE</span></div><p class="unote">PQC migration roadmap — NIST published standards 2024; BNM yet to mandate</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9A.02</button><div><p class="ot">Defend against 'harvest now, decrypt later' (HNDL) attacks on archived sensitive data</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">HNDL threat mitigation — not addressed in any existing framework</p></div></div>
+          <div class="obj" data-maps="bnm rice"><button class="oid" title="Copy control ID">P9A.03</button><div><p class="ot">Implement AI governance policy for internal LLM usage — prevent data leakage via AI prompts</p><div class="maps"><span class="chip">BNM §11</span><span class="chip u">&#9670; RICE</span></div><p class="unote">LLM data leakage governance — RICE-only operational control</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9A.04</button><div><p class="ot">Deploy deepfake and synthetic media detection in customer authentication and KYC workflows</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Deepfake auth fraud defence — not addressed in any existing framework</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9A.05</button><div><p class="ot">Assess 5G private network security for FSI branch and ATM network deployments</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">5G private network FSI security — RICE-only assessment</p></div></div>
+          <div class="obj" data-maps="nist rice"><button class="oid" title="Copy control ID">P9A.06</button><div><p class="ot">Maintain SBOM for all AI/ML models in production — model provenance and integrity verification</p><div class="maps"><span class="chip">NIST ID.SC</span><span class="chip u">&#9670; RICE</span></div><p class="unote">AI model SBOM &amp; integrity — RICE mandates; NIST guidance emerging</p></div></div>
+          <div class="obj" data-maps="cisa rice"><button class="oid" title="Copy control ID">P9A.07</button><div><p class="ot">Conduct red team exercises simulating AI-generated spear phishing at scale</p><div class="maps"><span class="chip">CISA</span><span class="chip u">&#9670; RICE</span></div><p class="unote">AI spear phishing simulation — RICE-only exercise type</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9A.08</button><div><p class="ot">Monitor for adversarial ML attacks on deployed detection models (model poisoning, evasion)</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Adversarial ML defence — not addressed in any existing framework</p></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls</h4>
+            <ul>
+              <li>PQC inventory: identify all RSA/ECC/ECDH usage across certificates, TLS, signing, and storage</li>
+              <li>NIST PQC standards: CRYSTALS-Kyber (ML-KEM), CRYSTALS-Dilithium (ML-DSA) — prioritise adoption</li>
+              <li>AI policy: define permitted LLM tools, data classification for AI input, incident reporting for leakage</li>
+              <li>Deepfake detection: integrate liveness detection and AI media authenticity in customer-facing flows</li>
+              <li>Model security: adversarial robustness testing, model access logging, version control for prod models</li>
+              <li>AI red team: use LLMs to generate phishing lures, test employee detection, measure click rates</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment</h4>
+            <ul>
+              <li>IBM — quantum-safe cryptography consulting and Guardium for data-at-rest encryption migration</li>
+              <li>Entrust / DigiCert — PQC-ready PKI platforms with hybrid certificate support</li>
+              <li>Microsoft Copilot for Security — AI-augmented threat analysis (governance required)</li>
+              <li>Pindrop / iProov — deepfake and voice fraud detection for telephony and KYC channels</li>
+              <li>HiddenLayer — ML security platform protecting production AI models from adversarial attacks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P9B ============ -->
+    <details class="pillar" id="p9b">
+      <summary>
+        <span class="pid">P9B</span>
+        <span class="pt"><h3>Emerging Threat Horizon — OT &amp; Cyber-Physical</h3><span class="tag">PURDUE DMZ · ATM/POS · IOT · IEC 62443 · PHYSICAL-CYBER</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">When digital meets physical — ATMs, payment terminals, smart buildings, and operational technology.</p>
+        <div class="objs">
+          <div class="obj" data-maps="cisa rice"><button class="oid" title="Copy control ID">P9B.01</button><div><p class="ot">Implement OT/ICS network segmentation using Purdue Model DMZ between IT and OT layers</p><div class="maps"><span class="chip">CISA</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Purdue DMZ implementation for FSI — CISA references concept but not FSI context</p></div></div>
+          <div class="obj" data-maps="bnm rice"><button class="oid" title="Copy control ID">P9B.02</button><div><p class="ot">Harden ATM and POS terminal fleet: OS patching, application whitelisting, tamper detection</p><div class="maps"><span class="chip">BNM §11</span><span class="chip u">&#9670; RICE</span></div><p class="unote">ATM/POS hardening as FSI-specific OT control — RICE-only mandate</p></div></div>
+          <div class="obj" data-maps="nist cisa rice"><button class="oid" title="Copy control ID">P9B.03</button><div><p class="ot">Deploy IoT asset discovery and continuous inventory for all network-connected physical devices</p><div class="maps"><span class="chip">NIST ID.AM</span><span class="chip">CISA</span><span class="chip u">&#9670; RICE</span></div><p class="unote">IoT asset governance for FSI physical devices — RICE-only specificity</p></div></div>
+          <div class="obj" data-maps="cisa rice"><button class="oid" title="Copy control ID">P9B.04</button><div><p class="ot">Align OT security programme to IEC 62443 for industrial and building management systems</p><div class="maps"><span class="chip">CISA</span><span class="chip u">&#9670; RICE</span></div><p class="unote">IEC 62443 alignment for FSI building/infrastructure OT — RICE mandates</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9B.05</button><div><p class="ot">Implement physical-cyber incident correlation: CCTV events feeding into SIEM alerts</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Physical-cyber correlation — not addressed in any existing framework</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9B.06</button><div><p class="ot">Conduct physical penetration testing annually — ATM jackpotting, terminal skimming, tailgating</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Physical pentest for ATM/POS — RICE-only requirement</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9B.07</button><div><p class="ot">Govern smart building systems (HVAC, access control, BAS) as network-connected attack surfaces</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Smart building as cyber attack surface — not in any existing framework</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9B.08</button><div><p class="ot">Integrate FSI physical security (guard systems, biometrics, CCTV) into unified security operations</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Unified physical-digital SOC integration — RICE-only operational model</p></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls</h4>
+            <ul>
+              <li>Purdue Model DMZ: Layer 3.5 between IT (L4-5) and OT (L0-2) — mandatory air-gapped demarcation</li>
+              <li>ATM hardening: CIS ATM/POS benchmark, application whitelist (McAfee/Trellix ATM Security)</li>
+              <li>IoT discovery: Armis, Claroty, Nozomi — passive, agentless OT/IoT asset visibility</li>
+              <li>IEC 62443 gap assessment for data centre BMS, HVAC, UPS monitoring systems</li>
+              <li>Physical-digital correlation: integrate physical access logs and CCTV events into SIEM</li>
+              <li>Annual ATM physical pentest: jackpotting simulation, black-box terminal assessment</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment</h4>
+            <ul>
+              <li>Armis / Claroty — agentless OT and IoT asset discovery and risk scoring</li>
+              <li>Trellix ATM Security — application whitelisting and endpoint hardening for ATM fleet</li>
+              <li>Nozomi Networks — OT/ICS network monitoring with Purdue model asset mapping</li>
+              <li>Genetec — physical security management integrated with SIEM for physical-cyber correlation</li>
+              <li>Fortinet OT Security — FortiGate ruggedised, FortiNAC for OT network access control</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<section class="sec last" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 05.1</span> · MATURITY</div>
+      <h2>Five levels, scored per pillar.</h2>
+      <p class="sub">Each of the nine pillars is scored independently. An organisation can be Level 4 on Governance and Level 2 on Emerging Threats — the per-pillar view reveals exactly where to invest next.</p>
+    </div>
+    <div class="mat">
+      <div><span class="lv">L1</span><span class="nm">Aware</span><p>Ad-hoc and reactive. No formal cybersecurity programme. Incidents handled case-by-case. BNM RMiT compliance not demonstrated.</p></div>
+      <div><span class="lv">L2</span><span class="nm">Developing</span><p>Policies documented. Controls inconsistently applied. Annual audits happening. Basic BNM RMiT compliance partially met.</p></div>
+      <div class="base"><span class="lv">L3</span><span class="nm">Defined<small>BNM RMiT compliant · RICE baseline</small></span><p>Standardised controls in place. BNM RMiT fully compliant. NIST CSF and ISO 27001 aligned. Consistent SOC coverage.</p></div>
+      <div><span class="lv">L4</span><span class="nm">Managed</span><p>Quantified risk management. Automated controls and dashboards. Proactive threat hunting. Continuous compliance posture monitoring.</p></div>
+      <div><span class="lv">L5</span><span class="nm">Optimising</span><p>Predictive and adaptive. AI-augmented detection. PQC migration underway. Community contribution to RICE. Industry benchmark.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <img src="assets/rice-seal-gold.svg" alt="">
+        <span class="t">RICE<small>V1.0 &middot; FSI EDITION</small></span>
+      </div>
+      <div class="foot-nav">
+        <a href="index.html">Overview</a>
+        <a href="framework.html">Framework</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="about.html">Author</a>
+        <a href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      </div>
+    </div>
+    <p class="fine">RICE v1.0 — FSI EDITION &middot; &copy; MJ LEE 2025&ndash;2026 &middot; NOT VENDOR-AFFILIATED. ALL FRAMEWORKS AND PRODUCT NAMES ARE TRADEMARKS OF THEIR RESPECTIVE OWNERS. RICE IS AN INDEPENDENT PRACTITIONER FRAMEWORK AND DOES NOT CONSTITUTE REGULATORY OR COMPLIANCE ADVICE — VALIDATE AGAINST CURRENT BNM RMiT AND APPLICABLE REGULATORY REQUIREMENTS.</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

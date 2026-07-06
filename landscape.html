@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Landscape — RICE</title>
+<meta name="description" content="The threat landscape RICE was built for: six eras of threat evolution, FSI breach economics, SEA incidents, five-framework analysis, and the 12-dimension coverage matrix.">
+<link rel="icon" href="assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/rice-seal-gold.svg" alt="RICE seal">
+      <span class="t">RICE<small>CYBERSECURITY ECOSYSTEM</small></span>
+    </a>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="framework.html">Framework</a>
+      <a href="landscape.html" aria-current="page">Landscape</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="about.html">Author</a>
+      <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:56px">
+  <div class="wrap">
+    <div class="hero-meta">
+      <b>§ 01–03</b><span class="dot"></span><span>Landscape · Frameworks · The Gap</span>
+    </div>
+    <h1 style="font-size:clamp(30px,4.4vw,52px)">The problem RICE was built for.</h1>
+    <p class="lede">Six eras of threat evolution converging on FSI at once. Five frameworks, each built for a different purpose — and the operational gaps that persist even when all five are adopted together.</p>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 01</span> · THE EVOLUTION OF THREATS</div>
+      <h2>From perimeter defence to quantum-era warfare.</h2>
+      <p class="sub">Malaysian FSI faces simultaneous pressure from all six eras — legacy infrastructure running alongside cloud, AI-powered threats, and imminent quantum risk.</p>
+    </div>
+    <div class="tl">
+      <div style="--i:0"><span class="era">1980s–90s</span><h4>Early Perimeter</h4><ul><li>Firewalls &amp; AV</li><li>Physical network boundaries</li><li>Low sophistication threats</li></ul></div>
+      <div style="--i:1"><span class="era">2000–10</span><h4>Web &amp; Malware</h4><ul><li>SQL injection, XSS</li><li>Botnets &amp; worms</li><li>BYOD begins</li></ul></div>
+      <div style="--i:2"><span class="era">2010–18</span><h4>APT Era</h4><ul><li>Nation-state actors</li><li>Ransomware emerges</li><li>Cloud adoption surge</li></ul></div>
+      <div style="--i:3"><span class="era">2018–22</span><h4>Cloud &amp; Identity</h4><ul><li>SaaS sprawl &amp; shadow IT</li><li>Zero Trust coined</li><li>Supply chain attacks</li></ul></div>
+      <div style="--i:4"><span class="era">2022–25</span><h4>AI &amp; Automation</h4><ul><li>AI-generated phishing</li><li>Automated exploitation</li><li>LLM data leakage</li></ul></div>
+      <div style="--i:5"><span class="era">2025–30+</span><h4>Quantum Horizon</h4><ul><li>PQC migration urgency</li><li>Harvest-now-decrypt-later</li><li>AI vs AI warfare</li></ul></div>
+    </div>
+    <p class="legend">COMPLEXITY &amp; IMPACT INCREASING →</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 01.1</span> · THREAT REALITY</div>
+      <h2>The numbers don't lie.</h2>
+      <p class="sub">Global FSI remains the most targeted sector — and Malaysia is not insulated.</p>
+    </div>
+    <div class="stats">
+      <div><div class="v">#1</div><h4>Most Targeted Sector</h4><p>Financial services leads all industries for cyberattack volume globally — IBM X-Force 2024</p></div>
+      <div><div class="v">18.9M</div><h4>Avg. Records Exposed</h4><p>Per breach incident in the financial sector — Ponemon Institute 2024</p></div>
+      <div><div class="v">187</div><h4>Days Avg. MTTD</h4><p>Mean time to detect a breach in FSI before containment — IBM Cost of Data Breach 2024</p></div>
+      <div><div class="v">$6.08B</div><h4>Avg. Cost Per FSI Breach</h4><p>Highest of any sector globally — IBM Cost of Data Breach 2024</p></div>
+    </div>
+    <div class="local">
+      <div><h4>BNM Enforcement</h4><p>BNM issued 5 enforcement actions against FIs in 2023–2024 for cybersecurity control failures — including technology risk management deficiencies.</p></div>
+      <div><h4>CIMB / Maybank Phishing (2023–24)</h4><p>Multiple waves of impersonation scams targeting Malaysian banking customers; MyCERT logged 1,600+ financial phishing reports in 2023 alone.</p></div>
+      <div><h4>Lazarus Group — SEA Focus</h4><p>North Korean APT Lazarus Group continued targeting SEA financial institutions via SWIFT infrastructure and supply chain compromise in 2024.</p></div>
+      <div><h4>Indonesia BSI Ransomware (2023)</h4><p>Bank Syariah Indonesia hit by LockBit ransomware — 15M+ customer records exposed; 8 days of service disruption across 1,000+ branches.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 01.2</span> · NOTABLE INCIDENTS</div>
+      <h2>When defences fail.</h2>
+      <p class="sub">Real incidents that shaped today's regulatory and security posture.</p>
+    </div>
+    <div class="ledger">
+      <div><span class="y">2016</span><span class="c">SWIFT / APT</span><div><h4>Bangladesh Bank SWIFT Heist</h4><p>USD 81M stolen via fraudulent SWIFT MT103 messages. Attackers bypassed multi-layer controls using insider knowledge of SWIFT messaging flows.</p></div></div>
+      <div><span class="y">2020</span><span class="c">Supply Chain</span><div><h4>SolarWinds Supply Chain</h4><p>18,000+ organisations compromised via trojanised Orion update. Demonstrated that trusted vendor software is an attack vector — relevant to every FSI with SolarWinds or similar tools.</p></div></div>
+      <div><span class="y">2021</span><span class="c">Third Party / SEA</span><div><h4>Accellion FTA — MAS Singapore</h4><p>Monetary Authority of Singapore data exposed via third-party file transfer compromise. Regulatory data exfiltration via supply chain weakness.</p></div></div>
+      <div><span class="y">2023</span><span class="c">Zero-Day</span><div><h4>MOVEit Mass Exploitation</h4><p>600+ organisations impacted by a zero-day in MOVEit Transfer. Multiple FSI firms exposed including pension funds. Patch window was hours, not days.</p></div></div>
+      <div><span class="y">2023</span><span class="c">Ransomware / SEA</span><div><h4>BSI Indonesia Ransomware</h4><p>LockBit 3.0 crippled Bank Syariah Indonesia. 15M+ records. 8 days downtime. Full SWIFT and mobile banking shutdown. A wake-up call for SEA FSI.</p></div></div>
+      <div><span class="y">2024</span><span class="c">Social Engineering</span><div><h4>Scattered Spider — US Banks</h4><p>Social engineering attacks bypassed MFA at multiple US financial institutions using vishing + SIM swap. Identity is the new perimeter.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 02</span> · FRAMEWORK ANALYSIS</div>
+      <h2>Five frameworks. Five perspectives.</h2>
+      <p class="sub">Each framework was built for a purpose. Understanding that purpose reveals where each one stops.</p>
+    </div>
+    <div class="fws">
+      <details>
+        <summary><span class="fn">BNM RMiT</span><span class="fd">The Malaysian standard — mandatory for all licensed FIs · Malaysia, 2020</span><span class="tog" aria-hidden="true"></span></summary>
+        <div class="fbody">
+          <div><h5>Strengths</h5><ul class="plus">
+            <li>Covers technology risk management, cybersecurity, cloud, outsourcing, and incident reporting</li>
+            <li>Section 11 addresses cybersecurity controls: governance, asset management, access control, incident management</li>
+            <li>BNM enforces with audit powers — institutions must submit Technology Risk Assessments annually</li>
+            <li>2024 updates added guidance on AI risk, cloud security, and third-party risk management</li>
+          </ul></div>
+          <div><h5>Limitations &amp; Gaps</h5><ul class="minus">
+            <li>Limited prescriptive technical controls — what to achieve, not how</li>
+            <li>Minimal AI/quantum threat specifics beyond policy guidance</li>
+            <li>Does not address OT/ICS or physical-cyber convergence</li>
+            <li>Compliance cycle risk: 'audit-ready' ≠ 'operationally resilient'</li>
+          </ul></div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="fn">NIST CSF 2.0</span><span class="fd">The global risk-based language of cybersecurity · USA, 2024 (v2.0)</span><span class="tog" aria-hidden="true"></span></summary>
+        <div class="fbody">
+          <div><h5>Strengths</h5><ul class="plus">
+            <li>Six functions: Govern, Identify, Protect, Detect, Respond, Recover — v2.0 added 'Govern'</li>
+            <li>Tiered maturity model (Tier 1 Partial → Tier 4 Adaptive) maps well to organisational readiness</li>
+            <li>Technology-agnostic: works across IT, OT, cloud, and hybrid environments</li>
+            <li>Widely used in Malaysian FSI as a complement to BNM RMiT — bridges to global frameworks</li>
+          </ul></div>
+          <div><h5>Limitations &amp; Gaps</h5><ul class="minus">
+            <li>Voluntary and self-assessed — no external accountability unless paired with audit</li>
+            <li>Broad categories require significant interpretation for FSI operational context</li>
+            <li>v2.0 supply chain guidance still maturing</li>
+            <li>No Malaysia-specific regulatory alignment built in</li>
+          </ul></div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="fn">CISA</span><span class="fd">Critical infrastructure guidance from the US cyber defence agency · USA, ongoing</span><span class="tog" aria-hidden="true"></span></summary>
+        <div class="fbody">
+          <div><h5>Strengths</h5><ul class="plus">
+            <li>Zero Trust Maturity Model (ZTMM): 5 pillars — Identity, Devices, Networks, Applications, Data</li>
+            <li>Strong guidance on OT/ICS security (ICS-CERT advisories, Purdue model alignment)</li>
+            <li>Supply chain risk management (C-SCRM) framework with vendor assessment guidance</li>
+            <li>Actionable advisories on specific CVEs, threat actors, and attack patterns</li>
+          </ul></div>
+          <div><h5>Limitations &amp; Gaps</h5><ul class="minus">
+            <li>US-centric — no direct BNM/Malaysia regulatory mapping</li>
+            <li>Advisory only — no certification or audit mechanism</li>
+            <li>OT guidance assumes US critical infrastructure context; FSI OT (ATMs, payment terminals) differs</li>
+            <li>Requires significant adaptation for Malaysian institutional context</li>
+          </ul></div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="fn">OWASP</span><span class="fd">The gold standard — for the application layer only · Global, ongoing</span><span class="tog" aria-hidden="true"></span></summary>
+        <div class="fbody">
+          <div><h5>Strengths</h5><ul class="plus">
+            <li>OWASP Top 10 (2021): injection, broken auth, SSRF, security misconfiguration — the AppSec bible</li>
+            <li>ASVS (Application Security Verification Standard): levels 1–3 for different risk tiers</li>
+            <li>SAMM (Software Assurance Maturity Model): measure and improve SDLC security posture</li>
+            <li>API Security Top 10: increasingly critical as Malaysian FSI adopts Open Banking &amp; APIs</li>
+          </ul></div>
+          <div><h5>Limitations &amp; Gaps</h5><ul class="minus">
+            <li>Scope is exclusively application/API layer — nothing on network, identity, infrastructure, cloud</li>
+            <li>No regulatory framework mapping or compliance alignment</li>
+            <li>Does not address supply chain, OT, insider threats, or AI risks</li>
+            <li>Requires developer/AppSec expertise to implement correctly — not C-suite accessible</li>
+          </ul></div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="fn">ISO 27001</span><span class="fd">The international ISMS standard · Global, 2022 revision</span><span class="tog" aria-hidden="true"></span></summary>
+        <div class="fbody">
+          <div><h5>Strengths</h5><ul class="plus">
+            <li>93 controls across 4 themes: Organisational, People, Physical, Technological (2022 revision)</li>
+            <li>New controls added: threat intelligence, cloud security, data masking, secure coding, monitoring</li>
+            <li>Internationally recognised certification — valued for third-party assurance and procurement</li>
+            <li>Risk-based approach: organisations select controls based on risk assessment</li>
+          </ul></div>
+          <div><h5>Limitations &amp; Gaps</h5><ul class="minus">
+            <li>Control selection is subjective — scope can be gamed to achieve certification without real coverage</li>
+            <li>Management framework only — does not prescribe implementation depth or technical specifics</li>
+            <li>2–3-year audit cycles may miss rapidly evolving threats</li>
+            <li>No explicit FSI operational requirements or BNM RMiT crosswalk</li>
+          </ul></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 03</span> · THE CONSULTING TRUTH</div>
+      <h2>Why RICE exists.</h2>
+    </div>
+    <div class="why">
+      <div><div><h4>The Compliance Treadmill</h4><p>FSI institutions run an endless cycle of audits, policies, and framework adoptions. The result is an organisation that is 'audit-ready' but not necessarily operationally resilient. Compliance is a baseline — not a destination.</p></div></div>
+      <div><div><h4>The C-Suite Rotation Problem</h4><p>Every 2–3 years, new leadership brings new priorities and new frameworks to champion. Institutional knowledge resets. What should be a maturing security posture becomes a perpetual restart.</p></div></div>
+      <div><div><h4>No Single Vendor Covers Everything</h4><p>Every vendor has a product line. Their advice — however well-intentioned — is bounded by what they carry. A true consulting engagement looks at the full picture: what is happening, what you need, and the best tool for that job — regardless of vendor.</p></div></div>
+      <div><div><h4>The Gap That Needed Naming</h4><p>After years of seeing the same blind spots appear across FSI clients — OT, AI threats, quantum, vendor-agnostic controls — it became clear: the gap needed a framework. RICE is that framework.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec last" id="matrix">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 06</span> · COVERAGE COMPARISON</div>
+      <h2>RICE vs. existing frameworks.</h2>
+      <p class="sub">Twelve dimensions. Even with all five frameworks adopted simultaneously, critical operational dimensions remain unaddressed — RICE is the only framework achieving full coverage across all twelve.</p>
+    </div>
+    <div class="mx-wrap">
+      <table class="mx">
+        <thead><tr><th>Dimension</th><th>BNM RMiT</th><th>NIST CSF</th><th>CISA</th><th>OWASP</th><th>ISO 27001</th><th class="r">RICE</th></tr></thead>
+        <tbody>
+          <tr><td>Governance &amp; Risk Oversight</td><td class="y">✓</td><td class="y">✓</td><td class="p">~</td><td class="x">✗</td><td class="y">✓</td><td class="r y">✓</td></tr>
+          <tr><td>Threat Detection &amp; Intelligence</td><td class="p">~</td><td class="y">✓</td><td class="y">✓</td><td class="x">✗</td><td class="p">~</td><td class="r y">✓</td></tr>
+          <tr><td>Identity &amp; Access Governance</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="x">✗</td><td class="y">✓</td><td class="r y">✓</td></tr>
+          <tr><td>Incident Response &amp; Resilience</td><td class="y">✓</td><td class="y">✓</td><td class="p">~</td><td class="x">✗</td><td class="p">~</td><td class="r y">✓</td></tr>
+          <tr><td>Data Security &amp; Privacy</td><td class="y">✓</td><td class="y">✓</td><td class="p">~</td><td class="x">✗</td><td class="y">✓</td><td class="r y">✓</td></tr>
+          <tr><td>Supply Chain &amp; Third-Party Risk</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="x">✗</td><td class="y">✓</td><td class="r y">✓</td></tr>
+          <tr><td>Infrastructure Best Practices</td><td class="p">~</td><td class="y">✓</td><td class="y">✓</td><td class="x">✗</td><td class="p">~</td><td class="r y">✓</td></tr>
+          <tr><td>Secure Application Ecosystem</td><td class="p">~</td><td class="p">~</td><td class="p">~</td><td class="y">✓</td><td class="p">~</td><td class="r y">✓</td></tr>
+          <tr><td>AI-Augmented Threat Defence</td><td class="p">~</td><td class="p">~</td><td class="p">~</td><td class="x">✗</td><td class="x">✗</td><td class="r y">✓</td></tr>
+          <tr><td>Post-Quantum Cryptography</td><td class="x">✗</td><td class="p">~</td><td class="p">~</td><td class="x">✗</td><td class="x">✗</td><td class="r y">✓</td></tr>
+          <tr><td>OT / Cyber-Physical Security</td><td class="x">✗</td><td class="p">~</td><td class="y">✓</td><td class="x">✗</td><td class="p">~</td><td class="r y">✓</td></tr>
+          <tr><td>Certificate Lifecycle Management</td><td class="x">✗</td><td class="p">~</td><td class="p">~</td><td class="x">✗</td><td class="p">~</td><td class="r y">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="legend"><span class="y">✓</span> Fully addressed&nbsp;&nbsp;<span class="p">~</span> Partial / implied&nbsp;&nbsp;<span class="x">✗</span> Not addressed&nbsp;&nbsp;—&nbsp;&nbsp;Persistent gaps even when all five are stacked: vendor-agnostic control mapping, day-2 operational resilience, FSI-specific identity governance, community-driven evolution.</p>
+    <div class="hero-cta" style="margin-top:36px">
+      <a class="btn btn-solid" href="framework.html">See how RICE closes them <span class="a">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <img src="assets/rice-seal-gold.svg" alt="">
+        <span class="t">RICE<small>V1.0 · FSI EDITION</small></span>
+      </div>
+      <div class="foot-nav">
+        <a href="index.html">Overview</a>
+        <a href="framework.html">Framework</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="about.html">Author</a>
+        <a href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <p class="fine">RICE v1.0 — FSI EDITION · © MJ LEE 2025–2026 · NOT VENDOR-AFFILIATED. ALL FRAMEWORKS AND PRODUCT NAMES ARE TRADEMARKS OF THEIR RESPECTIVE OWNERS. RICE IS AN INDEPENDENT PRACTITIONER FRAMEWORK AND DOES NOT CONSTITUTE REGULATORY OR COMPLIANCE ADVICE — VALIDATE AGAINST CURRENT BNM RMiT AND APPLICABLE REGULATORY REQUIREMENTS. INCIDENT AND STATISTIC REFERENCES REFLECT PUBLIC REPORTING AT TIME OF WRITING.</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
