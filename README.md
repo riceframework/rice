@@ -2,6 +2,11 @@
 
 Static site for the RICE Framework (v1.0, FSI Edition). No build step, no dependencies, no external services — plain HTML/CSS/JS with self-hosted IBM Plex fonts.
 
+## Stack notes
+- Background: HLS video stream (swap the STREAM_URL constant at the top of js/app.js — all 5 candidate streams are listed there). Falls back automatically to a three.js 3D constellation, then to a 2D canvas if WebGL is unavailable.
+- hls.js loads from cdnjs at runtime for Chrome/Firefox HLS playback (Safari plays natively).
+- Vendored libraries (self-hosted in assets/vendor/): GSAP + ScrollTrigger, Lenis, three.js.
+
 ## Deploy — GitHub Pages (recommended)
 
 1. Create a new **public** repo (e.g. `rice-framework`).
@@ -10,6 +15,11 @@ Static site for the RICE Framework (v1.0, FSI Edition). No build step, no depend
 4. Site goes live at `https://<username>.github.io/rice-framework/` within a minute or two.
 
 `.nojekyll` is included so GitHub serves files as-is.
+
+## Stack notes
+- Background: HLS video stream (swap the STREAM_URL constant at the top of js/app.js — all 5 candidate streams are listed there). Falls back automatically to a three.js 3D constellation, then to a 2D canvas if WebGL is unavailable.
+- hls.js loads from cdnjs at runtime for Chrome/Firefox HLS playback (Safari plays natively).
+- Vendored libraries (self-hosted in assets/vendor/): GSAP + ScrollTrigger, Lenis, three.js.
 
 ## Deploy — Cloudflare Pages (alternative)
 
@@ -22,7 +32,7 @@ Both hosts support custom domains free (domain itself ~USD 10–15/yr). On GitHu
 ## Structure
 
 ```
-index.html        Overview — hero schematic, acronym, pillar index, coverage teaser
+index.html        Overview — liquid-glass hero over particle network, system schematic, pillar story
 framework.html    The standard — 80 objectives, citable IDs, filters, maturity model
 landscape.html    Threat evolution, incidents, framework analysis, 12-dim matrix
 roadmap.html      3-phase implementation, maturity target, community

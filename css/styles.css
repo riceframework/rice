@@ -181,7 +181,7 @@ body.nav-open .nav-burger span::after{ transform:translateY(-6px) rotate(-45deg)
 .btn .a{ font-size:14px; line-height:1; }
 
 /* schematic */
-.schematic{ margin-top:64px; border:1px solid var(--line); border-bottom:none; background:var(--bg1); position:relative; }
+.schematic{ margin-top:64px; border:1px solid var(--line); border-bottom:none; background:var(--bg1); position:relative; overflow:hidden; }
 .schematic .cap{
   position:absolute; top:14px; left:16px; z-index:2;
   font-family:var(--mono); font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3);
@@ -193,8 +193,6 @@ body.nav-open .nav-burger span::after{ transform:translateY(-6px) rotate(-45deg)
 .schematic .node:hover rect,.schematic .node:focus rect{ stroke:var(--gold); }
 .schematic .node:hover text{ fill:var(--ink); }
 .schematic .trace{ stroke:var(--line-strong); stroke-width:1; fill:none; }
-.schematic .trace.flow{ stroke:var(--gold-line); stroke-dasharray:3 6; animation:flow 3.5s linear infinite; }
-@keyframes flow{ to{ stroke-dashoffset:-90; } }
 .schematic .band rect{ fill:var(--gold-tint); stroke:var(--gold-line); }
 .schematic .band text{ fill:var(--gold); }
 .schematic .band .pid{ fill:var(--gold); }
@@ -332,9 +330,12 @@ body.nav-open .nav-burger span::after{ transform:translateY(-6px) rotate(-45deg)
 .objs{ border-top:1px solid var(--line); }
 .obj{
   display:grid; grid-template-columns:76px 1fr; gap:18px;
-  padding:16px 0 16px; border-bottom:1px solid var(--line);
+  padding-top:16px; padding-bottom:16px; border-bottom:1px solid var(--line);
+  max-height:400px; overflow:hidden; opacity:1;
+  transition:max-height .45s cubic-bezier(.65,0,.35,1), opacity .3s ease,
+             padding-top .45s ease, padding-bottom .45s ease, border-color .3s ease;
 }
-.obj.hide{ display:none; }
+.obj.hide{ max-height:0; opacity:0; padding-top:0; padding-bottom:0; border-color:transparent; pointer-events:none; }
 .obj .oid{
   font-family:var(--mono); font-size:12px; font-weight:500; color:var(--gold-dim);
   letter-spacing:0.05em; padding-top:2px; cursor:pointer; transition:color .15s; text-align:left;
@@ -571,3 +572,682 @@ table.mx{ border-collapse:collapse; width:100%; min-width:760px; }
   .schematic{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .schematic svg{ min-width:760px; }
 }
+
+/* ============================================================
+   MOTION SYSTEM
+   Signature moment: hero entrance + schematic assembly + pinned
+   pillar scroll-story. Everything else stays quiet — simple
+   fade/rise reveals, no gimmicks. Fully neutralised by the
+   prefers-reduced-motion rule already declared at the top of
+   this file (animation/transition:none!important).
+   ============================================================ */
+
+/* ---- nav: intensify on scroll ---- */
+.nav{ transition:background .3s ease, box-shadow .3s ease; }
+.nav.scrolled{ background:rgba(10,12,16,.92); box-shadow:0 1px 0 rgba(233,231,224,.09); }
+
+/* ---- hero entrance: staggered rise-in on load ---- */
+.hero-meta,.hero h1,.hero .lede,.hero-cta,.schematic{
+  opacity:0; transform:translateY(22px);
+  transition:opacity 1.2s cubic-bezier(.16,.8,.24,1), transform 1.2s cubic-bezier(.16,.8,.24,1);
+}
+body.loaded .hero-meta{ transition-delay:.1s }
+body.loaded .hero h1{ transition-delay:.28s }
+body.loaded .hero .lede{ transition-delay:.58s }
+body.loaded .hero-cta{ transition-delay:.82s }
+body.loaded .schematic{ transition-delay:1.05s }
+body.loaded .hero-meta, body.loaded .hero h1, body.loaded .hero .lede,
+body.loaded .hero-cta, body.loaded .schematic{ opacity:1; transform:translateY(0); }
+
+/* ---- generic scroll reveal: cards fade + rise, staggered ---- */
+.reveal{
+  opacity:0; transform:translateY(18px);
+  transition:opacity .85s cubic-bezier(.16,.8,.24,1), transform .85s cubic-bezier(.16,.8,.24,1);
+  transition-delay:var(--rd,0ms);
+}
+.reveal.in{ opacity:1; transform:translateY(0); }
+.sec-head{ opacity:0; transform:translateY(14px); transition:opacity .8s ease, transform .8s ease; }
+.sec-head.in{ opacity:1; transform:translateY(0); }
+
+/* ---- number count-up: tabular figures so digits don't jitter width ---- */
+.strip .v, .stats .v{ font-variant-numeric:tabular-nums; }
+
+/* ---- pillar pinned scroll-story ---- */
+.story{ display:grid; grid-template-columns:376px 1fr; gap:56px; align-items:start; }
+.story-sticky{ position:sticky; top:100px; display:flex; flex-direction:column; gap:26px; }
+.story-card{
+  border:1px solid var(--line); background:var(--bg1); padding:34px 30px;
+  min-height:270px; display:flex; flex-direction:column;
+}
+.story-pid{ font-family:var(--serif); font-size:42px; color:var(--gold); font-weight:400; display:block; line-height:1; }
+.story-card h3{ font-size:22px; margin:16px 0 12px; letter-spacing:-0.01em; transition:opacity .25s ease; }
+.story-card p{ font-size:14.5px; color:var(--ink-2); line-height:1.7; min-height:76px; transition:opacity .25s ease; }
+.story-tag{
+  display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-3); margin:16px 0 24px; transition:opacity .25s ease;
+}
+.story-card .btn{ align-self:flex-start; margin-top:auto; }
+.story-progress{ display:flex; flex-direction:column; gap:11px; padding-left:6px; }
+.story-progress span{ width:22px; height:2px; background:var(--line-strong); transition:background .35s ease, width .35s ease; }
+.story-progress span.active{ background:var(--gold); width:36px; }
+
+.story-list{ border-top:1px solid var(--line); }
+.story-row{
+  display:flex; align-items:center; gap:22px; min-height:126px;
+  padding:0 26px; border-bottom:1px solid var(--line);
+  transition:background .35s ease;
+}
+.story-row .pid{ font-family:var(--mono); font-size:13px; color:var(--gold-dim); width:38px; flex:none; transition:color .35s ease; }
+.story-row .pt{ font-size:17px; color:var(--ink-2); transition:color .35s ease; }
+.story-row.active{ background:var(--gold-tint); }
+.story-row.active .pid{ color:var(--gold); }
+.story-row.active .pt{ color:var(--ink); font-weight:500; }
+
+@media (max-width:900px){
+  .story{ grid-template-columns:1fr; gap:0; }
+  .story-sticky{ position:static; margin-bottom:8px; }
+  .story-row{ min-height:auto; padding:20px; }
+}
+
+/* ============================================================
+   MOTION SYSTEM — LEVEL 2
+   Scroll progress, card tilt, magnetic
+   buttons, control-ID decode. Same rule as before: one signature
+   moment carries the weight (schematic + scroll-story already
+   do that) — everything here is a quiet, load-bearing detail.
+   ============================================================ */
+
+/* native cross-page transitions where supported; silently ignored elsewhere */
+@view-transition{ navigation:auto; }
+
+/* scroll progress indicator */
+.scrollbar{
+  position:fixed; top:0; left:0; height:2px; width:100%; z-index:70;
+  background:var(--gold); transform:scaleX(0); transform-origin:left top;
+  transition:transform .15s linear; pointer-events:none;
+}
+
+
+/* card tilt: perspective set on hover-capable pointers only, via JS */
+.acr>div, .story-card, .stats>div, .tl>div{ transition:transform .08s linear; }
+.acr>div.tilt-reset, .story-card.tilt-reset, .stats>div.tilt-reset, .tl>div.tilt-reset{ transition:transform .4s cubic-bezier(.34,1.56,.64,1); }
+
+/* magnetic buttons */
+.btn{ transition:transform .08s linear, background .15s, border-color .15s, color .15s; }
+.btn.mag-reset{ transition:transform .3s cubic-bezier(.34,1.56,.64,1), background .15s, border-color .15s, color .15s; }
+
+/* ---- chapter marker: gold tick draws in before each section eyebrow ---- */
+.sec-head .idx{ position:relative; padding-left:28px; }
+.sec-head .idx::before{
+  content:""; position:absolute; left:0; top:50%; width:18px; height:1px;
+  background:var(--gold); transform:scaleX(0); transform-origin:left;
+  transition:transform .6s cubic-bezier(.65,0,.35,1); transition-delay:.2s;
+}
+.sec-head.in .idx::before{ transform:scaleX(1); }
+
+/* ---- nav: hover underline ---- */
+.nav-links a:not(.ext){ position:relative; }
+.nav-links a:not(.ext)::after{
+  content:""; position:absolute; left:12px; right:12px; bottom:3px; height:1px;
+  background:var(--gold); transform:scaleX(0); transform-origin:left;
+  transition:transform .35s cubic-bezier(.65,0,.35,1);
+}
+.nav-links a:not(.ext):hover::after{ transform:scaleX(1); }
+.nav-links a[aria-current="page"]:not(.ext)::after{ transform:scaleX(1); background:var(--gold-dim); }
+
+/* ---- hero scroll cue ---- */
+.scroll-cue{
+  display:flex; flex-direction:column; align-items:center; gap:9px;
+  margin:60px auto 0; width:fit-content; opacity:0; transition:opacity .8s ease; transition-delay:1.9s;
+}
+body.loaded .scroll-cue{ opacity:1; }
+.scroll-cue .line{ width:1px; height:36px; background:linear-gradient(to bottom, var(--gold), transparent); animation:cue-pulse 2.2s ease-in-out infinite; }
+.scroll-cue .lbl{ font-family:var(--mono); font-size:9px; letter-spacing:.22em; color:var(--ink-3); }
+@keyframes cue-pulse{ 0%,100%{ transform:scaleY(1); opacity:.55; } 50%{ transform:scaleY(1.25); opacity:1; } }
+
+/* ---- ecosystem-wide hover: hovering any node lights the whole trace network ---- */
+.schematic .trace{ transition:stroke .5s ease, opacity .5s ease; }
+.schematic.ecosystem-active .trace{ stroke:var(--gold); opacity:1; }
+.schematic.ecosystem-active .jdot{ fill:var(--gold); }
+
+/* ---- custom cursor (fine-pointer desktop only) ---- */
+body.custom-cursor, body.custom-cursor a, body.custom-cursor button{ cursor:none; }
+.cursor-dot, .cursor-ring{
+  position:fixed; top:0; left:0; pointer-events:none; z-index:200; border-radius:50%;
+  transform:translate3d(-100px,-100px,0);
+}
+.cursor-dot{ width:6px; height:6px; margin:-3px 0 0 -3px; background:var(--gold); }
+.cursor-ring{
+  width:34px; height:34px; margin:-17px 0 0 -17px; border:1px solid var(--gold-line);
+  transition:width .25s ease, height .25s ease, margin .25s ease, border-color .25s ease, background .25s ease;
+}
+.cursor-ring.big{ width:58px; height:58px; margin:-29px 0 0 -29px; background:rgba(201,168,76,.08); border-color:var(--gold); }
+@media (max-width:880px){ .cursor-dot,.cursor-ring{ display:none!important; } body.custom-cursor,body.custom-cursor a,body.custom-cursor button{ cursor:auto; } }
+
+/* ---- smooth accordion open/close (overrides native <details> snap) ---- */
+.pillar-body, .fws .fbody{ overflow:hidden; transition:max-height .55s cubic-bezier(.65,0,.35,1); }
+
+/* ============================================================
+   LIQUID GLASS SYSTEM + FULL-SCREEN HERO ("V4")
+   Glass morphism over a live particle-network canvas.
+   Two tiers: .lg-light (blur 4px) and .lg-strong (blur 50px).
+   Gradient borders via masked ::before — no border classes.
+   ============================================================ */
+:root{ --radius:1rem; }
+
+.lg-light, .lg-strong{
+  background:rgba(255,255,255,0.01);
+  background-blend-mode:luminosity;
+  position:relative; overflow:hidden;
+  border:none;
+}
+.lg-light{
+  -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,0.1);
+}
+.lg-strong{
+  -webkit-backdrop-filter:blur(50px); backdrop-filter:blur(50px);
+  box-shadow:4px 4px 4px rgba(0,0,0,0.05), inset 0 1px 1px rgba(255,255,255,0.15);
+}
+.lg-light::before, .lg-strong::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; padding:1.4px;
+  pointer-events:none; z-index:1;
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+}
+.lg-light::before{
+  background:linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%, transparent 40%, transparent 60%, rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+}
+.lg-strong::before{
+  background:linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 20%, transparent 40%, transparent 60%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0.5) 100%);
+}
+.lg-light>*, .lg-strong>*{ position:relative; z-index:2; }
+
+/* ---- background stage: canvas + drifting gradient orbs ---- */
+.vhero{ position:relative; min-height:100svh; overflow:hidden; background:var(--bg0); }
+#netbg{ position:absolute; inset:0; z-index:0; width:100%; height:100%; }
+.orb{ position:absolute; border-radius:50%; filter:blur(90px); z-index:0; pointer-events:none; opacity:.55; }
+.orb-1{ width:520px; height:520px; left:-8%; top:-14%; background:radial-gradient(circle, rgba(201,168,76,.22), transparent 65%); animation:orb-a 26s ease-in-out infinite alternate; }
+.orb-2{ width:640px; height:640px; right:-12%; bottom:-20%; background:radial-gradient(circle, rgba(90,110,150,.20), transparent 65%); animation:orb-b 32s ease-in-out infinite alternate; }
+.orb-3{ width:380px; height:380px; left:38%; top:44%; background:radial-gradient(circle, rgba(201,168,76,.10), transparent 65%); animation:orb-a 38s ease-in-out infinite alternate-reverse; }
+@keyframes orb-a{ from{ transform:translate(0,0) } to{ transform:translate(70px,50px) } }
+@keyframes orb-b{ from{ transform:translate(0,0) } to{ transform:translate(-80px,-60px) } }
+
+/* ---- two-panel split ---- */
+.vhero-in{ position:relative; z-index:10; display:flex; gap:20px; min-height:100svh; padding:16px; }
+@media (min-width:1024px){ .vhero-in{ padding:24px; } }
+.vpanel-l{
+  width:100%; display:flex; flex-direction:column; border-radius:1.5rem; padding:24px;
+}
+@media (min-width:1024px){ .vpanel-l{ width:52%; padding:34px 38px; } }
+.vpanel-r{ display:none; }
+@media (min-width:1024px){ .vpanel-r{ display:flex; width:48%; flex-direction:column; gap:16px; padding:10px 6px; } }
+
+/* ---- left panel: nav row ---- */
+.vnav{ display:flex; align-items:center; justify-content:space-between; }
+.vbrand{ display:flex; align-items:center; gap:11px; }
+.vbrand img{ width:32px; height:32px; }
+.vbrand span{ font-size:23px; font-weight:600; letter-spacing:-0.045em; color:#fff; }
+.vmenu-btn{
+  display:flex; align-items:center; gap:9px; border-radius:999px; padding:10px 18px;
+  font-family:var(--sans); font-size:13px; color:rgba(255,255,255,.85);
+  transition:transform .25s ease;
+}
+.vmenu-btn:hover{ transform:scale(1.05); }
+.vmenu-btn svg{ width:15px; height:15px; }
+
+/* ---- left panel: hero centre ---- */
+.vcentre{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:0; padding:40px 0; }
+.vcentre .seal{ width:80px; height:80px; margin-bottom:30px; }
+.vcentre h1{
+  font-family:var(--sans); font-weight:500; color:#fff;
+  font-size:clamp(40px,5vw,68px); letter-spacing:-0.05em; line-height:1.06; max-width:15ch;
+}
+.vcentre h1 em{ font-family:var(--serif); font-style:italic; font-weight:400; color:rgba(255,255,255,.8); letter-spacing:-0.02em; }
+.vcta{
+  display:inline-flex; align-items:center; gap:12px; margin-top:34px;
+  border-radius:999px; padding:11px 13px 11px 26px;
+  font-family:var(--sans); font-size:14px; font-weight:500; color:#fff; letter-spacing:.01em;
+  transition:transform .25s ease;
+}
+.vcta:hover{ transform:scale(1.05); }
+.vcta:active{ transform:scale(.95); }
+.vcta .circ{ width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; }
+.vcta .circ svg{ width:14px; height:14px; }
+.vpills{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:26px; }
+.vpills span{
+  border-radius:999px; padding:8px 16px; font-family:var(--sans); font-size:12px;
+  color:rgba(255,255,255,.8); letter-spacing:.02em; transition:transform .25s ease;
+}
+.vpills span:hover{ transform:scale(1.05); }
+
+/* ---- left panel: bottom quote ---- */
+.vquote{ text-align:center; padding-bottom:8px; }
+.vquote .lbl{ font-family:var(--sans); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.5); }
+.vquote .q{ margin-top:12px; font-size:clamp(17px,1.6vw,21px); color:rgba(255,255,255,.9); font-family:var(--sans); font-weight:400; }
+.vquote .q em{ font-family:var(--serif); font-style:italic; color:rgba(255,255,255,.75); }
+.vquote .auth{
+  display:flex; align-items:center; justify-content:center; gap:16px; margin-top:14px;
+  font-family:var(--sans); font-size:11px; letter-spacing:.2em; color:rgba(255,255,255,.5);
+}
+.vquote .auth::before, .vquote .auth::after{ content:""; width:44px; height:1px; background:rgba(255,255,255,.2); }
+
+/* ---- right panel ---- */
+.vtop{ display:flex; align-items:center; justify-content:space-between; }
+.vsocial{
+  display:flex; align-items:center; gap:14px; border-radius:999px; padding:11px 18px;
+  color:#fff;
+}
+.vsocial a{ display:flex; transition:color .2s ease, transform .25s ease; color:#fff; }
+.vsocial a:hover{ color:rgba(255,255,255,.8); transform:scale(1.05); }
+.vsocial svg{ width:16px; height:16px; }
+.vsocial .sep{ width:1px; height:14px; background:rgba(255,255,255,.2); }
+.vaccount{
+  display:flex; align-items:center; gap:9px; border-radius:999px; padding:10px 18px;
+  font-family:var(--sans); font-size:12.5px; color:rgba(255,255,255,.9); transition:transform .25s ease;
+}
+.vaccount:hover{ transform:scale(1.05); }
+.vaccount .ic{ width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; }
+.vaccount svg{ width:13px; height:13px; }
+
+.vcommunity{
+  width:230px; align-self:flex-end; margin-top:14px; border-radius:var(--radius); padding:18px;
+  transition:transform .25s ease;
+}
+.vcommunity:hover{ transform:scale(1.05); }
+.vcommunity h4{ font-family:var(--sans); font-size:14px; font-weight:600; color:#fff; margin-bottom:7px; }
+.vcommunity p{ font-family:var(--sans); font-size:12px; line-height:1.6; color:rgba(255,255,255,.6); }
+
+.vfeature{ margin-top:auto; border-radius:2.5rem; padding:14px; display:flex; flex-direction:column; gap:12px; }
+.vfeature-row{ display:flex; gap:12px; }
+.vcard{
+  flex:1; border-radius:1.5rem; padding:20px; display:block;
+  transition:transform .25s ease;
+}
+.vcard:hover{ transform:scale(1.05); }
+.vcard .ic{ width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.vcard .ic svg{ width:15px; height:15px; color:#fff; }
+.vcard h4{ font-family:var(--sans); font-size:14.5px; font-weight:600; color:#fff; margin-bottom:5px; }
+.vcard p{ font-family:var(--sans); font-size:11.5px; line-height:1.55; color:rgba(255,255,255,.55); }
+.vmedia{
+  display:flex; align-items:center; gap:16px; border-radius:1.5rem; padding:14px 16px;
+}
+.vmedia .thumb{
+  width:96px; height:64px; flex:none; border-radius:12px; overflow:hidden;
+  background:rgba(255,255,255,.05); display:flex; align-items:center; justify-content:center;
+}
+.vmedia .thumb img{ width:46px; height:46px; opacity:.9; }
+.vmedia h4{ font-family:var(--sans); font-size:14px; font-weight:600; color:#fff; margin-bottom:4px; }
+.vmedia p{ font-family:var(--sans); font-size:11.5px; line-height:1.5; color:rgba(255,255,255,.55); }
+.vplus{
+  flex:none; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  color:#fff; transition:transform .25s ease;
+}
+.vplus:hover{ transform:scale(1.05); }
+.vplus svg{ width:16px; height:16px; }
+
+/* ---- fullscreen glass menu overlay ---- */
+.vmenu-overlay{
+  position:fixed; inset:0; z-index:120; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:6px;
+  background:rgba(10,12,16,.55);
+  -webkit-backdrop-filter:blur(50px); backdrop-filter:blur(50px);
+  opacity:0; pointer-events:none; transition:opacity .45s ease;
+}
+body.vmenu-open .vmenu-overlay{ opacity:1; pointer-events:auto; }
+body.vmenu-open{ overflow:hidden; }
+.vmenu-overlay a{
+  font-family:var(--serif); font-size:clamp(30px,4.6vw,52px); color:rgba(255,255,255,.85);
+  padding:6px 22px; letter-spacing:-0.01em; transition:color .25s ease, transform .35s ease, opacity .5s ease;
+  opacity:0; transform:translateY(16px);
+}
+body.vmenu-open .vmenu-overlay a{ opacity:1; transform:translateY(0); }
+.vmenu-overlay a:hover{ color:var(--gold); }
+.vmenu-overlay a:nth-child(2){ transition-delay:.05s } .vmenu-overlay a:nth-child(3){ transition-delay:.1s }
+.vmenu-overlay a:nth-child(4){ transition-delay:.15s } .vmenu-overlay a:nth-child(5){ transition-delay:.2s }
+.vmenu-overlay a:nth-child(6){ transition-delay:.25s } .vmenu-overlay a:nth-child(7){ transition-delay:.3s }
+.vmenu-close{
+  position:absolute; top:26px; right:30px; width:46px; height:46px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; color:#fff; transition:transform .25s ease;
+}
+.vmenu-close:hover{ transform:scale(1.05) rotate(90deg); }
+.vmenu-close svg{ width:18px; height:18px; }
+
+/* ---- hero entrance stagger ---- */
+.vnav, .vcentre .seal, .vcentre h1, .vcta, .vpills, .vquote,
+.vtop, .vcommunity, .vfeature{
+  opacity:0; transform:translateY(20px);
+  transition:opacity 1.1s cubic-bezier(.16,.8,.24,1), transform 1.1s cubic-bezier(.16,.8,.24,1);
+}
+body.loaded .vnav{ transition-delay:.15s } body.loaded .vcentre .seal{ transition-delay:.3s }
+body.loaded .vcentre h1{ transition-delay:.45s } body.loaded .vcta{ transition-delay:.72s }
+body.loaded .vpills{ transition-delay:.9s } body.loaded .vquote{ transition-delay:1.05s }
+body.loaded .vtop{ transition-delay:.5s } body.loaded .vcommunity{ transition-delay:.75s }
+body.loaded .vfeature{ transition-delay:1s }
+body.loaded .vnav, body.loaded .vcentre .seal, body.loaded .vcentre h1, body.loaded .vcta,
+body.loaded .vpills, body.loaded .vquote, body.loaded .vtop, body.loaded .vcommunity,
+body.loaded .vfeature{ opacity:1; transform:translateY(0); }
+
+/* interior nav gets the glass treatment for family cohesion */
+.nav{
+  background:rgba(10,12,16,.35);
+  -webkit-backdrop-filter:blur(24px); backdrop-filter:blur(24px);
+}
+.nav.scrolled{ background:rgba(10,12,16,.6); }
+
+@media (max-width:1023px){
+  .vpanel-l{ padding:20px; }
+  .vcentre h1{ font-size:clamp(34px,9.5vw,48px); }
+}
+
+/* ============================================================
+   V5 — SITE-WIDE GLASS OVER VIDEO
+   One fixed background stage on every page: HLS video with a
+   veil, falling back to the particle network if the stream or
+   hls.js is unavailable. Interior surfaces become translucent
+   glass so the motion reads through the whole site.
+   ============================================================ */
+body{ position:relative; }
+.sitebg{ position:fixed; inset:0; z-index:0; overflow:hidden; background:var(--bg0); }
+.sitebg video{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:0; transition:opacity 1.6s ease;
+}
+.sitebg video.live{ opacity:1; }
+.sitebg .veil{ position:absolute; inset:0; background:rgba(10,12,16,var(--veil,.5)); }
+body.inner{ --veil:.82; }
+.sitebg #netbg{ position:absolute; inset:0; width:100%; height:100%; display:none; }
+.sitebg.fallback #netbg{ display:block; }
+
+/* index: darken progressively below the hero so dense sections stay readable */
+.deepveil{
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:linear-gradient(180deg, transparent 0, transparent 82svh, rgba(10,12,16,.62) 125svh, rgba(10,12,16,.62) 100%);
+}
+
+/* content sits above the stage */
+.nav, .hero, .sec, .foot, .vhero, .vhero-in{ position:relative; z-index:1; }
+.vhero{ background:transparent; overflow:visible; }
+.vhero .orb{ z-index:0; }
+
+/* ---- interior surfaces: translucent glass recipe ----
+   Applied via existing selectors so no HTML changes are needed.
+   Light tier only (blur 4-10px) — dozens of blur(50px) regions
+   over live video would melt GPUs. */
+.acr>div, .stats>div, .tl>div, .phases>div, .duo>div,
+.pillar, .fws, .mat>div, .ledger>div, .why>div, .local>div,
+.story-card, .story-list, .mx-wrap, .strip, .schematic,
+.cv, .bio .certs ul, .pidx{
+  background:rgba(14,17,22,.42);
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+}
+.pillar[open]{ background:rgba(14,17,22,.55); }
+.pillar>summary:hover, .fws summary:hover, .pidx a:hover, .story-row.active{ background:rgba(201,168,76,.07); }
+.pidx a, .story-row, .ledger>div, .mat>div, .why>div, .local>div{ background:transparent; }
+.toolbar .search, .fchip, .xall button, .btn-line, .vmenu-btn{
+  background:rgba(14,17,22,.4);
+  -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+}
+.mx thead th{ background:rgba(14,17,22,.85); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); }
+.foot{ background:rgba(10,12,16,.55); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); }
+.hero::before{ display:none; } /* old radial glow: redundant over video */
+
+/* interior page headers get a strong glass plate so titles pop over motion */
+body.inner .hero .wrap{
+  background:rgba(14,17,22,.38);
+  -webkit-backdrop-filter:blur(24px); backdrop-filter:blur(24px);
+  border-radius:1.5rem; padding-top:40px; padding-bottom:40px;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.08);
+}
+
+/* ============================================================
+   SYSTEM VIEW v2 — clean bus topology + data packets
+   Orthogonal connectors that actually land on nodes, junction
+   dots at bus taps, and gold packets travelling the network in
+   place of the old scan sweep.
+   ============================================================ */
+.schematic .jdot{ fill:var(--gold-dim); transition:fill .5s ease, opacity .6s ease; }
+.schematic .pk{ fill:#E8CE84; opacity:0; pointer-events:none; }
+@supports (offset-path: path('M0 0 L1 1')){
+  .schematic.assembled .pk{
+    animation:pkmove var(--pd,7s) linear infinite;
+    animation-delay:var(--pdel,0s);
+  }
+}
+@keyframes pkmove{
+  0%{ offset-distance:0%; opacity:0; }
+  10%{ opacity:.95; }
+  86%{ opacity:.95; }
+  100%{ offset-distance:100%; opacity:0; }
+}
+
+/* ============================================================
+   V6 — UNIFIED GLASS FRAMES + GLASS CURSOR
+   Every window, card, and button across the site now speaks the
+   same liquid-glass language as the overview hero: rounded,
+   translucent, blurred, with the masked gradient border.
+   ============================================================ */
+
+/* ---- menu button fix: explicit stacking so centre content can
+   never swallow nav clicks on short viewports ---- */
+.vpanel-l .vnav{ z-index:6; }
+.vpanel-l .vquote{ z-index:4; }
+.vmenu-btn{ position:relative; z-index:7; }
+
+/* ---- shared glass card recipe (gradient border via ::before) ---- */
+.pillar, .fws, .schematic, .story-card, .story-list, .cv,
+.toolbar .search, .acr>div, .stats>div, .phases>div, .duo>div,
+.local>div, .ledger>div, .mat>div, .strip>div, .bio .certs ul,
+body.inner .hero .wrap{
+  position:relative; border:none; border-radius:var(--radius); overflow:hidden;
+  background:rgba(14,17,22,.42);
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.09);
+}
+.pillar::before, .fws::before, .schematic::before, .story-card::before,
+.story-list::before, .cv::before, .toolbar .search::before, .acr>div::before,
+.stats>div::before, .phases>div::before, .duo>div::before, .local>div::before,
+.ledger>div::before, .mat>div::before, .strip>div::before, .bio .certs ul::before,
+body.inner .hero .wrap::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; padding:1.4px;
+  pointer-events:none; z-index:1;
+  background:linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.13) 20%, transparent 40%, transparent 60%, rgba(255,255,255,0.13) 80%, rgba(255,255,255,0.4) 100%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+}
+
+/* conflict-safe variants: these already use ::before/::after for content,
+   so the rim is an inset ring instead of a masked pseudo */
+.why>div, .tl>div, .mx-wrap{
+  border:none; border-radius:var(--radius);
+  background:rgba(14,17,22,.42);
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.12), inset 0 0 0 1px rgba(255,255,255,.07);
+}
+.mx-wrap{ overflow-x:auto; }
+
+/* grids that used shared hairlines now breathe with gaps between glass cells */
+.acr, .stats, .strip, .local, .mat, .duo, .phases, .why{
+  gap:14px; border:none; background:transparent;
+  -webkit-backdrop-filter:none; backdrop-filter:none; box-shadow:none;
+}
+.acr>div, .stats>div, .strip>div, .local>div, .mat>div{ padding:22px 24px; }
+.strip{ margin-top:26px; }
+.pillar{ margin-bottom:14px; }
+.fws{ margin-bottom:14px; }
+.pillar[open]{ background:rgba(14,17,22,.58); }
+
+/* ---- buttons & chips: one pill language everywhere ---- */
+.btn, .fchip, .xall button{
+  border:none; border-radius:999px; position:relative; overflow:hidden;
+  background:rgba(14,17,22,.45);
+  -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.1);
+}
+.btn::before, .fchip::before, .xall button::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; padding:1.2px;
+  pointer-events:none;
+  background:linear-gradient(180deg, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.14) 25%, transparent 45%, transparent 55%, rgba(255,255,255,0.14) 75%, rgba(255,255,255,0.42) 100%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+}
+.btn-solid{
+  background:linear-gradient(180deg, #DFC470, #C9A84C);
+  color:#0A0C10; box-shadow:0 4px 18px rgba(201,168,76,.28), inset 0 1px 1px rgba(255,255,255,.45);
+}
+.btn-solid::before{ background:linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.1) 40%, transparent 60%, rgba(255,255,255,.25)); }
+.fchip.active{
+  background:linear-gradient(180deg, #DFC470, #C9A84C); color:#0A0C10;
+  box-shadow:0 3px 12px rgba(201,168,76,.25), inset 0 1px 1px rgba(255,255,255,.4);
+}
+.toolbar .search{ border-radius:999px; overflow:hidden; }
+.toolbar .search input{ background:transparent; border:none; }
+.oid{
+  border:none; border-radius:8px; background:rgba(201,168,76,.1);
+  box-shadow:inset 0 0 0 1px rgba(201,168,76,.28), inset 0 1px 1px rgba(255,255,255,.08);
+}
+.pillar .tgl, .vplus{ border-radius:50%; }
+.nav .btn{ border-radius:999px; }
+
+/* ---- glass 3D cursor ---- */
+.cursor-dot{
+  width:7px; height:7px; margin:-3.5px 0 0 -3.5px;
+  background:radial-gradient(circle at 32% 30%, #FFFFFF 0%, #EDD79A 38%, #C9A84C 78%);
+  box-shadow:0 0 10px rgba(232,206,132,.5), 0 1px 2px rgba(0,0,0,.35);
+}
+.cursor-ring{ border:none; background:transparent; box-shadow:none; transition:none; }
+.cursor-lens{
+  position:absolute; top:0; left:0; width:38px; height:38px; margin:-19px 0 0 -19px;
+  border-radius:50%;
+  background:linear-gradient(155deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.03) 48%, rgba(255,255,255,.01) 62%, rgba(255,255,255,.08) 100%);
+  -webkit-backdrop-filter:blur(5px) saturate(150%); backdrop-filter:blur(5px) saturate(150%);
+  box-shadow:
+    inset 0 1.5px 1px rgba(255,255,255,.4),
+    inset 0 -1px 1px rgba(255,255,255,.08),
+    inset 1px 0 1px rgba(255,255,255,.12),
+    0 6px 18px rgba(0,0,0,.28),
+    0 0 0 1px rgba(255,255,255,.09);
+  transition:width .3s cubic-bezier(.34,1.3,.5,1), height .3s cubic-bezier(.34,1.3,.5,1),
+             margin .3s cubic-bezier(.34,1.3,.5,1), background .3s ease, transform .18s ease;
+}
+.cursor-lens::after{
+  content:""; position:absolute; top:9%; left:22%; width:42%; height:20%;
+  border-radius:50%;
+  background:linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255,0));
+  filter:blur(1px); transform:rotate(-18deg);
+}
+.cursor-lens.big{
+  width:64px; height:64px; margin:-32px 0 0 -32px;
+  background:linear-gradient(155deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.05) 50%, rgba(255,255,255,.12) 100%);
+  -webkit-backdrop-filter:blur(9px) saturate(160%); backdrop-filter:blur(9px) saturate(160%);
+}
+.cursor-lens.press{ transform:scale(.82); }
+@media (max-width:880px){ .cursor-lens{ display:none!important; } }
+
+/* ============================================================
+   V6.1 — GLASS MENU POPOVER
+   Replaces the fullscreen overlay: a compact glass panel that
+   springs from the Menu button. No document-flow footprint, so
+   the hero stays exactly one viewport tall.
+   ============================================================ */
+.vmenu-anchor{ position:relative; z-index:8; }
+.vmenu-pop{
+  position:absolute; top:calc(100% + 12px); right:0; min-width:238px;
+  display:flex; flex-direction:column; padding:10px;
+  border-radius:1.25rem;
+  background:rgba(14,17,22,.55);
+  -webkit-backdrop-filter:blur(30px) saturate(140%); backdrop-filter:blur(30px) saturate(140%);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.14), 0 18px 44px rgba(0,0,0,.4);
+  opacity:0; transform:translateY(-8px) scale(.96); transform-origin:top right;
+  pointer-events:none;
+  transition:opacity .32s cubic-bezier(.16,.8,.24,1), transform .32s cubic-bezier(.16,.8,.24,1);
+}
+.vmenu-pop::before{
+  content:""; position:absolute; inset:0; border-radius:inherit; padding:1.4px;
+  pointer-events:none; z-index:1;
+  background:linear-gradient(180deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,.16) 22%, transparent 45%, transparent 60%, rgba(255,255,255,.16) 80%, rgba(255,255,255,.5) 100%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+}
+body.vmenu-open .vmenu-pop{ opacity:1; transform:translateY(0) scale(1); pointer-events:auto; }
+.vmenu-pop a{
+  position:relative; z-index:2;
+  font-family:var(--sans); font-size:14.5px; font-weight:500; color:rgba(255,255,255,.82);
+  padding:11px 16px; border-radius:.8rem; letter-spacing:.01em;
+  transition:background .2s ease, color .2s ease, opacity .4s ease, transform .4s cubic-bezier(.16,.8,.24,1);
+  opacity:0; transform:translateY(-6px);
+}
+body.vmenu-open .vmenu-pop a{ opacity:1; transform:translateY(0); }
+.vmenu-pop a:nth-child(1){ transition-delay:.04s } .vmenu-pop a:nth-child(2){ transition-delay:.08s }
+.vmenu-pop a:nth-child(3){ transition-delay:.12s } .vmenu-pop a:nth-child(4){ transition-delay:.16s }
+.vmenu-pop a:nth-child(5){ transition-delay:.2s } .vmenu-pop a:nth-child(7){ transition-delay:.26s }
+.vmenu-pop a:hover{ background:rgba(201,168,76,.12); color:#fff; }
+.vmenu-pop a[aria-current="page"]{ color:var(--gold); }
+.vmenu-pop a.ext{ color:var(--gold); }
+.vmenu-pop .vmenu-div{
+  position:relative; z-index:2; height:1px; margin:7px 12px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+}
+/* neutralise the old fullscreen-overlay scroll lock */
+body.vmenu-open{ overflow:visible; }
+
+/* ============================================================
+   V6.2 — FIXES: matrix header, oid chips, timeline breathing,
+   landscape spacing, roadmap hero aside
+   ============================================================ */
+
+/* matrix: sticky header now lives inside the glass wrap, so it pins to
+   the wrap's own top edge instead of floating 64px down over row one */
+.mx thead th{ top:0; }
+
+/* objective control-ID: compact chip, not a stretched grid cell */
+.obj .oid{
+  align-self:start; justify-self:start;
+  padding:5px 10px 4px; line-height:1.1; text-align:center;
+  color:var(--gold);
+}
+.pillar>summary .pid{ padding-left:2px; }
+
+/* timeline: room to breathe + themed edge glow */
+.tl{ gap:16px; border:none; background:transparent; }
+.tl>div{
+  border-right:none; border-radius:var(--radius); overflow:hidden;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.12), inset 0 0 0 1px rgba(255,255,255,.07),
+             0 0 26px rgba(201,168,76,.07);
+  transition:box-shadow .35s ease;
+}
+.tl>div:hover{
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.16), inset 0 0 0 1px rgba(201,168,76,.3),
+             0 0 34px rgba(201,168,76,.16);
+}
+@media (max-width:900px){ .tl{ gap:12px; } }
+
+/* landscape: separate the stat row from the local-context row,
+   matching the inter-card rhythm */
+.stats + .local, .local{ margin-top:14px; }
+
+/* roadmap hero: copy left, phase mini-map right */
+.hero .wrap.has-aside{ display:flex; align-items:center; justify-content:space-between; gap:48px; }
+.hero .wrap.has-aside .hero-copy{ flex:1; min-width:0; }
+.hero-phases{ flex:none; width:264px; display:flex; flex-direction:column; position:relative; }
+.hero-phases::before{
+  content:""; position:absolute; left:23px; top:26px; bottom:26px; width:1px;
+  background:linear-gradient(180deg, var(--gold), rgba(201,168,76,.15));
+}
+.hero-phases .ph{
+  position:relative; display:flex; align-items:center; gap:16px;
+  padding:13px 16px 13px 12px; margin:5px 0; border-radius:var(--radius);
+  background:rgba(14,17,22,.5);
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.1), inset 0 0 0 1px rgba(255,255,255,.07);
+}
+.hero-phases .ph .n{
+  flex:none; width:23px; height:23px; border-radius:50%; z-index:1;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--sans); font-size:10px; font-weight:600; color:#0A0C10;
+  background:linear-gradient(180deg,#DFC470,#C9A84C);
+  box-shadow:0 0 12px rgba(201,168,76,.35);
+}
+.hero-phases .ph b{ display:block; font-size:13.5px; font-weight:600; color:var(--ink); letter-spacing:.01em; }
+.hero-phases .ph span{ display:block; font-family:var(--sans); font-size:10.5px; letter-spacing:.08em; color:var(--ink-3); margin-top:2px; }
+@media (max-width:1023px){ .hero-phases{ display:none; } .hero .wrap.has-aside{ display:block; } }

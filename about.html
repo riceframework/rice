@@ -8,7 +8,14 @@
 <link rel="icon" href="assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="inner">
+
+<div class="sitebg" id="sitebg" aria-hidden="true">
+  <video id="bgvid" autoplay muted loop playsinline preload="auto" crossorigin="anonymous"></video>
+  <canvas id="netbg"></canvas>
+  <div class="veil"></div>
+</div>
+
 
 <nav class="nav">
   <div class="nav-in">
@@ -59,7 +66,7 @@
         <div class="langs">
           <h4>Languages</h4>
           <div class="langpills">
-            <span>MANDARIN</span><span>ENGLISH</span><span>MALAY</span><span>CANTONESE</span><span>SPANISH — ELEM.</span><span>KOREAN — ELEM.</span>
+            <span>MANDARIN</span><span>ENGLISH</span><span>MALAY</span><span>CANTONESE</span><span>KOREAN — ELEM.</span>
           </div>
         </div>
       </div>
@@ -67,7 +74,7 @@
         <p>MJ Lee is a Senior Pre-Sales Technical Consultant based in Kuala Lumpur, with over ten years in enterprise networking and cybersecurity — spanning campus and datacentre networking, NGFW, EDR/XDR, SIEM, NDR, IAM/PAM, and cloud security. His account portfolio covers Tier-1 and Tier-2 Malaysian FSI, insurance, private tertiary education, and oil &amp; gas manufacturing.</p>
         <p>Across sixty-plus enterprise RFPs, his work has contributed over RM 10 million in solution revenue, with a proposal win rate above fifty percent. In FY2025 he was recognised as a Fortinet Top Pre-Sales Consultant — one of three recipients across Malaysia's partner network.</p>
         <p>RICE grew out of a recurring observation: the same operational blind spots — OT convergence, AI-era threats, quantum readiness, vendor-bounded advice — appearing across otherwise compliant institutions. Rather than let the gap stay unnamed, he built the framework to fill it: vendor-agnostic, FSI-first, and mapped to the regulations Malaysian institutions actually answer to.</p>
-        <p>RICE v1.0 is the FSI Edition. Healthcare and Government &amp; Critical Infrastructure adaptations are in development, and the framework is open to community contribution under <span class="m" style="color:var(--gold)">#RICEFramework</span>.</p>
+        <p>RICE v1.0 is the FSI Edition. Healthcare and Government &amp; Critical Infrastructure adaptations are in development, and the framework is open to community contribution under <span class="m" style="color:var(--gold)">#RICEFrameworkMY</span>.</p>
         <div class="hero-cta" style="margin-top:32px">
           <a class="btn btn-solid" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">linkedin.com/in/minjuelee <span class="a">↗</span></a>
         </div>
@@ -96,6 +103,11 @@
   </div>
 </footer>
 
-<script src="js/app.js"></script>
+<script defer src="assets/vendor/gsap.min.js"></script>
+<script defer src="assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="assets/vendor/lenis.min.js"></script>
+<script type="module" src="assets/vendor/bg3d.mjs"></script>
+<script defer src="js/app.js"></script>
+<script defer src="js/motion.js"></script>
 </body>
 </html>
