@@ -76,3 +76,60 @@ RICE-FSI now carries two new objectives closing the Act 854 gap identified durin
 - **P6.09** — NACSA cybersecurity service provider licensing verification for vendors
 
 Objective count is now 82 (was 80) — updated everywhere it's referenced: homepage stats strip, framework hero, meta descriptions, sectors hub. Framework name kept spelled out as "Cybersecurity Act 2024 (Act 854)" throughout, since the Act 854 shorthand isn't yet widely recognized.
+
+
+## Phase 2 expansion: Government and Manufacturing live
+- `government/` — RICE-GOV. P1 benchmarked against Cybersecurity Act 2024 (Act 854) and the structural gap where PDPA 2010 doesn't bind federal government. Cites confirmed Auditor-General findings (MySejahtera "Super Admin" incident) — explicitly does NOT cite the debunked "17M MyKad leak" claim, which NRD/NACSA investigated and refuted.
+- `manufacturing/` — RICE-MFG. P1 benchmarked against IEC 62443, deliberately calibrated to a realistic L1-L2 starting maturity reflecting real Malaysian adoption patterns (ROI/downtime/fine-gated investment, not risk-gated).
+- All three Phase 2 sectors (Healthcare, Government, Manufacturing) are now unlocked in the sector switcher dropdown and the hub page.
+- Objective counts: Government P1 = 9 objectives, Manufacturing P1 = 8 objectives.
+
+
+## Full pillar drafts: Healthcare, Government, Manufacturing (all P2-P9 added)
+All three Phase 2 sectors now have all 9 pillars drafted (previously P1 only):
+- Healthcare: 48 objectives total (P1=8, P2-P9=40)
+- Government: 49 objectives total (P1=9, P2-P9=40)
+- Manufacturing: 48 objectives total (P1=8, P2-P9=40)
+
+Every pillar carries a `.draft-badge` ("DRAFT", amber, dot indicator) next to its ID — visible even when the accordion is collapsed — so status is unambiguous. None of this content is validated against real-world engagement yet; that happens progressively as the user's H3C exposure grows per sector. Status text updated everywhere: dropdown menus, hub cards, sector landing pages all say "9/9 drafted · 0/9 validated" instead of "P1 drafted."
+
+P2-P9 content was adapted from RICE-FSI's proven pillar structure (same 8 pillar names/scopes) rather than invented from scratch, re-benchmarked per sector:
+- Healthcare: HIPAA, HITRUST CSF, IEC 80001-1/81001-5-1, FDA SPDF
+- Government: Cybersecurity Act 2024 (Act 854), PDPA-gap framing, Auditor-General precedent
+- Manufacturing: IEC 62443, ROI/downtime-gated adoption reality baked directly into objective language
+
+
+## Layout fix + Manufacturing: Smart/lights-out coverage
+- Fixed a real layout bug: sector landing pages' "benchmark set" cards were misusing `.mat` (a strict 3-column grid built for the FSI maturity table), forcing 2-child label+paragraph content into a 3-column template and causing text collision. New dedicated `.bench` component fixes this across Healthcare, Government, and Manufacturing.
+- Manufacturing now explicitly covers smart manufacturing / lights-out (near-fully-autonomous) production:
+  - P7.02-P7.04: Purdue Model **Level 3.5 (Industrial DMZ)** — the formal OT/IT boundary — plus new objectives assigning explicit named ownership of that boundary (P7.03) and requiring bidirectional traffic monitoring at the boundary itself (P7.04), addressing the IT/OT responsibility ambiguity directly.
+  - P9.06-P9.08: telemetry scaled to production autonomy, automated contingency/fail-safe procedures for unmanned lines, and cascading-failure risk assessment for machine-speed events.
+  - Manufacturing objective count: 48 → 53.
+
+
+## Self-Assessment tool (`assess.html`)
+Interactive 3-step self-read against the RICE maturity model — sector select, role select, then a role-filtered question set:
+- 27 questions total (3 per pillar x 9 pillars), each tagged by role
+- Executive & Board: 9 questions (~6 min) — strategic/governance angle only
+- Manager & Department Lead: 18 questions (~13 min) — governance + operational
+- IT & Security Officer: 18 questions (~13 min) — operational + technical
+- Scored against RICE's existing L1-L5 ladder (Aware/Developing/Defined/Managed/Optimising) — same scale used in framework.html and roadmap.html, not a new one
+- Results: hand-drawn canvas radar chart (9 axes), weakest-pillar "where to start" callout, full pillar breakdown, CTA linking to the relevant sector's framework page
+- State persists via localStorage (resume mid-assessment on reload) — no backend, nothing sent anywhere, stated explicitly in the footer
+- Sector selection is generic/reusable — one universal question bank, sector choice mainly routes the results CTA to the right framework page
+
+## Bug fixes this round
+- `.nav-in .nav-links` had an unguarded display:flex rule sitting outside its media query (introduced during the V7 sector-switch work) — this silently broke the mobile burger-menu collapse on every page since then. Fixed by scoping it to `min-width:901px`.
+- Assessment shell (`.asm-shell`) wasn't tagged with the site's content z-index rule, so the fixed background `.veil` intercepted clicks after scrolling. Fixed with explicit `position:relative; z-index:1`.
+
+
+## Self-Assessment v2: domain-specific + navigation fixes
+- **Domain-specific question banks per sector** — no longer one universal bank. FSI questions reference BNM RMiT, core banking, fraud, fintech partners. Healthcare references PHI, EHR, break-glass access, HIPAA, IoMT. Government references citizen databases, PDPA's government exemption, cross-agency coordination, Act 854. Manufacturing references OT/IT convergence, Level 3.5 Industrial DMZ, ransomware-line-stoppage framing. 108 questions total (27 per sector), same 9-pillar/3-role structure throughout so results stay comparable.
+- **Back button made prominent and available from question 1** — previously text-only and only visible from Q2 onward. Now a styled pill button visible on every question; on Q1 it reads "Back to role selection" instead of being hidden.
+- **Sector development status shown up front** — each sector card on Step 1 now carries a status tag (LIVE — V1.0 for FSI, 9/9 PILLARS DRAFTED for the other three), plus an explanatory note that draft-sector results are a conversation starter, not a finished benchmark. The results page CTA for draft sectors also carries this caveat.
+- **"Don't see your sector?" contact block** added to Step 1 — links to LinkedIn for feedback/future development requests, for anyone whose sector (Education, Media, Transport, Energy, etc.) isn't covered yet.
+
+
+## Nav bar fix
+- `.nav-links a` was missing `white-space:nowrap`, so "Self-Assessment" wrapped onto two lines while every other link stayed on one — inconsistent and visually broken.
+- Root cause of the underlying squeeze: the burger-menu breakpoint was still set at 880px from when the nav carried 6 links; with Sectors + Self-Assessment added it now needs ~1034px to lay out comfortably. Raised the breakpoint to 1080px (and synced the matching min-width rule and the sector-switch mobile-stacking breakpoint) so the full nav never overflows its container at any width — verified zero overflow from 1081px up, clean burger collapse at 1080px and below, across all 14 pages.

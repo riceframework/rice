@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RICE — Government Edition (In Development)</title>
+<meta name="description" content="RICE Government Edition — benchmarked against Malaysia's Cybersecurity Act 2024 and the structural gap left by PDPA's inapplicability to federal government. In active development.">
+<link rel="icon" href="../assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="inner" data-edition="RICE-GOV">
+
+<div class="sitebg" id="sitebg" aria-hidden="true">
+  <video id="bgvid" autoplay muted loop playsinline preload="auto" crossorigin="anonymous"></video>
+  <canvas id="netbg"></canvas>
+  <div class="veil"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="index.html">
+      <img src="../assets/rice-seal-gold.svg" alt="RICE seal">
+      <span class="t">RICE<small>GOVERNMENT EDITION</small></span>
+    </a>
+    <div class="sector-switch" id="sectorSwitch" aria-label="Sector edition">
+      <button class="sector-switch-btn" id="sectorSwitchBtn" aria-expanded="false">
+        <span class="dot"></span><span id="sectorSwitchLabel">Government Edition</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <nav class="sector-switch-menu" id="sectorSwitchMenu" aria-hidden="true">
+            <div class="sector-switch-phase">Phase 1</div>
+            <a href="../index.html">FSI<span class="stat">LIVE</span></a>
+            <div class="sector-switch-phase">Phase 2</div>
+            <a href="../healthcare/index.html">Healthcare<span class="stat">9/9 DRAFTED</span></a>
+            <a href="index.html" aria-current="page">Government<span class="stat">9/9 DRAFTED</span></a>
+            <a href="../manufacturing/index.html">Manufacturing<span class="stat">9/9 DRAFTED</span></a>
+            <div class="sector-switch-phase">Phase 3</div>
+            <a href="#" class="locked" tabindex="-1">Media &amp; Digital<span class="stat">PLANNED</span></a>
+            <a href="#" class="locked" tabindex="-1">Education<span class="stat">PLANNED</span></a>
+            <a href="../sectors.html">More NCII sectors<span class="stat">ROADMAP</span></a>
+      </nav>
+    </div>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="framework.html">Framework</a>
+      <a href="../index.html">↑ FSI Edition</a>
+      <a href="../sectors.html">Sectors</a>
+      <a href="../assess.html">Self-Assessment</a>
+      <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:56px">
+  <div class="wrap">
+    <div class="hero-meta">
+      <b>RICE-GOV</b><span class="dot"></span><span>Government Edition</span><span class="dot"></span><span>In development</span>
+    </div>
+    <h1 style="font-size:clamp(30px,4.4vw,52px)">One ecosystem. <em style="font-family:var(--serif);font-style:italic;color:var(--ink-2)">Re-benchmarked for public trust.</em></h1>
+    <p class="lede">Same 9 pillars, same maturity model, same citation discipline as RICE-FSI — rebuilt around a structural reality unique to government: Malaysia's Personal Data Protection Act doesn't legally bind the federal government at all. RICE-GOV exists to hold citizen-data systems to the standard the law hasn't yet mandated.</p>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 00</span> · WHY A SEPARATE EDITION</div>
+      <h2>The accountability gap, made structural.</h2>
+      <p class="sub">Government-held citizen data carries the highest concentration risk of any sector — and currently, the least legal obligation to protect it.</p>
+    </div>
+    <div class="acr">
+      <div>
+        <span class="L" style="font-size:15px;letter-spacing:.06em;color:var(--gold-dim)">01</span>
+        <h4 style="margin-top:10px">PDPA doesn't apply to government</h4>
+        <p>Malaysia's Personal Data Protection Act 2010 excludes federal and state government entities entirely, and doesn't cover non-commercial transactions either. Systems like PADU, MySejahtera, and MyJPJ operate outside the accountability regime private companies face.</p>
+      </div>
+      <div>
+        <span class="L" style="font-size:15px;letter-spacing:.06em;color:var(--gold-dim)">02</span>
+        <h4 style="margin-top:10px">Consolidation without proportionate control</h4>
+        <p>Malaysia's digital government strategy is actively merging IC numbers, biometrics, income data, and health records into interconnected "super app" architecture — MyDigital ID alone is designed to bridge PADU, MySejahtera, MyJPJ, MyGov, and LHDN.</p>
+      </div>
+      <div>
+        <span class="L" style="font-size:15px;letter-spacing:.06em;color:var(--gold-dim)">03</span>
+        <h4 style="margin-top:10px">The record shows the pattern, not the headline</h4>
+        <p>A widely-circulated "17 million MyKad leak" claim was investigated and refuted by NRD/NACSA in December 2024 — the samples were recycled 2015–2017 data. But the Auditor-General's own reports document real access-governance failures underneath the noise, which is what RICE-GOV benchmarks against.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 01</span> · WHAT'S ON THE RECORD</div>
+      <h2>Confirmed, not rumoured.</h2>
+      <p class="sub">RICE-GOV is built only against verified findings — official audit reports and confirmed incidents, not unverified dark-web claims.</p>
+    </div>
+    <div class="bench">
+      <div><b style="color:var(--ink);font-size:15px">MySejahtera — Auditor-General 2021</b><p style="margin-top:6px;font-size:13px;color:var(--ink-2);line-height:1.6">A third-party-held "Super Admin" account downloaded 3 million vaccine recipients' data across multiple IPs over four days — not revoked until two days after the final download. 1.12 million intrusion attempts were also logged against the same database.</p></div>
+      <div><b style="color:var(--ink);font-size:15px">PADU — public trust deficit</b><p style="margin-top:6px;font-size:13px;color:var(--ink-2);line-height:1.6">CyberSecurity Malaysia had to issue public assurances of PADU's security in March 2024. Registration stalled at 9.24M of a 22M target — security and privacy concerns were a documented factor.</p></div>
+      <div><b style="color:var(--ink);font-size:15px">Confirmed breach pattern, 2022–2025</b><p style="margin-top:6px;font-size:13px;color:var(--ink-2);line-height:1.6">Election Commission, Maybank, and Astro data theft (2022); SOCSO breach of MyKad numbers, salaries, and addresses (2023); Prasarana Malaysia ransomware, 300GB leaked (Aug 2024); a hacker's claim of breaching 12+ government websites (Aug 2025).</p></div>
+      <div><b style="color:var(--ink);font-size:15px">Cybersecurity Act 2024 (Act 854)</b><p style="margin-top:6px;font-size:13px;color:var(--ink-2);line-height:1.6">Government is one of the 11 statutory NCII sectors. Act 854 mandates incident reporting and audits — but doesn't fill the PDPA accountability gap for how citizen data is handled day to day.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 02</span> · STATUS</div>
+      <h2>All 9 pillars drafted. None yet validated.</h2>
+      <p class="sub">Every pillar carries a full objective set, benchmarked against Cybersecurity Act 2024 (Act 854) and the PDPA-government accountability gap. Every objective is marked <b style="color:#D9B25C">DRAFT</b> until it's been pressure-tested against real government-sector engagement — that validation happens as exposure grows, not before.</p>
+    </div>
+    <a href="framework.html" class="btn btn-solid" style="margin-top:28px">View the framework draft <span aria-hidden="true">→</span></a>
+    <div class="lede" style="margin-top:16px;max-width:640px;font-size:13px;color:var(--ink-3)">◐ 9 of 9 pillars drafted · 0 of 9 validated</div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <img src="../assets/rice-seal-gold.svg" alt="">
+        <span class="t">RICE<small>GOVERNMENT EDITION &middot; IN DEVELOPMENT</small></span>
+      </div>
+      <div class="foot-nav">
+        <a href="index.html">Overview</a>
+        <a href="framework.html">Framework</a>
+        <a href="../index.html">FSI Edition</a>
+        <a href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      </div>
+    </div>
+    <p class="fine">RICE-GOV — GOVERNMENT EDITION &middot; IN ACTIVE DEVELOPMENT &middot; &copy; MJ LEE 2025&ndash;2026 &middot; NOT VENDOR-AFFILIATED, NOT GOVERNMENT-AFFILIATED. NOT YET A COMPLETE STANDARD — OBJECTIVES ARE BEING BENCHMARKED AND VALIDATED PROGRESSIVELY. DO NOT CITE AS FINAL UNTIL MARKED COMPLETE.</p>
+  </div>
+</footer>
+
+<script defer src="../assets/vendor/gsap.min.js"></script>
+<script defer src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="../assets/vendor/lenis.min.js"></script>
+<script type="module" src="../assets/vendor/bg3d.mjs"></script>
+<script defer src="../js/app.js"></script>
+<script defer src="../js/motion.js"></script>
+</body>
+</html>

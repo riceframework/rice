@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RICE — Manufacturing Edition (In Development)</title>
+<meta name="description" content="RICE Manufacturing Edition — benchmarked against IEC 62443 and the real adoption pattern in Malaysian manufacturing: security investment gated by production downtime and ransomware exposure, not risk itself. In active development.">
+<link rel="icon" href="../assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="inner" data-edition="RICE-MFG">
+
+<div class="sitebg" id="sitebg" aria-hidden="true">
+  <video id="bgvid" autoplay muted loop playsinline preload="auto" crossorigin="anonymous"></video>
+  <canvas id="netbg"></canvas>
+  <div class="veil"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="index.html">
+      <img src="../assets/rice-seal-gold.svg" alt="RICE seal">
+      <span class="t">RICE<small>MANUFACTURING EDITION</small></span>
+    </a>
+    <div class="sector-switch" id="sectorSwitch" aria-label="Sector edition">
+      <button class="sector-switch-btn" id="sectorSwitchBtn" aria-expanded="false">
+        <span class="dot"></span><span id="sectorSwitchLabel">Manufacturing Edition</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <nav class="sector-switch-menu" id="sectorSwitchMenu" aria-hidden="true">
+            <div class="sector-switch-phase">Phase 1</div>
+            <a href="../index.html">FSI<span class="stat">LIVE</span></a>
+            <div class="sector-switch-phase">Phase 2</div>
+            <a href="../healthcare/index.html">Healthcare<span class="stat">9/9 DRAFTED</span></a>
+            <a href="../government/index.html">Government<span class="stat">9/9 DRAFTED</span></a>
+            <a href="index.html" aria-current="page">Manufacturing<span class="stat">9/9 DRAFTED</span></a>
+            <div class="sector-switch-phase">Phase 3</div>
+            <a href="#" class="locked" tabindex="-1">Media &amp; Digital<span class="stat">PLANNED</span></a>
+            <a href="#" class="locked" tabindex="-1">Education<span class="stat">PLANNED</span></a>
+            <a href="../sectors.html">More NCII sectors<span class="stat">ROADMAP</span></a>
+      </nav>
+    </div>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="framework.html">Framework</a>
+      <a href="../index.html">↑ FSI Edition</a>
+      <a href="../sectors.html">Sectors</a>
+      <a href="../assess.html">Self-Assessment</a>
+      <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:56px">
+  <div class="wrap">
+    <div class="hero-meta">
+      <b>RICE-MFG</b><span class="dot"></span><span>Manufacturing Edition</span><span class="dot"></span><span>In development</span>
+    </div>
+    <h1 style="font-size:clamp(30px,4.4vw,52px)">One ecosystem. <em style="font-family:var(--serif);font-style:italic;color:var(--ink-2)">Honest about the starting line.</em></h1>
+    <p class="lede">Same 9 pillars, same maturity model, same citation discipline as RICE-FSI — but built on a deliberately honest premise: most Malaysian manufacturers invest in security only when production stops, a customer contract demands it, or a fine forces the issue. RICE-MFG designs for that reality instead of pretending it away.</p>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 00</span> · WHY A SEPARATE EDITION</div>
+      <h2>Same architecture. A different starting line.</h2>
+      <p class="sub">FSI and Healthcare frameworks assume a baseline of regulatory pressure already pushing maturity upward. Manufacturing, in Malaysia specifically, largely doesn't have that yet — so RICE-MFG starts from where plants actually are.</p>
+    </div>
+    <div class="acr">
+      <div>
+        <span class="L" style="font-size:15px;letter-spacing:.06em;color:var(--gold-dim)">01</span>
+        <h4 style="margin-top:10px">ROI-gated, not risk-gated</h4>
+        <p>Security investment gets approved when it protects revenue, not when it reduces abstract risk — the same adoption pattern seen globally with AI investment. Framing objectives around "reduce risk" alone doesn't move budget on the plant floor; framing them around protecting the thing that already has budget authority does.</p>
+      </div>
+      <div>
+        <span class="L" style="font-size:15px;letter-spacing:.06em;color:var(--gold-dim)">02</span>
+        <h4 style="margin-top:10px">Production continuity is the real risk appetite</h4>
+        <p>The line staying up is the one thing that reliably gets attention. Ransomware is the sharpest threat precisely because it's the one attack type that guarantees downtime — RICE-MFG treats that as the practical entry point for every other control.</p>
+      </div>
+      <div>
+        <span class="L" style="font-size:15px;letter-spacing:.06em;color:var(--gold-dim)">03</span>
+        <h4 style="margin-top:10px">OT/IT convergence, not generic IT security</h4>
+        <p>A compromised infusion pump and a compromised PLC fail differently. RICE-MFG benchmarks specifically against IEC 62443's zones-and-conduits model rather than reusing another sector's device-security framing.</p>
+      </div>
+      <div>
+        <span class="L" style="font-size:15px;letter-spacing:.06em;color:var(--gold-dim)">04</span>
+        <h4 style="margin-top:10px">Fewer people on the floor means more eyes on the network</h4>
+        <p>Smart manufacturing and lights-out production don't just automate labour — they remove the human who used to notice something wrong. An unmonitored autonomous line fails silently. RICE-MFG treats rising autonomy as a reason to raise visibility and contingency planning, not lower them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 01</span> · BENCHMARK SET</div>
+      <h2>What RICE-MFG is built against.</h2>
+      <p class="sub">A global OT/ICS standard, layered with the honest Malaysian adoption pattern global frameworks don't account for.</p>
+    </div>
+    <div class="bench">
+      <div><b>IEC 62443</b><p>The core OT/ICS security standard — zones and conduits, security levels, asset-owner and integrator responsibilities. The closest existing analogue to what RICE-MFG needs to encode.</p></div>
+      <div><b>Cybersecurity Act 2024 (Act 854)</b><p>Manufacturing isn't its own NCII sector, but overlaps Trade, Industry &amp; Economy — and any plant supplying an NCII sector inherits obligations indirectly through its customer's supply-chain requirements.</p></div>
+      <div><b>Purdue Model — Level 3.5 (Industrial DMZ)</b><p>The formal buffer zone between OT (Levels 0–3) and IT (Levels 4–5) — and the exact boundary where responsibility ownership gets ambiguous in most plants. RICE-MFG treats this handshake as a governance objective, not just a network diagram detail.</p></div>
+      <div><b>Ransomware-as-forcing-function</b><p>Not a formal standard — a documented adoption reality. RICE-MFG treats ransomware readiness as the practical entry point that earns budget for everything else.</p></div>
+      <div><b>Cyber-insurance &amp; customer contracts</b><p>Increasingly the real governance forcing-function — insurers and OEM customers now mandate baseline controls that regulation alone hasn't required.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">§ 02</span> · STATUS</div>
+      <h2>All 9 pillars drafted. None yet validated.</h2>
+      <p class="sub">Every pillar carries a full objective set, benchmarked against IEC 62443 and calibrated to a realistic starting maturity. Every objective is marked <b style="color:#D9B25C">DRAFT</b> until it's been pressure-tested against real manufacturing-sector engagement — that validation happens as exposure grows, not before.</p>
+    </div>
+    <a href="framework.html" class="btn btn-solid" style="margin-top:28px">View the framework draft <span aria-hidden="true">→</span></a>
+    <div class="lede" style="margin-top:16px;max-width:640px;font-size:13px;color:var(--ink-3)">◐ 9 of 9 pillars drafted · 0 of 9 validated</div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <img src="../assets/rice-seal-gold.svg" alt="">
+        <span class="t">RICE<small>MANUFACTURING EDITION &middot; IN DEVELOPMENT</small></span>
+      </div>
+      <div class="foot-nav">
+        <a href="index.html">Overview</a>
+        <a href="framework.html">Framework</a>
+        <a href="../index.html">FSI Edition</a>
+        <a href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      </div>
+    </div>
+    <p class="fine">RICE-MFG — MANUFACTURING EDITION &middot; IN ACTIVE DEVELOPMENT &middot; &copy; MJ LEE 2025&ndash;2026 &middot; NOT VENDOR-AFFILIATED. NOT YET A COMPLETE STANDARD — OBJECTIVES ARE BEING BENCHMARKED AND VALIDATED PROGRESSIVELY. DO NOT CITE AS FINAL UNTIL MARKED COMPLETE.</p>
+  </div>
+</footer>
+
+<script defer src="../assets/vendor/gsap.min.js"></script>
+<script defer src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="../assets/vendor/lenis.min.js"></script>
+<script type="module" src="../assets/vendor/bg3d.mjs"></script>
+<script defer src="../js/app.js"></script>
+<script defer src="../js/motion.js"></script>
+</body>
+</html>

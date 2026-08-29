@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self-Assessment — RICE</title>
+<meta name="description" content="A 15-minute self-read against the RICE maturity model — pick your sector and role, answer honestly, and see where to start before your first real conversation with RICE.">
+<link rel="icon" href="assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="inner">
+
+<div class="sitebg" id="sitebg" aria-hidden="true">
+  <video id="bgvid" autoplay muted loop playsinline preload="auto" crossorigin="anonymous"></video>
+  <canvas id="netbg"></canvas>
+  <div class="veil"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/rice-seal-gold.svg" alt="RICE seal">
+      <span class="t">RICE<small>CYBERSECURITY ECOSYSTEM</small></span>
+    </a>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="framework.html">Framework</a>
+      <a href="landscape.html">Landscape</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="about.html">Author</a>
+      <a href="sectors.html">Sectors</a>
+      <a href="assess.html" aria-current="page">Self-Assessment</a>
+      <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap asm-shell" id="assessApp" aria-live="polite">
+  <!-- rendered entirely by js/assess.js -->
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <img src="assets/rice-seal-gold.svg" alt="">
+        <span class="t">RICE<small>CYBERSECURITY ECOSYSTEM</small></span>
+      </div>
+      <div class="foot-nav">
+        <a href="index.html">Overview</a>
+        <a href="framework.html">Framework</a>
+        <a href="sectors.html">Sectors</a>
+        <a href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      </div>
+    </div>
+    <p class="fine">RICE &middot; SELF-ASSESSMENT IS A SELF-READ, NOT AN AUDIT &middot; &copy; MJ LEE 2025&ndash;2026 &middot; NOT VENDOR-AFFILIATED. RESULTS ARE STORED LOCALLY IN YOUR BROWSER ONLY AND ARE NOT SENT ANYWHERE.</p>
+  </div>
+</footer>
+
+<script defer src="assets/vendor/gsap.min.js"></script>
+<script defer src="assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="assets/vendor/lenis.min.js"></script>
+<script type="module" src="assets/vendor/bg3d.mjs"></script>
+<script defer src="js/app.js"></script>
+<script defer src="js/motion.js"></script>
+<script defer src="js/assess.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework Draft — RICE Manufacturing Edition</title>
+<meta name="description" content="RICE-MFG framework draft: Governance & Risk Oversight benchmarked against IEC 62443 and the real ROI-gated adoption pattern in Malaysian manufacturing. Remaining pillars in active development.">
+<link rel="icon" href="../assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="inner" data-edition="RICE-MFG">
+
+<div class="sitebg" id="sitebg" aria-hidden="true">
+  <video id="bgvid" autoplay muted loop playsinline preload="auto" crossorigin="anonymous"></video>
+  <canvas id="netbg"></canvas>
+  <div class="veil"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="index.html">
+      <img src="../assets/rice-seal-gold.svg" alt="RICE seal">
+      <span class="t">RICE<small>MANUFACTURING EDITION</small></span>
+    </a>
+    <div class="sector-switch" id="sectorSwitch" aria-label="Sector edition">
+      <button class="sector-switch-btn" id="sectorSwitchBtn" aria-expanded="false">
+        <span class="dot"></span><span id="sectorSwitchLabel">Manufacturing Edition</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <nav class="sector-switch-menu" id="sectorSwitchMenu" aria-hidden="true">
+            <div class="sector-switch-phase">Phase 1</div>
+            <a href="../index.html">FSI<span class="stat">LIVE</span></a>
+            <div class="sector-switch-phase">Phase 2</div>
+            <a href="../healthcare/index.html">Healthcare<span class="stat">9/9 DRAFTED</span></a>
+            <a href="../government/index.html">Government<span class="stat">9/9 DRAFTED</span></a>
+            <a href="index.html" aria-current="page">Manufacturing<span class="stat">9/9 DRAFTED</span></a>
+            <div class="sector-switch-phase">Phase 3</div>
+            <a href="#" class="locked" tabindex="-1">Media &amp; Digital<span class="stat">PLANNED</span></a>
+            <a href="#" class="locked" tabindex="-1">Education<span class="stat">PLANNED</span></a>
+            <a href="../sectors.html">More NCII sectors<span class="stat">ROADMAP</span></a>
+      </nav>
+    </div>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="framework.html" aria-current="page">Framework</a>
+      <a href="../index.html">↑ FSI Edition</a>
+      <a href="../sectors.html">Sectors</a>
+      <a href="../assess.html">Self-Assessment</a>
+      <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:56px">
+  <div class="wrap">
+    <div class="hero-meta">
+      <b>RICE-MFG</b><span class="dot"></span><span>Framework draft</span><span class="dot"></span><span>9 of 9 pillars drafted — pending real-world validation</span>
+    </div>
+    <h1 style="font-size:clamp(30px,4.4vw,52px)">The standard, rebuilt for the plant floor.</h1>
+    <p class="lede">P1 — Governance &amp; Risk Oversight is benchmarked against IEC 62443 and calibrated to a realistic starting maturity, and marked <span class="m" style="color:var(--gold)">◆</span> where RICE-MFG sets a requirement no existing framework does. Remaining pillars follow as OT/ICS benchmarking deepens.</p>
+  </div>
+</header>
+
+<section class="sec last" style="padding-top:48px">
+  <div class="wrap">
+    <div class="toolbar">
+      <div class="search"><span class="sk">/</span><input id="objSearch" type="search" placeholder="Search objectives, controls, systems…" aria-label="Search objectives"></div>
+      <button class="fchip" data-f="all" aria-pressed="true">ALL</button>
+      <button class="fchip" data-f="rice" aria-pressed="false">◆ RICE-MFG SPECIFIC</button>
+      <button class="fchip" data-f="iec62443" aria-pressed="false">IEC 62443</button>
+      <button class="fchip" data-f="act854" aria-pressed="false">CYBERSECURITY ACT 2024</button>
+      <div class="xall">
+        <button id="expandAll">Expand all</button>
+        <button id="collapseAll">Collapse all</button>
+      </div>
+    </div>
+    <p class="result-note" id="resultNote"></p>
+
+    <!-- ============ P1 — DRAFTED ============ -->
+    <details class="pillar" id="p1" open>
+      <summary>
+        <span class="pid">P1<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Governance &amp; Risk Oversight</h3><span class="tag">PRODUCTION CONTINUITY · ROI-GATED INVESTMENT · RANSOMWARE READINESS</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">The foundation pillar — but in manufacturing, honest governance starts by admitting where budget actually comes from: production continuity, contractual pressure, and fines, not risk appetite alone. Draft v0.1, benchmarked against IEC 62443.</p>
+        <div class="objs">
+          <div class="obj" data-maps="iec62443"><button class="oid" title="Copy control ID">P1.01</button><div><p class="ot">Establish joint OT/IT Security Governance with plant-manager and IT leadership sharing accountability</p><div class="maps"><span class="chip">IEC 62443-1</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.02</button><div><p class="ot">Define risk appetite explicitly in terms of production-downtime cost and regulatory fine exposure — document the real ROI-gated investment pattern rather than an aspirational risk-based one</p><div class="maps"><span class="chip u">◆ RICE-MFG</span></div><p class="unote">The core honesty objective — most Malaysian manufacturers only invest in security when it protects revenue or avoids a fine, the same adoption pattern seen globally with AI investment. No existing framework designs governance around this reality instead of assuming risk-based maturity from day one.</p></div></div>
+          <div class="obj" data-maps="iec62443 rice"><button class="oid" title="Copy control ID">P1.03</button><div><p class="ot">Mandate a ransomware-specific incident response plan with OT/IT network isolation procedures to contain blast radius</p><div class="maps"><span class="chip">IEC 62443-3</span><span class="chip u">◆ RICE-MFG</span></div><p class="unote">Ransomware-first framing — treated as the practical entry point since it's the one attack type guaranteed to stop the production line, which is what actually earns budget approval</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.04</button><div><p class="ot">Conduct an honest minimum-viable security baseline assessment — calibrate RICE maturity scoring to a realistic L1 starting point, with a defined path to L2/L3 tied to measurable triggers</p><div class="maps"><span class="chip u">◆ RICE-MFG</span></div><p class="unote">RICE Maturity Model, deliberately anchored to where plants actually are rather than where FSI/Healthcare start — pretending otherwise makes the framework unusable on day one</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.05</button><div><p class="ot">Map cyber-insurance requirements and OEM customer contract security clauses as the practical governance forcing-function</p><div class="maps"><span class="chip u">◆ RICE-MFG</span></div><p class="unote">Regulatory and ethical framing alone doesn't move plant-floor budget — insurers and customer contracts increasingly do, and RICE-MFG treats that as a legitimate lever rather than ignoring it</p></div></div>
+          <div class="obj" data-maps="act854"><button class="oid" title="Copy control ID">P1.06</button><div><p class="ot">Assess Cybersecurity Act 2024 (Act 854) exposure — direct obligations where designated, indirect obligations where supplying an NCII-sector customer</p><div class="maps"><span class="chip">Cybersecurity Act 2024 (Act 854)</span></div></div></div>
+          <div class="obj" data-maps="iec62443"><button class="oid" title="Copy control ID">P1.07</button><div><p class="ot">Establish a complete OT asset inventory as the governance prerequisite — most plants don't have an accurate picture of what's actually connected</p><div class="maps"><span class="chip">IEC 62443-2</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.08</button><div><p class="ot">Address plant-management and shift-leadership rotation risk — maintain institutional OT security memory across plant-manager and engineering-lead transitions</p><div class="maps"><span class="chip u">◆ RICE-MFG</span></div><p class="unote">Rotation-resilient governance, adapted from RICE-FSI P1.08 — plant leadership turnover carries the same institutional-memory risk, often with less documentation to fall back on</p></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls (draft)</h4>
+            <ul>
+              <li>Documented risk appetite explicitly tied to downtime cost and fine exposure, not abstract risk scoring</li>
+              <li>Ransomware-specific incident response plan with OT/IT isolation runbook</li>
+              <li>RICE-MFG Maturity Model scoring anchored to a realistic L1 baseline</li>
+              <li>Cyber-insurance and customer-contract security requirement register</li>
+              <li>Complete OT asset inventory, reviewed at minimum annually</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What RICE-MFG benchmarks against (draft)</h4>
+            <ul>
+              <li>IEC 62443 — zones and conduits, security levels, OT/ICS-specific controls</li>
+              <li>Cybersecurity Act 2024 (Act 854) — indirect exposure via NCII-sector customers</li>
+              <li>Real Malaysian manufacturing adoption pattern — documented, not assumed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P2–P9 — IN DEVELOPMENT ============ -->
+    <details class="pillar" id="p2">
+      <summary>
+        <span class="pid">P2<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Threat Detection & Intelligence</h3><span class="tag">OT-AWARE MONITORING · RANSOMWARE PRECURSORS · ICS-CERT INTEL</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — detection tuned for OT behavior, not IT anomaly signatures applied where they don't fit.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.01</button><div><p class="ot">Deploy OT-aware intrusion detection, distinct from generic IT monitoring tooling</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.02</button><div><p class="ot">Monitor for ransomware pre-encryption indicators — unusual file enumeration, backup deletion attempts</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Pre-encryption detection is the highest-leverage control available — catching the precursor beats responding to the encryption event</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.03</button><div><p class="ot">Establish a baseline of normal OT network behaviour before deploying anomaly detection</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.04</button><div><p class="ot">Integrate threat intelligence feeds specific to ICS/SCADA vulnerabilities — ICS-CERT advisories</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.05</button><div><p class="ot">Monitor IIoT device traffic for anomalous outbound connections</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p3">
+      <summary>
+        <span class="pid">P3<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Identity & Access Governance</h3><span class="tag">OT ROLE-BASED ACCESS · SHARED TERMINALS · REMOTE VENDOR MFA</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — access governance accounts for how the plant floor actually operates, not how an office does.</p>
+        <div class="objs">
+          <div class="obj" data-maps="iec62443"><button class="oid" title="Copy control ID">P3.01</button><div><p class="ot">Implement OT-specific role-based access distinct from IT RBAC, per the IEC 62443 role model</p><div class="maps"><span class="chip">IEC 62443-3</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.02</button><div><p class="ot">Address shared-terminal reality on the production floor — session timeout and re-authentication rather than assuming one user per device</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Plant-floor identity is genuinely different: a workstation is often shared across a shift, which most access frameworks don't design for</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.03</button><div><p class="ot">Enforce MFA for remote access to OT networks — vendor and integrator remote support is a common entry point</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Remote-support access is one of the most common real-world OT intrusion paths and often the least monitored</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.04</button><div><p class="ot">Time-bound OEM and integrator remote access, disabled by default outside maintenance windows</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.05</button><div><p class="ot">Conduct periodic access review for engineering workstation and HMI access</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p4">
+      <summary>
+        <span class="pid">P4<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Incident Response & Resilience</h3><span class="tag">RANSOMWARE CONTAINMENT · MANUAL FALLBACK · DOWNTIME-WEIGHTED RTO</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — response planning centres on keeping the line running, or restarting it fast, since that's what governance actually optimises for here.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.01</button><div><p class="ot">Define a ransomware containment procedure that isolates OT from IT without halting the entire plant where possible</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Selective isolation, not an all-or-nothing shutdown — the goal is containing blast radius while preserving as much production as safely possible</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.02</button><div><p class="ot">Establish manual or offline fallback procedures for critical production processes</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.03</button><div><p class="ot">Conduct an annual ransomware tabletop exercise involving plant operations, not just IT</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.04</button><div><p class="ot">Define RTO per production line, weighted explicitly by revenue impact per hour of downtime</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Directly operationalises P1.02's honesty principle — recovery targets stated in the currency that actually drives plant-floor decisions</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.05</button><div><p class="ot">Maintain offline, tested backups of OT configuration and historian data</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p5">
+      <summary>
+        <span class="pid">P5<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Data Security & Privacy</h3><span class="tag">PROCESS IP PROTECTION · HISTORIAN ENCRYPTION · RECIPE DATA</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — the sensitive asset here is process and product IP first, personal data second.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.01</button><div><p class="ot">Protect proprietary process data and manufacturing IP as the primary data-security concern, not personal data</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">A framing shift from most data-security guidance, which defaults to personal-data protection — for a plant, the recipe and process parameters are the crown jewels</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.02</button><div><p class="ot">Encrypt data in transit between the OT historian and any cloud or analytics platform</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.03</button><div><p class="ot">Classify and restrict access to product formulation, recipe, and process-parameter data</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.04</button><div><p class="ot">Apply baseline data protection to personal data collected — HR records, visitor logs — per PDPA</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.05</button><div><p class="ot">Define data retention for production and quality records per industry and customer contract requirements</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p6">
+      <summary>
+        <span class="pid">P6<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Supply Chain & Third-Party Risk</h3><span class="tag">OEM ACCESS TIERING · CONTRACT SECURITY CLAUSES · NACSA LICENSING</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — the OEM and integrator relationship is the primary third-party risk, more than generic vendor management.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.01</button><div><p class="ot">Inventory and tier OEM and integrator remote-access relationships to OT networks</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">The starting point most plants skip — you can't govern access you haven't inventoried</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.02</button><div><p class="ot">Require security requirements in vendor contracts as a condition of OT network access</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.03</button><div><p class="ot">Verify NACSA licensing status for any cybersecurity service providers engaged</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.04</button><div><p class="ot">Assess fourth-party risk for cloud-connected industrial equipment — your vendor's vendor</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.05</button><div><p class="ot">Map customer-contract security requirements as a governance driver</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Ties to P1.05 — increasingly it's the OEM customer's contract, not regulation, that sets the real security bar</p></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p7">
+      <summary>
+        <span class="pid">P7<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Infrastructure Best Practices</h3><span class="tag">IEC 62443 ZONES & CONDUITS · PURDUE DMZ · LEGACY PLC HARDENING</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — segmentation is the single highest-leverage infrastructure control available to a plant that's starting from a low baseline.</p>
+        <div class="objs">
+          <div class="obj" data-maps="iec62443"><button class="oid" title="Copy control ID">P7.01</button><div><p class="ot">Implement the IEC 62443 zones-and-conduits model to segment OT from IT</p><div class="maps"><span class="chip">IEC 62443-3</span></div></div></div>
+          <div class="obj" data-maps="iec62443"><button class="oid" title="Copy control ID">P7.02</button><div><p class="ot">Establish an Industrial DMZ — Purdue Model Level 3.5 — as the mandatory buffer zone between OT (Levels 0–3) and IT (Levels 4–5)</p><div class="maps"><span class="chip">Purdue Model L3.5</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.03</button><div><p class="ot">Assign explicit, named ownership of the Level 3.5 DMZ — patching, monitoring, and change control — resolving the IT/OT handoff before an incident forces the question</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">The DMZ is where responsibility most often falls through the crack — IT assumes OT owns it because it touches the plant floor, OT assumes IT owns it because it's "just a firewall." RICE-MFG requires a single named owner and a documented escalation path, reviewed at least annually as the boundary shifts with OT/IT convergence.</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.04</button><div><p class="ot">Log and monitor all Level 3.5 DMZ traffic bidirectionally, treating the boundary itself as a detection point, not just a control point</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">A firewall rule set without traffic monitoring only tells you what should happen, not what did — the DMZ is one of the highest-value places in the whole network to actually watch</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.05</button><div><p class="ot">Harden legacy PLCs and SCADA systems that cannot be patched, via compensating network controls</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Compensating controls are the realistic answer for equipment with a 15-20 year service life that was never designed to be patched</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.06</button><div><p class="ot">Define a patch management process that accounts for production-window constraints</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.07</button><div><p class="ot">Maintain physical security controls for OT equipment access — cabinet locks, port controls</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p8">
+      <summary>
+        <span class="pid">P8<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Secure Application Ecosystem</h3><span class="tag">SCADA/MES/HMI HARDENING · VENDOR SOFTWARE VETTING · DEFAULT CREDENTIALS</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — the application layer here is industrial software, with its own default-credential and legacy-vulnerability problems.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.01</button><div><p class="ot">Secure SCADA/MES/HMI application access and configuration change control</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.02</button><div><p class="ot">Apply secure SDLC to any custom manufacturing execution system development</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.03</button><div><p class="ot">Test vendor-supplied industrial software for known vulnerabilities before deployment</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Pre-deployment vetting — a surprising amount of industrial software ships with known, unpatched vulnerabilities baked in</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.04</button><div><p class="ot">Harden any cloud-connected production-monitoring dashboards against unauthorized access</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.05</button><div><p class="ot">Review default credentials on all newly commissioned OT equipment before go-live</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">The single most common OT compromise vector globally, and the cheapest one to close</p></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p9">
+      <summary>
+        <span class="pid">P9<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Emerging Threat Horizon</h3><span class="tag">SMART MANUFACTURING · LIGHTS-OUT PRODUCTION · IIOT ATTACK SURFACE</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — Industry 4.0 connectivity is expanding the attack surface faster than most plants' governance is maturing to match, and the next step beyond it — lights-out, near-fully-autonomous production — removes the one thing that used to catch problems by accident: a person on the floor.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.01</button><div><p class="ot">Assess attack surface growth from IIoT sensor proliferation on the plant floor</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Every new sensor is a new endpoint — inventory and risk assessment need to keep pace with Industry 4.0 rollout, not trail it</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.02</button><div><p class="ot">Evaluate AI-driven predictive maintenance tools for data-integrity and manipulation risk</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.03</button><div><p class="ot">Monitor supply-chain-embedded firmware risk in industrial equipment</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.04</button><div><p class="ot">Begin planning for OT/IT convergence risk as Industry 4.0 initiatives expand connectivity</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.05</button><div><p class="ot">Assess ransomware-as-a-service targeting patterns specific to the manufacturing sector</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.06</button><div><p class="ot">Scale telemetry and monitoring coverage in direct proportion to production autonomy — treat reduced human floor presence as a mandate to increase visibility, not a reason it went unnoticed</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">The core lights-out-manufacturing principle — a human walking the floor used to catch smoke, sound, or a stopped line by accident. Remove that person and the monitoring system has to catch everything a human incidentally would have. No existing framework states this as an explicit design requirement.</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.07</button><div><p class="ot">Define automated contingency and fail-safe procedures for unmanned or minimally-manned production runs — safe shutdown, containment, and alerting without waiting for human intervention</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">In a fully-staffed plant, a person can physically intervene within minutes. In a lights-out cell, the system itself has to be the first responder — this has to be engineered in advance, not improvised during an incident</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.08</button><div><p class="ot">Assess cascading-failure risk unique to highly-autonomous lines, where one compromised control loop can propagate faster than any human-paced response could contain</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Autonomy raises both the speed of legitimate production and the speed at which an attack or fault can cascade — response design has to assume machine-speed events, not human-speed ones</p></div></div>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <img src="../assets/rice-seal-gold.svg" alt="">
+        <span class="t">RICE<small>MANUFACTURING EDITION &middot; IN DEVELOPMENT</small></span>
+      </div>
+      <div class="foot-nav">
+        <a href="index.html">Overview</a>
+        <a href="framework.html">Framework</a>
+        <a href="../index.html">FSI Edition</a>
+        <a href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      </div>
+    </div>
+    <p class="fine">RICE-MFG — MANUFACTURING EDITION &middot; IN ACTIVE DEVELOPMENT &middot; &copy; MJ LEE 2025&ndash;2026 &middot; NOT VENDOR-AFFILIATED. NOT YET A COMPLETE STANDARD — OBJECTIVES ARE BEING BENCHMARKED AND VALIDATED PROGRESSIVELY. DO NOT CITE AS FINAL UNTIL MARKED COMPLETE.</p>
+  </div>
+</footer>
+
+<script defer src="../assets/vendor/gsap.min.js"></script>
+<script defer src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="../assets/vendor/lenis.min.js"></script>
+<script type="module" src="../assets/vendor/bg3d.mjs"></script>
+<script defer src="../js/app.js"></script>
+<script defer src="../js/motion.js"></script>
+</body>
+</html>

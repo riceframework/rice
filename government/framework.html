@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework Draft — RICE Government Edition</title>
+<meta name="description" content="RICE-GOV framework draft: Governance & Risk Oversight benchmarked against Cybersecurity Act 2024 and the PDPA-government accountability gap. Remaining pillars in active development.">
+<link rel="icon" href="../assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="inner" data-edition="RICE-GOV">
+
+<div class="sitebg" id="sitebg" aria-hidden="true">
+  <video id="bgvid" autoplay muted loop playsinline preload="auto" crossorigin="anonymous"></video>
+  <canvas id="netbg"></canvas>
+  <div class="veil"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="index.html">
+      <img src="../assets/rice-seal-gold.svg" alt="RICE seal">
+      <span class="t">RICE<small>GOVERNMENT EDITION</small></span>
+    </a>
+    <div class="sector-switch" id="sectorSwitch" aria-label="Sector edition">
+      <button class="sector-switch-btn" id="sectorSwitchBtn" aria-expanded="false">
+        <span class="dot"></span><span id="sectorSwitchLabel">Government Edition</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <nav class="sector-switch-menu" id="sectorSwitchMenu" aria-hidden="true">
+            <div class="sector-switch-phase">Phase 1</div>
+            <a href="../index.html">FSI<span class="stat">LIVE</span></a>
+            <div class="sector-switch-phase">Phase 2</div>
+            <a href="../healthcare/index.html">Healthcare<span class="stat">9/9 DRAFTED</span></a>
+            <a href="index.html" aria-current="page">Government<span class="stat">9/9 DRAFTED</span></a>
+            <a href="../manufacturing/index.html">Manufacturing<span class="stat">9/9 DRAFTED</span></a>
+            <div class="sector-switch-phase">Phase 3</div>
+            <a href="#" class="locked" tabindex="-1">Media &amp; Digital<span class="stat">PLANNED</span></a>
+            <a href="#" class="locked" tabindex="-1">Education<span class="stat">PLANNED</span></a>
+            <a href="../sectors.html">More NCII sectors<span class="stat">ROADMAP</span></a>
+      </nav>
+    </div>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="framework.html" aria-current="page">Framework</a>
+      <a href="../index.html">↑ FSI Edition</a>
+      <a href="../sectors.html">Sectors</a>
+      <a href="../assess.html">Self-Assessment</a>
+      <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:56px">
+  <div class="wrap">
+    <div class="hero-meta">
+      <b>RICE-GOV</b><span class="dot"></span><span>Framework draft</span><span class="dot"></span><span>9 of 9 pillars drafted — pending real-world validation</span>
+    </div>
+    <h1 style="font-size:clamp(30px,4.4vw,52px)">The standard, rebuilt for public trust.</h1>
+    <p class="lede">P1 — Governance &amp; Risk Oversight is benchmarked against Cybersecurity Act 2024 (Act 854) and grounded in confirmed Auditor-General findings — not the debunked mega-leak claims that dominate headlines — and marked <span class="m" style="color:var(--gold)">◆</span> where RICE-GOV sets a requirement no existing framework does. Remaining pillars follow as benchmarking deepens.</p>
+  </div>
+</header>
+
+<section class="sec last" style="padding-top:48px">
+  <div class="wrap">
+    <div class="toolbar">
+      <div class="search"><span class="sk">/</span><input id="objSearch" type="search" placeholder="Search objectives, controls, systems…" aria-label="Search objectives"></div>
+      <button class="fchip" data-f="all" aria-pressed="true">ALL</button>
+      <button class="fchip" data-f="rice" aria-pressed="false">◆ RICE-GOV SPECIFIC</button>
+      <button class="fchip" data-f="act854" aria-pressed="false">CYBERSECURITY ACT 2024</button>
+      <button class="fchip" data-f="pdpagap" aria-pressed="false">PDPA GAP-FILL</button>
+      <div class="xall">
+        <button id="expandAll">Expand all</button>
+        <button id="collapseAll">Collapse all</button>
+      </div>
+    </div>
+    <p class="result-note" id="resultNote"></p>
+
+    <!-- ============ P1 — DRAFTED ============ -->
+    <details class="pillar" id="p1" open>
+      <summary>
+        <span class="pid">P1<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Governance &amp; Risk Oversight</h3><span class="tag">DATA CONSOLIDATION RISK · CITIZEN TRUST · CROSS-AGENCY ACCOUNTABILITY</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">The foundation pillar — but in government, risk appetite has to answer for citizen trust and legal accountability that the law itself hasn't fully assigned yet. Draft v0.1, benchmarked against Cybersecurity Act 2024 and confirmed Auditor-General findings.</p>
+        <div class="objs">
+          <div class="obj" data-maps="act854 rice"><button class="oid" title="Copy control ID">P1.01</button><div><p class="ot">Establish a Government Digital Security Governance framework with named ministerial or agency-head accountability — not diffuse ownership across vendors and departments</p><div class="maps"><span class="chip">Cybersecurity Act 2024 (Act 854)</span><span class="chip u">◆ RICE-GOV</span></div><p class="unote">Named-accountability requirement — MySejahtera's Auditor-General findings show what happens when ownership of a citizen-facing system is unclear: a third-party-held privileged account went unmonitored for days</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.02</button><div><p class="ot">Define risk appetite weighted by citizen-trust and social-stability impact, not system uptime alone</p><div class="maps"><span class="chip u">◆ RICE-GOV</span></div><p class="unote">Trust-weighted risk scoring — adapted from RICE-HC's patient-safety weighting; for government, the equivalent harm is erosion of public confidence in digital services</p></div></div>
+          <div class="obj" data-maps="pdpagap rice"><button class="oid" title="Copy control ID">P1.03</button><div><p class="ot">Voluntarily apply PDPA-equivalent data protection obligations to all citizen-facing systems, pending legal reform closing the government exemption</p><div class="maps"><span class="chip u">◆ RICE-GOV</span></div><p class="unote">The core gap-fill objective — Malaysia's PDPA 2010 does not legally bind federal or state government entities. PADU, MySejahtera, and MyJPJ currently operate outside the accountability regime a private company would face for the same data.</p></div></div>
+          <div class="obj" data-maps="act854 rice"><button class="oid" title="Copy control ID">P1.04</button><div><p class="ot">Eliminate standing privileged-access accounts; require time-bound, logged access grants with mandatory revocation within 24 hours of task completion</p><div class="maps"><span class="chip">Cybersecurity Act 2024 (Act 854)</span><span class="chip u">◆ RICE-GOV</span></div><p class="unote">Directly responsive to the confirmed 2021 Auditor-General finding: a third-party "Super Admin" account on MySejahtera downloaded 3 million records over four days and wasn't revoked until two days after the final download</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.05</button><div><p class="ot">Formalise cross-agency data-sharing agreements with mandatory access logging for any system drawing from national-database-class infrastructure</p><div class="maps"><span class="chip u">◆ RICE-GOV</span></div><p class="unote">Cross-agency governance — Malaysia's digital ID strategy is actively consolidating PADU, MySejahtera, MyJPJ, MyGov, and LHDN; no framework currently governs the access boundaries between them</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.06</button><div><p class="ot">Commission independent security assessment and publish a public transparency summary before any major citizen-facing system launch</p><div class="maps"><span class="chip u">◆ RICE-GOV</span></div><p class="unote">Proactive trust-building, not reactive reassurance — PADU's adoption stalled at 9.24M of a 22M target partly over unaddressed public security concerns; CyberSecurity Malaysia's March 2024 statement came only after public pressure</p></div></div>
+          <div class="obj" data-maps="act854"><button class="oid" title="Copy control ID">P1.07</button><div><p class="ot">Comply with Cybersecurity Act 2024 (Act 854) NCII obligations for the Government sector — incident notification, risk assessment, and audit cadence</p><div class="maps"><span class="chip">Cybersecurity Act 2024 (Act 854)</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.08</button><div><p class="ot">Align RICE maturity model scoring to existing public-accountability reporting cadence — Auditor-General and Parliamentary review cycles</p><div class="maps"><span class="chip u">◆ RICE-GOV</span></div><p class="unote">RICE Maturity Model, mapped to a mechanism that already exists and already works — the Auditor-General's reports are how MySejahtera's failures actually came to light</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.09</button><div><p class="ot">Address administration and political-cycle rotation risk — maintain institutional security memory across minister and agency-head transitions</p><div class="maps"><span class="chip u">◆ RICE-GOV</span></div><p class="unote">Rotation-resilient governance, adapted from RICE-FSI P1.08 — government leadership turnover happens on an electoral cycle, an even shorter horizon than corporate C-suite rotation</p></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls (draft)</h4>
+            <ul>
+              <li>Named accountable owner per citizen-facing system, published, not just internally documented</li>
+              <li>Privileged-access register with mandatory expiry — zero standing "Super Admin" style accounts</li>
+              <li>Cross-agency data-sharing agreement template with logged access boundaries</li>
+              <li>Pre-launch independent security assessment + public transparency summary</li>
+              <li>RICE-GOV Maturity Model scoring aligned to Auditor-General reporting cycle</li>
+            </ul>
+          </div>
+          <div>
+            <h4>What RICE-GOV benchmarks against (draft)</h4>
+            <ul>
+              <li>Cybersecurity Act 2024 (Act 854) — Government NCII sector obligations</li>
+              <li>Auditor-General of Malaysia annual reports — the working precedent for what public accountability actually looks like</li>
+              <li>PDPA 2010 — cited for its scope gap, not its protections, since it doesn't bind government</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P2–P9 — IN DEVELOPMENT ============ -->
+    <details class="pillar" id="p2">
+      <summary>
+        <span class="pid">P2<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Threat Detection & Intelligence</h3><span class="tag">NACSA ADVISORIES · SUPER-APP MONITORING · CROSS-AGENCY INTEL</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — detection has to span a consolidating "super app" architecture, not a single agency's perimeter.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.01</button><div><p class="ot">Integrate NACSA threat advisories into agency-level monitoring</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.02</button><div><p class="ot">Deploy centralised logging across citizen-facing super-app components — PADU, MySejahtera, MyJPJ integration layer</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Centralised logging across consolidated systems — the current architecture links agencies without a shared visibility layer to match</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.03</button><div><p class="ot">Monitor for anomalous bulk data access, directly responsive to the confirmed MySejahtera Super Admin finding</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">A direct response to the 2021 Auditor-General finding — bulk downloads by privileged accounts should trigger real-time alerting, not be discovered years later in an audit</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.04</button><div><p class="ot">Establish an inter-agency threat intelligence sharing protocol</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.05</button><div><p class="ot">Monitor for credential-stuffing and account-takeover attempts against citizen-facing portals</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p3">
+      <summary>
+        <span class="pid">P3<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Identity & Access Governance</h3><span class="tag">ZERO STANDING ACCESS · MYDIGITAL ID · CIVIL SERVANT MFA</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — identity governance closes the exact gap the Auditor-General already found.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.01</button><div><p class="ot">Eliminate standing privileged accounts across all citizen-data systems</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Ties directly to P1.04 — the finding that created this pillar in the first place</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.02</button><div><p class="ot">Integrate MyDigital ID as the standard citizen authentication layer, deprecating fragmented per-agency logins</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Consolidated citizen authentication — fewer, better-governed identity systems beat many loosely-secured ones</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.03</button><div><p class="ot">Enforce MFA for all civil-servant access to citizen-data systems</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.04</button><div><p class="ot">Time-bound and log all third-party vendor access to government databases</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.05</button><div><p class="ot">Conduct quarterly access reviews for any system holding IC-number-linked data</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p4">
+      <summary>
+        <span class="pid">P4<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Incident Response & Resilience</h3><span class="tag">ACT 854 NOTIFICATION · CROSS-AGENCY BREACH COORDINATION · PUBLIC DISCLOSURE</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — a breach in one linked system erodes trust in all of them, so coordination and disclosure discipline matter as much as containment.</p>
+        <div class="objs">
+          <div class="obj" data-maps="act854"><button class="oid" title="Copy control ID">P4.01</button><div><p class="ot">Establish an incident response plan meeting Cybersecurity Act 2024 (Act 854) notification timelines</p><div class="maps"><span class="chip">Cybersecurity Act 2024 (Act 854)</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.02</button><div><p class="ot">Define a cross-agency breach coordination protocol — a breach in one system affects trust in every linked system</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Trust is shared infrastructure across PADU/MySejahtera/MyJPJ-class systems even when the databases aren't</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.03</button><div><p class="ot">Conduct an annual ransomware tabletop exercise for critical citizen-service systems</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.04</button><div><p class="ot">Establish a proactive public communication protocol for confirmed incidents</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Proactive disclosure discipline — the pattern seen in past incidents is delayed or defensive response; RICE-GOV treats fast, honest disclosure as the control</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.05</button><div><p class="ot">Define RTO/RPO for citizen-facing services weighted by social-disruption impact</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p5">
+      <summary>
+        <span class="pid">P5<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Data Security & Privacy</h3><span class="tag">PDPA-EQUIVALENT CONTROLS · DATA CLASSIFICATION · DPIA</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — this pillar is where the PDPA gap becomes operational, not just a governance statement.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.01</button><div><p class="ot">Apply PDPA-equivalent encryption controls voluntarily across all citizen-data systems, at rest and in transit</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Operationalises P1.03 — the voluntary-compliance commitment has to show up as an actual technical control, not just a policy statement</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.02</button><div><p class="ot">Classify data across consolidated systems — PADU, MySejahtera, MyJPJ — by sensitivity tier</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.03</button><div><p class="ot">Restrict biometric data storage and access to the minimum number of systems necessary</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.04</button><div><p class="ot">Define a data retention and deletion schedule for citizen records, avoiding indefinite retention by default</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.05</button><div><p class="ot">Conduct a Data Protection Impact Assessment before any new cross-agency data-sharing initiative</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">DPIA as a gating step — the kind of upfront assessment PADU's rollout would have benefited from before public trust became the story</p></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p6">
+      <summary>
+        <span class="pid">P6<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Supply Chain & Third-Party Risk</h3><span class="tag">NACSA LICENSING · COMPETITIVE TENDER · THIRD-PARTY MANAGED SYSTEMS</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — procurement discipline is itself a security control when a single vendor arrangement can become a national talking point.</p>
+        <div class="objs">
+          <div class="obj" data-maps="act854"><button class="oid" title="Copy control ID">P6.01</button><div><p class="ot">Require NACSA-licensed vendors for all cybersecurity services engaged</p><div class="maps"><span class="chip">Cybersecurity Act 2024 (Act 854)</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.02</button><div><p class="ot">Formalise contractual security requirements for third-party-managed citizen systems</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Precedent: MySejahtera's third-party management arrangement drew parliamentary scrutiny over both procurement process and security accountability</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.03</button><div><p class="ot">Mandate open, competitive tender for security-critical system vendors, avoiding sole-source appointments without security review</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Procurement-as-governance — how a vendor is selected is itself a security control when the system will hold tens of millions of citizens' data</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.04</button><div><p class="ot">Establish a vendor offboarding procedure with full credential and access revocation</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.05</button><div><p class="ot">Require an SBOM for critical citizen-facing application vendors</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p7">
+      <summary>
+        <span class="pid">P7<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Infrastructure Best Practices</h3><span class="tag">NCII HARDENING · ZERO TRUST INTER-AGENCY · PATCH SLA</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — infrastructure controls for systems legally designated as national critical infrastructure.</p>
+        <div class="objs">
+          <div class="obj" data-maps="act854"><button class="oid" title="Copy control ID">P7.01</button><div><p class="ot">Harden national-critical-infrastructure systems per Act 854 NCII requirements</p><div class="maps"><span class="chip">Cybersecurity Act 2024 (Act 854)</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.02</button><div><p class="ot">Segment citizen-facing systems from internal government administrative networks</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.03</button><div><p class="ot">Apply zero-trust network architecture for inter-agency data connections</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Zero-trust between agencies, not just within them — the connective tissue of the super-app architecture is where trust currently is assumed rather than verified</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.04</button><div><p class="ot">Maintain a patch management SLA for internet-facing government systems</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.05</button><div><p class="ot">Define certificate lifecycle management for inter-agency API integrations</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p8">
+      <summary>
+        <span class="pid">P8<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Secure Application Ecosystem</h3><span class="tag">SECURE SDLC · PRE-LAUNCH PENTEST · CROSS-SYSTEM API TESTING</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — application security discipline applied before launch, not discovered after.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.01</button><div><p class="ot">Apply secure SDLC to all citizen-facing application development, in-house and outsourced</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.02</button><div><p class="ot">Conduct independent penetration testing before major system launches</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Ties to P1.06 — pre-launch assessment as standard practice, not a reactive measure taken only after public pressure</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.03</button><div><p class="ot">Harden authentication for all citizen-facing portals against credential-stuffing attacks</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.04</button><div><p class="ot">Test cross-system API integrations — PADU/MySejahtera/MyJPJ-class connections — for authorization flaws</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">The integration points between consolidated systems are exactly where an authorization flaw would have the widest blast radius</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.05</button><div><p class="ot">Conduct regular vulnerability scanning of public-facing government web assets</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p9">
+      <summary>
+        <span class="pid">P9<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Emerging Threat Horizon</h3><span class="tag">AI DISINFORMATION · DEEPFAKES · POST-QUANTUM NATIONAL ID</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — the frontier risks for government are as much about information integrity as system security.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.01</button><div><p class="ot">Assess AI-driven disinformation risk targeting government communication channels</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Disinformation-readiness as a security objective — a government's information channels are now an attack surface in their own right</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.02</button><div><p class="ot">Begin post-quantum cryptography migration planning for long-lived national identity data</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">National identity data — MyKad, biometrics — is relevant for decades; "harvest now, decrypt later" risk applies at national scale</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.03</button><div><p class="ot">Monitor deepfake risk in the context of official government communications and public figures</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.04</button><div><p class="ot">Assess OT/cyber-physical risk for critical infrastructure under Act 854 NCII designation</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.05</button><div><p class="ot">Establish an AI governance framework for any government use of generative AI in citizen services</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <img src="../assets/rice-seal-gold.svg" alt="">
+        <span class="t">RICE<small>GOVERNMENT EDITION &middot; IN DEVELOPMENT</small></span>
+      </div>
+      <div class="foot-nav">
+        <a href="index.html">Overview</a>
+        <a href="framework.html">Framework</a>
+        <a href="../index.html">FSI Edition</a>
+        <a href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      </div>
+    </div>
+    <p class="fine">RICE-GOV — GOVERNMENT EDITION &middot; IN ACTIVE DEVELOPMENT &middot; &copy; MJ LEE 2025&ndash;2026 &middot; NOT VENDOR-AFFILIATED, NOT GOVERNMENT-AFFILIATED. NOT YET A COMPLETE STANDARD — OBJECTIVES ARE BEING BENCHMARKED AND VALIDATED PROGRESSIVELY. DO NOT CITE AS FINAL UNTIL MARKED COMPLETE.</p>
+  </div>
+</footer>
+
+<script defer src="../assets/vendor/gsap.min.js"></script>
+<script defer src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="../assets/vendor/lenis.min.js"></script>
+<script type="module" src="../assets/vendor/bg3d.mjs"></script>
+<script defer src="../js/app.js"></script>
+<script defer src="../js/motion.js"></script>
+</body>
+</html>

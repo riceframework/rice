@@ -31,9 +31,9 @@
             <div class="sector-switch-phase">Phase 1</div>
             <a href="../index.html">FSI<span class="stat">LIVE</span></a>
             <div class="sector-switch-phase">Phase 2</div>
-            <a href="index.html" aria-current="page">Healthcare<span class="stat">P1 DRAFTED</span></a>
-            <a href="#" class="locked" tabindex="-1">Government<span class="stat">PLANNED</span></a>
-            <a href="#" class="locked" tabindex="-1">Manufacturing<span class="stat">PLANNED</span></a>
+            <a href="index.html" aria-current="page">Healthcare<span class="stat">9/9 DRAFTED</span></a>
+            <a href="../government/index.html">Government<span class="stat">9/9 DRAFTED</span></a>
+            <a href="../manufacturing/index.html">Manufacturing<span class="stat">9/9 DRAFTED</span></a>
             <div class="sector-switch-phase">Phase 3</div>
             <a href="#" class="locked" tabindex="-1">Media &amp; Digital<span class="stat">PLANNED</span></a>
             <a href="#" class="locked" tabindex="-1">Education<span class="stat">PLANNED</span></a>
@@ -46,6 +46,7 @@
       <a href="framework.html" aria-current="page">Framework</a>
       <a href="../index.html">↑ FSI Edition</a>
       <a href="../sectors.html">Sectors</a>
+      <a href="../assess.html">Self-Assessment</a>
       <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
     </div>
   </div>
@@ -54,7 +55,7 @@
 <header class="hero" style="padding-bottom:56px">
   <div class="wrap">
     <div class="hero-meta">
-      <b>RICE-HC</b><span class="dot"></span><span>Framework draft</span><span class="dot"></span><span>1 of 9 pillars benchmarked</span>
+      <b>RICE-HC</b><span class="dot"></span><span>Framework draft</span><span class="dot"></span><span>9 of 9 pillars drafted — pending real-world validation</span>
     </div>
     <h1 style="font-size:clamp(30px,4.4vw,52px)">The standard, rebuilt for healthcare.</h1>
     <p class="lede">P1 — Governance &amp; Risk Oversight is benchmarked against HIPAA Security Rule, HITRUST CSF, and Malaysian PDPA / APHM code of practice, and marked <span class="m" style="color:var(--gold)">◆</span> where RICE-HC sets a requirement no existing framework does. Remaining pillars follow as sector exposure deepens — see status below.</p>
@@ -80,7 +81,7 @@
     <!-- ============ P1 — DRAFTED ============ -->
     <details class="pillar" id="p1" open>
       <summary>
-        <span class="pid">P1</span>
+        <span class="pid">P1<span class="draft-badge">DRAFT</span></span>
         <span class="pt"><h3>Governance &amp; Risk Oversight</h3><span class="tag">CLINICAL-RISK-WEIGHTED · BOARD ACCOUNTABILITY · PATIENT SAFETY</span></span>
         <span class="tog" aria-hidden="true"></span>
       </summary>
@@ -120,14 +121,149 @@
     </details>
 
     <!-- ============ P2–P9 — IN DEVELOPMENT ============ -->
-    <div class="pillar-stub" data-pid="P2"><span class="pillar-stub-name">Threat Detection &amp; Intelligence<span class="pillar-stub-note">Benchmarking: HHS Healthcare Cybersecurity Performance Goals, HITRUST domains 06–07</span></span></div>
-    <div class="pillar-stub" data-pid="P3"><span class="pillar-stub-name">Identity &amp; Access Governance<span class="pillar-stub-note">Benchmarking: HIPAA §164.312(d), clinical single-sign-on and break-glass access patterns</span></span></div>
-    <div class="pillar-stub" data-pid="P4"><span class="pillar-stub-name">Incident Response &amp; Resilience<span class="pillar-stub-note">Benchmarking: HIPAA 72-hour restoration mandate (proposed), ransomware-specific clinical continuity planning</span></span></div>
-    <div class="pillar-stub" data-pid="P5"><span class="pillar-stub-name">Data Security &amp; Privacy<span class="pillar-stub-note">Benchmarking: PHI lifecycle security, PDPA sensitive-data provisions, cross-border health data transfer</span></span></div>
-    <div class="pillar-stub" data-pid="P6"><span class="pillar-stub-name">Supply Chain &amp; Third-Party Risk<span class="pillar-stub-note">Benchmarking: MDS2 vendor disclosure, medical device SBOM requirements</span></span></div>
-    <div class="pillar-stub" data-pid="P7"><span class="pillar-stub-name">Infrastructure Best Practices<span class="pillar-stub-note">Benchmarking: IEC 80001-1 (risk management for IT networks incorporating medical devices)</span></span></div>
-    <div class="pillar-stub" data-pid="P8"><span class="pillar-stub-name">Secure Application Ecosystem<span class="pillar-stub-note">Benchmarking: health IT / patient-portal application security, telemedicine platform hardening</span></span></div>
-    <div class="pillar-stub" data-pid="P9"><span class="pillar-stub-name">Emerging Threat Horizon<span class="pillar-stub-note">Benchmarking: IEC 81001-5-1, FDA Secure Product Development Framework, IoMT-specific AI diagnostics risk</span></span></div>
+    <details class="pillar" id="p2">
+      <summary>
+        <span class="pid">P2<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Threat Detection & Intelligence</h3><span class="tag">SIEM · HC3 ADVISORIES · CLINICAL ANOMALY DETECTION</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — detection tuned for clinical environments, not generic enterprise IT.</p>
+        <div class="objs">
+          <div class="obj" data-maps="hitrust"><button class="oid" title="Copy control ID">P2.01</button><div><p class="ot">Deploy SIEM with healthcare-specific threat use cases — ransomware precursors, anomalous EHR access</p><div class="maps"><span class="chip">HITRUST 06.a</span></div></div></div>
+          <div class="obj" data-maps="hitrust"><button class="oid" title="Copy control ID">P2.02</button><div><p class="ot">Integrate HHS Health Sector Cybersecurity Coordination Center (HC3) threat advisories into monitoring</p><div class="maps"><span class="chip">HITRUST 07.a</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.03</button><div><p class="ot">Monitor for anomalous PHI access patterns — break-glass overuse, bulk record pulls</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Clinical-access-pattern monitoring — a generic SIEM rule set misses what looks abnormal specifically for a hospital</p></div></div>
+          <div class="obj" data-maps="hitrust"><button class="oid" title="Copy control ID">P2.04</button><div><p class="ot">Deploy network detection across clinical VLANs, including medical device network segments</p><div class="maps"><span class="chip">HITRUST 06.b</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P2.05</button><div><p class="ot">Establish 24/7 monitoring coverage or MSSP arrangement for after-hours clinical operations</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Clinical operations run continuously — detection coverage has to match, which most SMB hospitals underinvest in</p></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p3">
+      <summary>
+        <span class="pid">P3<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Identity & Access Governance</h3><span class="tag">ROLE-BASED CLINICAL ACCESS · BREAK-GLASS · NON-HUMAN IDENTITY</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — access governance has to accommodate emergency clinical workflows without becoming the excuse for over-permissioning.</p>
+        <div class="objs">
+          <div class="obj" data-maps="hipaa"><button class="oid" title="Copy control ID">P3.01</button><div><p class="ot">Implement access control aligned to clinical role — physician, nurse, admin — not generic RBAC tiers</p><div class="maps"><span class="chip">HIPAA §164.312(a)</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.02</button><div><p class="ot">Deploy break-glass emergency access with mandatory post-access review within 24 hours</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Break-glass has to exist for patient safety — the gap in most deployments is nobody reviews what it was used for afterward</p></div></div>
+          <div class="obj" data-maps="hipaa"><button class="oid" title="Copy control ID">P3.03</button><div><p class="ot">Enforce MFA for all remote and privileged access, including shared clinical workstations where feasible</p><div class="maps"><span class="chip">HIPAA §164.312(d)</span></div></div></div>
+          <div class="obj" data-maps="hitrust"><button class="oid" title="Copy control ID">P3.04</button><div><p class="ot">Automate access de-provisioning tied to the credentialing system for clinical staff turnover</p><div class="maps"><span class="chip">HITRUST 05.j</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P3.05</button><div><p class="ot">Govern non-human identities — device certificates, EHR service accounts, HL7/FHIR integration engines</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Non-human identity governance — the fastest-growing, least-audited access category in any modern hospital IT estate</p></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p4">
+      <summary>
+        <span class="pid">P4<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Incident Response & Resilience</h3><span class="tag">CLINICAL CONTINUITY · RANSOMWARE PLAYBOOK · PATIENT-SAFETY RTO</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — incident response has to protect patient care continuity first, system uptime second.</p>
+        <div class="objs">
+          <div class="obj" data-maps="hitrust"><button class="oid" title="Copy control ID">P4.01</button><div><p class="ot">Establish a clinical-continuity incident response plan with defined downtime procedures for critical care areas</p><div class="maps"><span class="chip">HITRUST 09.a</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.02</button><div><p class="ot">Define a ransomware-specific playbook with offline/paper-based fallback for patient care continuity</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Paper-fallback readiness — the difference between a hospital that keeps treating patients during an outage and one that can't</p></div></div>
+          <div class="obj" data-maps="hipaa"><button class="oid" title="Copy control ID">P4.03</button><div><p class="ot">Meet HIPAA breach notification timelines with an internal escalation clock faster than the regulatory deadline</p><div class="maps"><span class="chip">HIPAA §164.408</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.04</button><div><p class="ot">Conduct joint clinical-and-IT tabletop exercises annually — not an IT-only drill</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P4.05</button><div><p class="ot">Define RTO/RPO per system tier, weighted by patient-safety criticality rather than business criticality alone</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Patient-safety-weighted recovery objectives — an EHR outage and a payroll-system outage are not equivalent, and RTO targets should say so</p></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p5">
+      <summary>
+        <span class="pid">P5<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Data Security & Privacy</h3><span class="tag">PHI ENCRYPTION · CROSS-BORDER TRANSFER · DE-IDENTIFICATION</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — PHI carries lifetime sensitivity a financial record doesn't; controls are built around that asymmetry.</p>
+        <div class="objs">
+          <div class="obj" data-maps="hipaa"><button class="oid" title="Copy control ID">P5.01</button><div><p class="ot">Encrypt PHI at rest and in transit across all systems, including legacy medical devices where feasible</p><div class="maps"><span class="chip">HIPAA §164.312(e)</span></div></div></div>
+          <div class="obj" data-maps="hitrust"><button class="oid" title="Copy control ID">P5.02</button><div><p class="ot">Implement DLP tuned for PHI patterns — MRNs, diagnosis codes — not generic PII signatures</p><div class="maps"><span class="chip">HITRUST 09.m</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.03</button><div><p class="ot">Map cross-border health data transfers — cloud EHR, telemedicine — against PDPA transfer restrictions</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Cross-border health-data mapping — a routine cloud-EHR migration can silently become a PDPA transfer violation</p></div></div>
+          <div class="obj" data-maps="hipaa"><button class="oid" title="Copy control ID">P5.04</button><div><p class="ot">De-identify data used for research and analytics per HIPAA Safe Harbor or Expert Determination method</p><div class="maps"><span class="chip">HIPAA §164.514</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P5.05</button><div><p class="ot">Maintain a data retention and destruction schedule aligned to medical-record retention law, not generic IT policy</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p6">
+      <summary>
+        <span class="pid">P6<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Supply Chain & Third-Party Risk</h3><span class="tag">BAA · MDS2 · MEDICAL DEVICE SBOM</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — every connected device and every data-touching vendor is a clinical risk, not just a procurement line item.</p>
+        <div class="objs">
+          <div class="obj" data-maps="hipaa"><button class="oid" title="Copy control ID">P6.01</button><div><p class="ot">Require signed Business Associate Agreements for all vendors touching PHI, with defined breach liability terms</p><div class="maps"><span class="chip">HIPAA §164.502(e)</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.02</button><div><p class="ot">Collect a Manufacturer Disclosure Statement for Medical Device Security (MDS2) for every connected device</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">MDS2 collection as a standing procurement control — most hospitals only ask for this after an incident, not before purchase</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.03</button><div><p class="ot">Tier vendor risk by PHI access depth and clinical-system criticality</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.04</button><div><p class="ot">Verify NACSA licensing status for cybersecurity service providers before and during engagement</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Mirrors RICE-FSI P6.09 — Cybersecurity Act 2024 licensing liability applies to healthcare NCII entities the same way it applies to banks</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.05</button><div><p class="ot">Establish an SBOM requirement for EHR and medical device software from key vendors</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p7">
+      <summary>
+        <span class="pid">P7<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Infrastructure Best Practices</h3><span class="tag">CLINICAL/IT SEGMENTATION · IEC 80001-1 · LEGACY DEVICE HARDENING</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — infrastructure controls account for devices that can't always be patched on a normal IT cadence.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.01</button><div><p class="ot">Segment the clinical and medical-device network from the general administrative IT network</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.02</button><div><p class="ot">Apply the IEC 80001-1 risk management process for any new medical-device network integration</p><div class="maps"><span class="chip">IEC 80001-1</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.03</button><div><p class="ot">Maintain a patch management program that accounts for FDA-validated device patch windows</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Device patch-window accommodation — a medical device often cannot be patched the moment a CVE drops; the program has to say what happens in the gap</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.04</button><div><p class="ot">Harden legacy medical devices that cannot be patched via compensating network controls</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P7.05</button><div><p class="ot">Define certificate lifecycle management for device-to-EHR integrations</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p8">
+      <summary>
+        <span class="pid">P8<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Secure Application Ecosystem</h3><span class="tag">PATIENT PORTAL · TELEMEDICINE · HL7/FHIR SECURITY</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — the application layer now includes patient-facing software, not just internal clinical systems.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.01</button><div><p class="ot">Apply secure SDLC to in-house-developed clinical and patient-facing applications</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.02</button><div><p class="ot">Harden patient portal authentication against account-recovery abuse and credential stuffing</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.03</button><div><p class="ot">Secure telemedicine platform sessions end-to-end and verify vendor security posture before adoption</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.04</button><div><p class="ot">Test HL7/FHIR integration endpoints for injection and authorization flaws</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">HL7/FHIR-specific testing — these interoperability standards move PHI between systems constantly and are rarely covered by generic web app scanning</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P8.05</button><div><p class="ot">Conduct API security testing for any EHR-exposed API surface</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pillar" id="p9">
+      <summary>
+        <span class="pid">P9<span class="draft-badge">DRAFT</span></span>
+        <span class="pt"><h3>Emerging Threat Horizon</h3><span class="tag">AI DIAGNOSTICS · IOMT · POST-QUANTUM · FDA SPDF</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">Draft — the frontier for healthcare is connected devices and clinical AI, not just networked computers.</p>
+        <div class="objs">
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.01</button><div><p class="ot">Adopt FDA Secure Product Development Framework practices for any custom medical device software</p><div class="maps"><span class="chip">FDA SPDF</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.02</button><div><p class="ot">Assess AI-diagnostic tools for adversarial-input and data-poisoning risk before clinical deployment</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Clinical-AI-specific risk assessment — a poisoned diagnostic model is a patient-safety incident, not just a data-science quality problem</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.03</button><div><p class="ot">Begin post-quantum cryptography migration planning for long-lived genomic and medical record data</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Genomic and medical records outlive most encryption's useful life — "harvest now, decrypt later" risk is real for 50-year-relevant health data</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.04</button><div><p class="ot">Monitor IoMT/OT convergence risk as connected device volume grows across the facility</p><div class="maps"></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P9.05</button><div><p class="ot">Establish AI governance for clinical decision-support tools, including explainability requirements</p><div class="maps"></div></div></div>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
