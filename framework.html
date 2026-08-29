@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Framework — RICE</title>
-<meta name="description" content="The full RICE standard: 9 pillars, 80 objectives with citable control IDs, key controls, vendor alignment, and mappings to BNM RMiT, NIST CSF, CISA, OWASP and ISO 27001.">
+<meta name="description" content="The full RICE standard: 9 pillars, 82 objectives with citable control IDs, key controls, vendor alignment, and mappings to BNM RMiT, NIST CSF, CISA, OWASP and ISO 27001.">
 <link rel="icon" href="assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -23,6 +23,24 @@
       <img src="assets/rice-seal-gold.svg" alt="RICE seal">
       <span class="t">RICE<small>CYBERSECURITY ECOSYSTEM</small></span>
     </a>
+    <div class="sector-switch" id="sectorSwitch" aria-label="Sector edition">
+      <button class="sector-switch-btn" id="sectorSwitchBtn" aria-expanded="false">
+        <span class="dot"></span><span id="sectorSwitchLabel">FSI Edition</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <nav class="sector-switch-menu" id="sectorSwitchMenu" aria-hidden="true">
+            <div class="sector-switch-phase">Phase 1</div>
+            <a href="index.html" aria-current="page">FSI<span class="stat">LIVE</span></a>
+            <div class="sector-switch-phase">Phase 2</div>
+            <a href="healthcare/index.html">Healthcare<span class="stat">P1 DRAFTED</span></a>
+            <a href="#" class="locked" tabindex="-1">Government<span class="stat">PLANNED</span></a>
+            <a href="#" class="locked" tabindex="-1">Manufacturing<span class="stat">PLANNED</span></a>
+            <div class="sector-switch-phase">Phase 3</div>
+            <a href="#" class="locked" tabindex="-1">Media &amp; Digital<span class="stat">PLANNED</span></a>
+            <a href="#" class="locked" tabindex="-1">Education<span class="stat">PLANNED</span></a>
+            <a href="sectors.html">More NCII sectors<span class="stat">ROADMAP</span></a>
+      </nav>
+    </div>
     <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
     <div class="nav-links">
       <a href="index.html">Overview</a>
@@ -30,6 +48,7 @@
       <a href="landscape.html">Landscape</a>
       <a href="roadmap.html">Roadmap</a>
       <a href="about.html">Author</a>
+      <a href="sectors.html">Sectors</a>
       <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
     </div>
   </div>
@@ -38,7 +57,7 @@
 <header class="hero" style="padding-bottom:56px">
   <div class="wrap">
     <div class="hero-meta">
-      <b>§ 05</b><span class="dot"></span><span>RICE Deep Dives</span><span class="dot"></span><span>80 objectives · 10 domains</span>
+      <b>§ 05</b><span class="dot"></span><span>RICE Deep Dives</span><span class="dot"></span><span>82 objectives · 10 domains</span>
     </div>
     <h1 style="font-size:clamp(30px,4.4vw,52px)">The standard, pillar by pillar.</h1>
     <p class="lede">Every objective carries a citable control ID and is cross-referenced to BNM RMiT, NIST CSF, CISA, OWASP and ISO 27001 where coverage exists — and marked <span class="m" style="color:var(--gold)">◆</span> where RICE sets a requirement no existing framework does. Click any ID to copy it.</p>
@@ -79,8 +98,9 @@
           <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P1.04</button><div><p class="ot">Mandate cybersecurity literacy training at C-suite and board level annually</p><div class="maps"><span class="chip">BNM §13</span><span class="chip">NIST GV.RR</span><span class="chip">ISO A.6.3</span></div></div></div>
           <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P1.05</button><div><p class="ot">Establish a Technology Risk Committee with defined escalation thresholds</p><div class="maps"><span class="chip">BNM §4</span><span class="chip">NIST GV.OC</span><span class="chip">ISO A.5</span></div></div></div>
           <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.06</button><div><p class="ot">Align RICE maturity model scoring to board reporting — Levels 1–5 per pillar</p><div class="maps"><span class="chip u">◆ RICE</span></div><p class="unote">RICE Maturity Model — no equivalent in existing frameworks</p></div></div>
-          <div class="obj" data-maps="bnm iso"><button class="oid" title="Copy control ID">P1.07</button><div><p class="ot">Map all technology risk to regulatory obligations (BNM RMiT, PDPA, AMLA cyber provisions)</p><div class="maps"><span class="chip">BNM §4</span><span class="chip">ISO A.5</span></div></div></div>
+          <div class="obj" data-maps="bnm iso"><button class="oid" title="Copy control ID">P1.07</button><div><p class="ot">Map all technology risk to regulatory obligations (BNM RMiT, PDPA, AMLA cyber provisions, Cybersecurity Act 2024)</p><div class="maps"><span class="chip">BNM §4</span><span class="chip">ISO A.5</span></div></div></div>
           <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.08</button><div><p class="ot">Address C-suite rotation risk: maintain institutional cybersecurity memory via documented posture reports</p><div class="maps"><span class="chip u">◆ RICE</span></div><p class="unote">Rotation-resilient governance — gap in all existing frameworks</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.09</button><div><p class="ot">Comply with Cybersecurity Act 2024 (Act 854) NCII obligations — incident notification, annual risk assessment, and biennial audit cadence — layered on top of BNM RMiT, not in place of it</p><div class="maps"><span class="chip u">◆ RICE</span></div><p class="unote">Act 854 is a dual-track obligation for FSI entities designated as Banking &amp; Finance NCII: BNM RMiT and Act 854 apply simultaneously, with separate reporting timelines and separate penalty regimes. No existing framework maps this overlap explicitly.</p></div></div>
         </div>
         <div class="cv">
           <div>
@@ -305,6 +325,7 @@
           <div class="obj" data-maps="bnm rice"><button class="oid" title="Copy control ID">P6.06</button><div><p class="ot">Assess fourth-party risk: sub-contractors and cloud providers used by your vendors</p><div class="maps"><span class="chip">BNM §14</span><span class="chip u">&#9670; RICE</span></div><p class="unote">Fourth-party risk assessment — not addressed in any existing framework</p></div></div>
           <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.07</button><div><p class="ot">Conduct annual supply chain attack simulation (SolarWinds-type scenario)</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Supply chain attack simulation — RICE-only exercise type</p></div></div>
           <div class="obj" data-maps="bnm nist iso"><button class="oid" title="Copy control ID">P6.08</button><div><p class="ot">Define vendor offboarding procedures with credential revocation and access review</p><div class="maps"><span class="chip">BNM §14</span><span class="chip">NIST ID.SC</span><span class="chip">ISO A.5.19</span></div></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P6.09</button><div><p class="ot">Verify NACSA licensing status for all cybersecurity service providers (penetration testing, managed SOC monitoring) before and during engagement</p><div class="maps"><span class="chip u">&#9670; RICE</span></div><p class="unote">Cybersecurity Act 2024 (Act 854) places licensing liability on the NCII entity, not just the vendor — engaging an unlicensed provider is a compliance failure on your organisation. Document licence verification as a standing procurement control, reviewed at each contract renewal.</p></div></div>
         </div>
         <div class="cv">
           <div>

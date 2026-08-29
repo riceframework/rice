@@ -176,6 +176,30 @@
     });
   })();
 
+  /* ---------- sector switcher dropdown (interior/framework pages) ---------- */
+  (function initSectorSwitch() {
+    var wrap = document.getElementById('sectorSwitch');
+    var btn = document.getElementById('sectorSwitchBtn');
+    var menu = document.getElementById('sectorSwitchMenu');
+    if (!wrap || !btn || !menu) return;
+    function setOpen(open) {
+      wrap.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      menu.setAttribute('aria-hidden', String(!open));
+    }
+    function isOpen() { return wrap.classList.contains('open'); }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!isOpen());
+    });
+    document.addEventListener('click', function (e) {
+      if (isOpen() && !wrap.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
+
   /* ---------- nav: intensify on scroll ---------- */
   var navEl = document.querySelector('.nav');
   if (navEl) {
@@ -632,7 +656,8 @@
     var toastTimer;
     document.querySelectorAll('.obj .oid').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var id = 'RICE ' + btn.textContent.trim();
+        var edition = document.body.dataset.edition || 'RICE-FSI';
+        var id = edition + ' ' + btn.textContent.trim();
         function done() {
           toast.textContent = id + ' copied';
           toast.classList.add('show');

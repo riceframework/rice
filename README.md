@@ -51,3 +51,28 @@ assets/*.svg      RICE seal variants
 - New pillar/edition: copy a `<details class="pillar">` block and follow the ID pattern.
 
 © MJ Lee 2025–2026 · Not vendor-affiliated.
+
+
+## Sector editions (RICE v2, in progress)
+- `sectors.html` — hub page selling the shared architecture across editions
+- `healthcare/` — RICE-HC, Healthcare Edition. P1 (Governance) drafted and benchmarked; P2–P9 shown as "benchmarking" stubs pending real-world validation
+- Citation prefix is edition-aware: set via `data-edition` on `<body>` (defaults to `RICE-FSI` if absent — every existing FSI page needs no change)
+- Government and Manufacturing editions: not yet started, placeholder cards only on the hub
+- Control-ID numbering is independent per sector — RICE-FSI P5.03 and RICE-HC P5.03 are different objectives by design (see hub page for the citation-format explanation)
+
+
+## Phased sector roadmap (v2)
+Grounded in Malaysia's Cyber Security Act 2024 (Act 854) — 11 statutory NCII sectors.
+- **Phase 1 (shipped):** FSI — covers Banking & Finance NCII sector
+- **Phase 2 (in progress):** Healthcare (= Healthcare Services NCII, P1 drafted), Government, Manufacturing
+- **Phase 3 (roadmap):** Media & Digital (= Information/Communication & Digital NCII), Education (deliberate gap-fill, not an NCII sector), remaining 6 NCII sectors
+
+Sector switcher is a dropdown (`#sectorSwitch` / `.sector-switch-menu`) on every interior page's nav, and a matching `.vmenu-sector` list inside the homepage's glass menu popover — chosen over pills specifically because the list will keep growing.
+
+
+## Live gap-fix: Cybersecurity Act 2024 (Act 854)
+RICE-FSI now carries two new objectives closing the Act 854 gap identified during the v2 roadmap review:
+- **P1.09** — Act 854 NCII obligations (incident notification, annual risk assessment, biennial audit) layered on top of BNM RMiT
+- **P6.09** — NACSA cybersecurity service provider licensing verification for vendors
+
+Objective count is now 82 (was 80) — updated everywhere it's referenced: homepage stats strip, framework hero, meta descriptions, sectors hub. Framework name kept spelled out as "Cybersecurity Act 2024 (Act 854)" throughout, since the Act 854 shorthand isn't yet widely recognized.

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sector Editions — RICE</title>
+<meta name="description" content="One cybersecurity architecture, benchmarked per sector. RICE-FSI is live; Healthcare, Government, and Manufacturing editions are in progressive development.">
+<link rel="icon" href="assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="inner">
+
+<div class="sitebg" id="sitebg" aria-hidden="true">
+  <video id="bgvid" autoplay muted loop playsinline preload="auto" crossorigin="anonymous"></video>
+  <canvas id="netbg"></canvas>
+  <div class="veil"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/rice-seal-gold.svg" alt="RICE seal">
+      <span class="t">RICE<small>CYBERSECURITY ECOSYSTEM</small></span>
+    </a>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="framework.html">Framework</a>
+      <a href="landscape.html">Landscape</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="about.html">Author</a>
+      <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
+    </div>
+  </div>
+</nav>
+
+<section class="sector-hub">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx"><span class="n">SECTOR EDITIONS</span></div>
+      <h2 style="font-size:clamp(30px,4.6vw,50px)">One system. Many sectors.</h2>
+      <p class="sub" style="max-width:640px">The 9 pillars and the L1–L5 maturity model never change — that's the architecture. What changes underneath is the benchmark: each edition is re-cut against the standards, regulations, and real operating risks specific to its sector. Same discipline, different battlefield.</p>
+    </div>
+
+    <div class="sec-head" style="margin-top:56px">
+      <div class="idx"><span class="n">GROUNDED IN LAW</span></div>
+      <h2 style="font-size:clamp(22px,2.8vw,28px)">Malaysia's Cyber Security Act 2024 sets the map.</h2>
+      <p class="sub" style="max-width:680px">Act 854 (in force since 26 August 2024) legally designates 11 National Critical Information Infrastructure sectors, with penalties up to RM500,000 and 10 years' imprisonment for non-compliance. It layers on top of existing sector regulation rather than replacing it — a bank now answers to BNM RMiT <em style="font-style:italic;color:var(--ink)">and</em> Act 854 simultaneously. RICE's sector roadmap is mapped against this list, plus deliberate gap-fills where no regulation exists yet.</p>
+    </div>
+
+    <div class="sector-phase-head">
+      <span class="ph-n">01</span><span class="ph-t">Phase 1</span><span class="ph-s">SHIPPED</span>
+    </div>
+    <div class="sector-grid">
+      <a class="sector-card" href="index.html">
+        <span class="tag live">● LIVE — V1.0</span>
+        <h3>FSI Edition</h3>
+        <p>Covers the Banking &amp; Finance NCII sector. 9 pillars, 82 objectives, 23 RICE-unique controls. Benchmarked against BNM RMiT, NIST CSF, CISA, OWASP, and ISO 27001.</p>
+        <span class="go">Enter FSI Edition →</span>
+      </a>
+    </div>
+
+    <div class="sector-phase-head">
+      <span class="ph-n">02</span><span class="ph-t">Phase 2</span><span class="ph-s">IN PROGRESS</span>
+    </div>
+    <div class="sector-grid">
+      <a class="sector-card" href="healthcare/index.html">
+        <span class="tag">◐ IN DEVELOPMENT</span>
+        <h3>Healthcare Edition</h3>
+        <p>Covers the Healthcare Services NCII sector. P1 — Governance drafted against HIPAA, HITRUST CSF, and Malaysian PDPA. Remaining pillars underway.</p>
+        <span class="go">View progress →</span>
+      </a>
+      <div class="sector-card soon">
+        <span class="tag">○ PLANNED</span>
+        <h3>Government &amp; Critical Infrastructure</h3>
+        <p>Covers the Government NCII sector directly. Benchmarking not yet started.</p>
+        <span class="go">Not yet started</span>
+      </div>
+      <div class="sector-card soon">
+        <span class="tag">○ PLANNED</span>
+        <h3>Manufacturing</h3>
+        <p>Not an NCII sector on its own — scoped around Trade, Industry &amp; Economy plus OT/ICS convergence and IEC 62443 alignment. Benchmarking not yet started.</p>
+        <span class="go">Not yet started</span>
+      </div>
+    </div>
+
+    <div class="sector-phase-head">
+      <span class="ph-n">03</span><span class="ph-t">Phase 3</span><span class="ph-s">ROADMAP</span>
+    </div>
+    <div class="sector-grid">
+      <div class="sector-card soon">
+        <span class="tag">○ ROADMAP</span>
+        <h3>Media &amp; Digital</h3>
+        <p>Maps to the Information, Communication &amp; Digital NCII sector — broadcasters, press, and telcos share a regulatory home under Act 854.</p>
+        <span class="go">Not yet started</span>
+      </div>
+      <div class="sector-card soon">
+        <span class="tag">○ ROADMAP</span>
+        <h3>Education</h3>
+        <p>Not an NCII sector — a deliberate gap-fill, the same way Healthcare closes Malaysia's missing digital-health law. Student PII, campus ransomware, and research IP sit outside any current mandate.</p>
+        <span class="go">Not yet started</span>
+      </div>
+      <div class="sector-card soon">
+        <span class="tag">○ ROADMAP</span>
+        <h3>Remaining NCII sectors</h3>
+        <p>Transportation, Defence &amp; National Security, Water/Sewerage &amp; Waste, Energy, Agriculture &amp; Plantation, Science/Technology &amp; Innovation — six sectors, not yet scoped.</p>
+        <span class="go">Not yet started</span>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:88px">
+      <div class="idx"><span class="n">HOW A CONTROL ID READS</span></div>
+      <h2 style="font-size:clamp(22px,2.8vw,30px)">Citations are always edition-qualified.</h2>
+      <p class="sub" style="max-width:640px">Because the same pillar number can mean a different objective per sector, every citable ID carries its edition — <b style="color:var(--ink)">RICE-FSI P5.03</b> and <b style="color:var(--ink)">RICE-HC P5.03</b> are two different objectives, on purpose. Copy any control ID from either framework page and the edition tag comes with it.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <img src="assets/rice-seal-gold.svg" alt="">
+        <span class="t">RICE<small>CYBERSECURITY ECOSYSTEM</small></span>
+      </div>
+      <div class="foot-nav">
+        <a href="index.html">Overview</a>
+        <a href="framework.html">Framework</a>
+        <a href="landscape.html">Landscape</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="about.html">Author</a>
+        <a href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      </div>
+    </div>
+    <p class="fine">RICE &middot; MULTI-SECTOR CYBERSECURITY ECOSYSTEM &middot; &copy; MJ LEE 2025&ndash;2026 &middot; NOT VENDOR-AFFILIATED. ALL FRAMEWORKS AND PRODUCT NAMES ARE TRADEMARKS OF THEIR RESPECTIVE OWNERS.</p>
+  </div>
+</footer>
+
+<script defer src="assets/vendor/gsap.min.js"></script>
+<script defer src="assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="assets/vendor/lenis.min.js"></script>
+<script type="module" src="assets/vendor/bg3d.mjs"></script>
+<script defer src="js/app.js"></script>
+<script defer src="js/motion.js"></script>
+</body>
+</html>

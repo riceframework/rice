@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework Draft — RICE Healthcare Edition</title>
+<meta name="description" content="RICE-HC framework draft: Governance & Risk Oversight benchmarked against HIPAA, HITRUST CSF, and Malaysian PDPA. Remaining pillars in active development.">
+<link rel="icon" href="../assets/rice-seal-gold-on-cream.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="inner" data-edition="RICE-HC">
+
+<div class="sitebg" id="sitebg" aria-hidden="true">
+  <video id="bgvid" autoplay muted loop playsinline preload="auto" crossorigin="anonymous"></video>
+  <canvas id="netbg"></canvas>
+  <div class="veil"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-brand" href="index.html">
+      <img src="../assets/rice-seal-gold.svg" alt="RICE seal">
+      <span class="t">RICE<small>HEALTHCARE EDITION</small></span>
+    </a>
+    <div class="sector-switch" id="sectorSwitch" aria-label="Sector edition">
+      <button class="sector-switch-btn" id="sectorSwitchBtn" aria-expanded="false">
+        <span class="dot"></span><span id="sectorSwitchLabel">Healthcare Edition</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <nav class="sector-switch-menu" id="sectorSwitchMenu" aria-hidden="true">
+            <div class="sector-switch-phase">Phase 1</div>
+            <a href="../index.html">FSI<span class="stat">LIVE</span></a>
+            <div class="sector-switch-phase">Phase 2</div>
+            <a href="index.html" aria-current="page">Healthcare<span class="stat">P1 DRAFTED</span></a>
+            <a href="#" class="locked" tabindex="-1">Government<span class="stat">PLANNED</span></a>
+            <a href="#" class="locked" tabindex="-1">Manufacturing<span class="stat">PLANNED</span></a>
+            <div class="sector-switch-phase">Phase 3</div>
+            <a href="#" class="locked" tabindex="-1">Media &amp; Digital<span class="stat">PLANNED</span></a>
+            <a href="#" class="locked" tabindex="-1">Education<span class="stat">PLANNED</span></a>
+            <a href="../sectors.html">More NCII sectors<span class="stat">ROADMAP</span></a>
+      </nav>
+    </div>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="framework.html" aria-current="page">Framework</a>
+      <a href="../index.html">↑ FSI Edition</a>
+      <a href="../sectors.html">Sectors</a>
+      <a class="ext" href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">Connect ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:56px">
+  <div class="wrap">
+    <div class="hero-meta">
+      <b>RICE-HC</b><span class="dot"></span><span>Framework draft</span><span class="dot"></span><span>1 of 9 pillars benchmarked</span>
+    </div>
+    <h1 style="font-size:clamp(30px,4.4vw,52px)">The standard, rebuilt for healthcare.</h1>
+    <p class="lede">P1 — Governance &amp; Risk Oversight is benchmarked against HIPAA Security Rule, HITRUST CSF, and Malaysian PDPA / APHM code of practice, and marked <span class="m" style="color:var(--gold)">◆</span> where RICE-HC sets a requirement no existing framework does. Remaining pillars follow as sector exposure deepens — see status below.</p>
+  </div>
+</header>
+
+<section class="sec last" style="padding-top:48px">
+  <div class="wrap">
+    <div class="toolbar">
+      <div class="search"><span class="sk">/</span><input id="objSearch" type="search" placeholder="Search objectives, controls, vendors…" aria-label="Search objectives"></div>
+      <button class="fchip" data-f="all" aria-pressed="true">ALL</button>
+      <button class="fchip" data-f="rice" aria-pressed="false">◆ RICE-HC SPECIFIC</button>
+      <button class="fchip" data-f="hipaa" aria-pressed="false">HIPAA</button>
+      <button class="fchip" data-f="hitrust" aria-pressed="false">HITRUST</button>
+      <button class="fchip" data-f="pdpa" aria-pressed="false">PDPA-MY</button>
+      <div class="xall">
+        <button id="expandAll">Expand all</button>
+        <button id="collapseAll">Collapse all</button>
+      </div>
+    </div>
+    <p class="result-note" id="resultNote"></p>
+
+    <!-- ============ P1 — DRAFTED ============ -->
+    <details class="pillar" id="p1" open>
+      <summary>
+        <span class="pid">P1</span>
+        <span class="pt"><h3>Governance &amp; Risk Oversight</h3><span class="tag">CLINICAL-RISK-WEIGHTED · BOARD ACCOUNTABILITY · PATIENT SAFETY</span></span>
+        <span class="tog" aria-hidden="true"></span>
+      </summary>
+      <div class="pillar-body">
+        <p class="pillar-lede">The foundation pillar — but in healthcare, risk appetite has to be weighed against patient safety, not just financial exposure. Draft v0.1, benchmarked against HIPAA, HITRUST, and the Malaysian PDPA/APHM gap.</p>
+        <div class="objs">
+          <div class="obj" data-maps="hipaa hitrust rice"><button class="oid" title="Copy control ID">P1.01</button><div><p class="ot">Establish a Health Information Security Governance framework with joint clinical-leadership and board accountability</p><div class="maps"><span class="chip">HIPAA §164.308(a)(1)</span><span class="chip">HITRUST 00.a</span><span class="chip u">◆ RICE-HC</span></div><p class="unote">Joint clinical + IT governance sign-off — existing frameworks assign accountability to IT/compliance alone, not clinical leadership</p></div></div>
+          <div class="obj" data-maps="hipaa hitrust rice"><button class="oid" title="Copy control ID">P1.02</button><div><p class="ot">Define risk appetite weighted by patient-safety impact, not financial exposure alone</p><div class="maps"><span class="chip">HIPAA §164.308(a)(1)(ii)(A)</span><span class="chip">HITRUST 03.a</span><span class="chip u">◆ RICE-HC</span></div><p class="unote">Patient-safety-weighted risk scoring — no existing framework ties cyber risk appetite to clinical harm severity</p></div></div>
+          <div class="obj" data-maps="hipaa hitrust"><button class="oid" title="Copy control ID">P1.03</button><div><p class="ot">Implement continuous compliance monitoring beyond the annual HIPAA risk analysis cycle</p><div class="maps"><span class="chip">HIPAA §164.308(a)(8)</span><span class="chip">HITRUST 03.b</span></div></div></div>
+          <div class="obj" data-maps="hipaa hitrust"><button class="oid" title="Copy control ID">P1.04</button><div><p class="ot">Mandate cybersecurity and patient-data-handling literacy training for clinical and administrative staff annually</p><div class="maps"><span class="chip">HIPAA §164.308(a)(5)</span><span class="chip">HITRUST 01.b</span></div></div></div>
+          <div class="obj" data-maps="hitrust rice"><button class="oid" title="Copy control ID">P1.05</button><div><p class="ot">Establish a Digital Health Risk Committee with escalation to Medical Director and Board</p><div class="maps"><span class="chip">HITRUST 00.a</span><span class="chip u">◆ RICE-HC</span></div><p class="unote">Bridges clinical and IT governance — a structural gap HITRUST references but doesn't mandate</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.06</button><div><p class="ot">Align RICE-HC maturity model scoring to board and clinical-governance reporting — Levels 1–5 per pillar</p><div class="maps"><span class="chip u">◆ RICE-HC</span></div><p class="unote">RICE Maturity Model, carried over unchanged from RICE-FSI — the one element that stays identical across every sector</p></div></div>
+          <div class="obj" data-maps="pdpa rice"><button class="oid" title="Copy control ID">P1.07</button><div><p class="ot">Map technology risk to regulatory obligations: PDPA sensitive-data provisions, APHM code of practice, and pending Malaysian Cybersecurity Bill requirements</p><div class="maps"><span class="chip">PDPA (sensitive data)</span><span class="chip u">◆ RICE-HC</span></div><p class="unote">Interim gap-fill mapping — Malaysia currently has no dedicated digital-health security law; MOH's own digital health lead has confirmed the absence of a mandated standard</p></div></div>
+          <div class="obj" data-maps="rice"><button class="oid" title="Copy control ID">P1.08</button><div><p class="ot">Address clinical and IT leadership rotation risk — maintain institutional security memory across Medical Director / CISO transitions</p><div class="maps"><span class="chip u">◆ RICE-HC</span></div><p class="unote">Rotation-resilient governance, adapted from RICE-FSI P1.08 — healthcare leadership turnover carries the same institutional-memory risk</p></div></div>
+        </div>
+        <div class="cv">
+          <div>
+            <h4>Key Controls (draft)</h4>
+            <ul>
+              <li>Board- and Medical-Director-approved Digital Health Security Strategy, reviewed annually</li>
+              <li>Clinical Risk Register — patient-safety impact, likelihood, containment owner</li>
+              <li>RICE-HC Maturity Model scoring per pillar (1 = Aware → 5 = Optimising)</li>
+              <li>Regulatory mapping: PDPA sensitive-data provisions, APHM CoP, HIPAA where cross-border data applies</li>
+              <li>Annual clinical-leadership + board cybersecurity simulation exercise</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Vendor Alignment (draft)</h4>
+            <ul>
+              <li>Healthcare GRC: HITRUST MyCSF, Compliancy Group, Censinet, Clearwater</li>
+              <li>Clinical risk platforms: Protenus, CynergisTek — patient-data access analytics</li>
+              <li>Training: KnowBe4 Healthcare, HIPAA Exams — clinical-staff-specific modules</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ P2–P9 — IN DEVELOPMENT ============ -->
+    <div class="pillar-stub" data-pid="P2"><span class="pillar-stub-name">Threat Detection &amp; Intelligence<span class="pillar-stub-note">Benchmarking: HHS Healthcare Cybersecurity Performance Goals, HITRUST domains 06–07</span></span></div>
+    <div class="pillar-stub" data-pid="P3"><span class="pillar-stub-name">Identity &amp; Access Governance<span class="pillar-stub-note">Benchmarking: HIPAA §164.312(d), clinical single-sign-on and break-glass access patterns</span></span></div>
+    <div class="pillar-stub" data-pid="P4"><span class="pillar-stub-name">Incident Response &amp; Resilience<span class="pillar-stub-note">Benchmarking: HIPAA 72-hour restoration mandate (proposed), ransomware-specific clinical continuity planning</span></span></div>
+    <div class="pillar-stub" data-pid="P5"><span class="pillar-stub-name">Data Security &amp; Privacy<span class="pillar-stub-note">Benchmarking: PHI lifecycle security, PDPA sensitive-data provisions, cross-border health data transfer</span></span></div>
+    <div class="pillar-stub" data-pid="P6"><span class="pillar-stub-name">Supply Chain &amp; Third-Party Risk<span class="pillar-stub-note">Benchmarking: MDS2 vendor disclosure, medical device SBOM requirements</span></span></div>
+    <div class="pillar-stub" data-pid="P7"><span class="pillar-stub-name">Infrastructure Best Practices<span class="pillar-stub-note">Benchmarking: IEC 80001-1 (risk management for IT networks incorporating medical devices)</span></span></div>
+    <div class="pillar-stub" data-pid="P8"><span class="pillar-stub-name">Secure Application Ecosystem<span class="pillar-stub-note">Benchmarking: health IT / patient-portal application security, telemedicine platform hardening</span></span></div>
+    <div class="pillar-stub" data-pid="P9"><span class="pillar-stub-name">Emerging Threat Horizon<span class="pillar-stub-note">Benchmarking: IEC 81001-5-1, FDA Secure Product Development Framework, IoMT-specific AI diagnostics risk</span></span></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <img src="../assets/rice-seal-gold.svg" alt="">
+        <span class="t">RICE<small>HEALTHCARE EDITION &middot; IN DEVELOPMENT</small></span>
+      </div>
+      <div class="foot-nav">
+        <a href="index.html">Overview</a>
+        <a href="framework.html">Framework</a>
+        <a href="../index.html">FSI Edition</a>
+        <a href="https://www.linkedin.com/in/minjuelee" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      </div>
+    </div>
+    <p class="fine">RICE-HC — HEALTHCARE EDITION &middot; IN ACTIVE DEVELOPMENT &middot; &copy; MJ LEE 2025&ndash;2026 &middot; NOT VENDOR-AFFILIATED. NOT YET A COMPLETE STANDARD — OBJECTIVES ARE BEING BENCHMARKED AND VALIDATED PROGRESSIVELY. DO NOT CITE AS FINAL UNTIL MARKED COMPLETE.</p>
+  </div>
+</footer>
+
+<script defer src="../assets/vendor/gsap.min.js"></script>
+<script defer src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="../assets/vendor/lenis.min.js"></script>
+<script type="module" src="../assets/vendor/bg3d.mjs"></script>
+<script defer src="../js/app.js"></script>
+<script defer src="../js/motion.js"></script>
+</body>
+</html>
