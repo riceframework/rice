@@ -41,6 +41,7 @@
             Menu
           </button>
           <nav class="vmenu-pop" id="vmenuOverlay" aria-hidden="true">
+            <div class="vmenu-pop-scroll" data-lenis-prevent>
             <a href="index.html" aria-current="page">Overview</a>
             <a href="framework.html">Framework</a>
             <a href="landscape.html">Landscape</a>
@@ -62,6 +63,7 @@
               <a href="#" class="locked" tabindex="-1">Education<span class="stat">PLANNED</span></a>
               <a href="sectors.html">More NCII sectors<span class="stat">ROADMAP</span></a>
             </div>
+            </div>
           </nav>
         </div>
       </div>
@@ -82,7 +84,7 @@
 
       <div class="vquote">
         <div class="lbl">Practitioner Built</div>
-        <p class="q">Compliance is a baseline — <em>not a destination.</em></p>
+        <p class="q"><b>Compliance is a baseline</b> — <em>not a destination.</em></p>
         <div class="auth">MJ LEE</div>
       </div>
     </div>
@@ -155,14 +157,12 @@
         <path class="trace" d="M180 96 V128 M480 96 V128 M780 96 V128"/>
         <path class="trace" d="M180 196 V210 M480 196 V210 M780 196 V210 M142.5 210 H817.5 M142.5 210 V224 M367.5 210 V224 M592.5 210 V224 M817.5 210 V224"/>
         <path class="trace" d="M142.5 292 V324 M367.5 292 V324 M592.5 292 V324 M817.5 292 V324"/>
-        <!-- bus junctions -->
-        <circle class="jdot" cx="180" cy="210" r="2.4"/>
-        <circle class="jdot" cx="480" cy="210" r="2.4"/>
-        <circle class="jdot" cx="780" cy="210" r="2.4"/>
-        <circle class="jdot" cx="142.5" cy="210" r="2.4"/>
-        <circle class="jdot" cx="367.5" cy="210" r="2.4"/>
-        <circle class="jdot" cx="592.5" cy="210" r="2.4"/>
-        <circle class="jdot" cx="817.5" cy="210" r="2.4"/>
+        <!-- bus junctions: only at row-3 taps, where the vertical line actually
+             passes through the bus rather than terminating at a box edge -->
+        <circle class="jdot" cx="142.5" cy="210" r="2.8"/>
+        <circle class="jdot" cx="367.5" cy="210" r="2.8"/>
+        <circle class="jdot" cx="592.5" cy="210" r="2.8"/>
+        <circle class="jdot" cx="817.5" cy="210" r="2.8"/>
         <!-- data packets: governance directives + telemetry moving through the network -->
         <circle class="pk" r="2.6" style="offset-path:path('M480 96 L480 128'); --pd:3.4s; --pdel:.2s"/>
         <circle class="pk" r="2.6" style="offset-path:path('M480 196 L480 210 L142.5 210 L142.5 224'); --pd:6.5s; --pdel:1.6s"/>
