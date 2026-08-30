@@ -439,10 +439,10 @@ body.nav-open .nav-burger span::after{ transform:translateY(-6px) rotate(-45deg)
 @media (max-width:720px){ .local{ grid-template-columns:1fr; } .local>div{ border-right:none; } }
 
 /* incident ledger */
-.ledger{ border:1px solid var(--line); }
+.ledger{ display:flex; flex-direction:column; gap:14px; }
 .ledger>div{
   display:grid; grid-template-columns:64px 150px 1fr; gap:22px;
-  padding:20px 24px; border-bottom:1px solid var(--line);
+  padding:20px 24px;
 }
 .ledger>div:last-child{ border-bottom:none; }
 .ledger .y{ font-family:var(--mono); font-size:14px; font-weight:500; color:var(--gold); }
@@ -451,8 +451,7 @@ body.nav-open .nav-burger span::after{ transform:translateY(-6px) rotate(-45deg)
 .ledger p{ font-size:13px; color:var(--ink-2); line-height:1.6; }
 @media (max-width:680px){ .ledger>div{ grid-template-columns:1fr; gap:4px; } }
 
-/* framework analysis */
-.fws{ border:1px solid var(--line); }
+/* framework analysis: border comes from the shared glass card recipe below; no outer straight border needed */
 .fws>details{ border-bottom:1px solid var(--line); }
 .fws>details:last-child{ border-bottom:none; }
 .fws summary{
@@ -1053,7 +1052,7 @@ body.inner .hero .wrap::after{
 }
 body.inner .hero .wrap.has-aside::after{ display:none; }
 @media (max-width:1023px){ body.inner .hero .wrap::after{ display:none; } }
-.story-list{ padding-top:0; padding-bottom:0; } /* rows carry their own padding; the container shouldn't add more */
+.story-list, .fws{ padding-top:0; padding-bottom:0; } /* rows carry their own padding; the container shouldn't add more */
 .pillar::before, .fws::before, .schematic::before, .story-card::before,
 .story-list::before, .cv::before, .toolbar .search::before, .acr>div::before,
 .stats>div::before, .phases>div::before, .duo>div::before, .local>div::before,
@@ -1244,7 +1243,7 @@ body.vmenu-open{ overflow:visible; }
 .stats + .local, .local{ margin-top:14px; }
 
 /* roadmap hero: copy left, phase mini-map right */
-.hero .wrap.has-aside{ display:flex; align-items:center; justify-content:space-between; gap:48px; }
+.hero .wrap.has-aside{ display:flex; align-items:center; justify-content:space-between; gap:48px; padding-right:56px; }
 .hero .wrap.has-aside .hero-copy{ flex:1; min-width:0; }
 .hero-phases{ flex:none; width:264px; display:flex; flex-direction:column; position:relative; }
 .hero-phases::before{
